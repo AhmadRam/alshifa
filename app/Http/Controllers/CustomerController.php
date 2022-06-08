@@ -34,9 +34,11 @@ class CustomerController extends Controller
      */
     public function update()
     {
-        User::find(auth()->user()->id);
+        $customer = User::find(auth()->user()->id);
+        $customer->name = request('name');
+        $customer->email = request('email');
+        $customer->save();
 
-        $customer = auth()->user();
-        return view('customer.profile')->with('customer', $customer);
+        return redirect()->back()->with('success', 'Profile updated successfully');
     }
 }

@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{ asset('asset/css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/css/toastr.css" rel="stylesheet" />
+
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -210,6 +212,23 @@
 
     <script src="{{ asset('asset/js/main.js') }}"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/js/toastr.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            toastr.options.timeOut = 10000;
+            @if (Session::has('error'))
+                toastr.error('{{ Session::get('error') }}');
+            @elseif(Session::has('success'))
+                toastr.success('{{ Session::get('success') }}');
+            @elseif(Session::has('warning'))
+                toastr.success('{{ Session::get('warning') }}');
+            @elseif(Session::has('info'))
+                toastr.success('{{ Session::get('info') }}');
+            @endif
+        });
+
+    </script>
 </body>
 
 </html>

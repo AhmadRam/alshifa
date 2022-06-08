@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use TCG\Voyager\Facades\Voyager;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,7 @@ Route::get('/appointment', function () {
 });
 
 Route::get('customer/profile', [CustomerController::class, 'index'])->name('customer.profile');
+Route::post('customer/profile', [CustomerController::class, 'update'])->name('customer.profile.update');
 
 
 Route::group(['prefix' => 'admin'], function () {

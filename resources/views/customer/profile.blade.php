@@ -5,7 +5,7 @@
 
         <div class="appointment-wrap bg-white p-5 d-flex align-items-center" style="margin-top: 100px">
 
-            <form class="appointment-form ftco-animate" method="POST" action="{{ route('register') }}">
+            <form class="appointment-form ftco-animate" method="POST" action="{{ route('customer.profile.update') }}">
                 @csrf
                 <h3>{{ __('Update Profile') }}</h3>
                 <div class="form-group">
