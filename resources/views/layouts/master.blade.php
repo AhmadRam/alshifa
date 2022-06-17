@@ -35,12 +35,12 @@
                         <div class="col-md pr-4 d-flex topper align-items-center">
                             <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
                                     class="icon-phone2"></span></div>
-                            <span class="text">+90 555 041 35 55 / +90 555 024 35 55</span>
+                            <span class="text"><a href="tel:+90 555 041 35 55" style="color: white">+90 555 041 35 55</a> / <a href="tel:+90 555 024 35 55" style="color: white">+90 555 024 35 55</a></span>
                         </div>
                         <div class="col-md pr-4 d-flex topper align-items-center">
                             <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
                                     class="icon-paper-plane"></span></div>
-                            <span class="text">info@magicist.co</span>
+                                    <a href = "mailto: info@magicist.co" style="color: white"><span class="text">info@magicist.co</span></a>
                         </div>
                         {{-- <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
                             <p class="mb-0 register-link">
