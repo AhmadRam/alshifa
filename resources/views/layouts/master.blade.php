@@ -158,12 +158,11 @@
                         <h2 class="ftco-heading-2">Have a Questions?</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St.
-                                        Mountain View, San Francisco, California, USA</span></li>
-                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392
-                                            3929 210</span></a></li>
-                                <li><a href="#"><span class="icon icon-envelope pr-4"></span><span
-                                            class="text">info@yourdomain.com</span></a></li>
+                                <li><span class="icon icon-map-marker"></span><span class="text">Ataköy 7-8-9-10 kısım mh. Çobançeşme E-5 yanyol CD. No:12 Daire:A119 Nivo Ataköy rezidans Bakırköy/İSTANBUL</span></li>
+                                <li><a href="tel:+90 555 024 35 55"><span class="icon icon-phone"></span><span class="text">+90 555 024 35 55</a></span></li>
+                                <li><a href="tel:+90 555 041 35 55"><span class="icon icon-phone"></span><span class="text">+90 555 041 35 55</a></span></li>
+                                <li><a href = "mailto: info@magicist.co"><span class="icon icon-envelope pr-4"></span><span
+                                            class="text">info@magicist.co</span></a></li>
                             </ul>
                         </div>
                     </div>
