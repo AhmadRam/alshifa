@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/css/toastr.css" rel="stylesheet" />
 
+    <link rel="icon" sizes="8x8" href="{{ asset('asset/images/Logo.png') }}" />
+
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -69,7 +71,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target"
         id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="/"><img src="{{ asset('asset/images/Logo.png') }}" height="60px"/></a>
+            <a class="navbar-brand" href="/"><img src="{{ asset('asset/images/Logo.png') }}" height="60px" width="100px"/></a>
             <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
                 data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
