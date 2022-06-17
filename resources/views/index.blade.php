@@ -9,7 +9,7 @@
                 data-scrollax-parent="true">
                 <div class="col-md-6 pt-5 ftco-animate">
                     <div class="mt-5">
-                        <span class="subheading">Welcome to Mediplus</span>
+                        <span class="subheading">Welcome to Magicist</span>
                         <h1 class="mb-4">We are here <br>for your Care</h1>
                         <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and
                             Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
@@ -32,7 +32,7 @@
                     <div class="py-md-5">
                         <div class="row justify-content-start pb-3">
                             <div class="col-md-12 heading-section ftco-animate p-4 p-lg-5">
-                                <h2 class="mb-4">We Are <span>Mediplus</span> A Medical Clinic</h2>
+                                <h2 class="mb-4">We Are <span>Magicist</span> A Medical Clinic</h2>
                                 <p>A small river named Duden flows by their place and supplies it with the necessary
                                     regelialia. It is a paradisematic country, in which roasted parts of sentences fly into
                                     your mouth. It is a paradisematic country, in which roasted parts of sentences fly into
