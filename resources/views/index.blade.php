@@ -37,8 +37,8 @@
                                     regelialia. It is a paradisematic country, in which roasted parts of sentences fly into
                                     your mouth. It is a paradisematic country, in which roasted parts of sentences fly into
                                     your mouth.</p>
-                                <p><a href="/appointment" class="btn btn-primary py-3 px-4">Make an appointment</a> <a href="#"
-                                        class="btn btn-secondary py-3 px-4">Contact us</a></p>
+                                <p><a href="/appointment" class="btn btn-primary py-3 px-4">Make an appointment</a> <a
+                                        href="#" class="btn btn-secondary py-3 px-4">Contact us</a></p>
                             </div>
                         </div>
                     </div>
@@ -112,10 +112,7 @@
                             <h3>Free Consultation</h3>
                             <div class="">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="First Name">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Last Name">
+                                    <input type="text" class="form-control" placeholder="Full Name" name="full_name">
                                 </div>
                             </div>
                             <div class="">
@@ -123,7 +120,7 @@
                                     <div class="form-field">
                                         <div class="select-wrap">
                                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                            <select name="" id="" class="form-control">
+                                            <select name="branch" id="" class="form-control">
                                                 <option value="">Select Your Services</option>
                                                 <option value="">Neurology</option>
                                                 <option value="">Cardiology</option>
@@ -135,27 +132,19 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Phone">
+                                    <input type="text" class="form-control" placeholder="Phone" name="phone">
                                 </div>
                             </div>
                             <div class="">
                                 <div class="form-group">
-                                    <div class="input-wrap">
-                                        <div class="icon"><span class="ion-md-calendar"></span></div>
-                                        <input type="text" class="form-control appointment_date" placeholder="Date">
-                                    </div>
+                                    <textarea name="description" id="" cols="30" rows="2" class="form-control" placeholder="description"></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <div class="input-wrap">
-                                        <div class="icon"><span class="ion-ios-clock"></span></div>
-                                        <input type="text" class="form-control appointment_time" placeholder="Time">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <div class="form-group">
-                                    <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
-                                </div>
+
+                                    <div id="fileBtn" onclick="getFile()">click to upload a file</div>
+                                    <div style='height: 0px;width: 0px; overflow:hidden;'><input id="upfile" type="file"
+                                            value="upload" onchange="sub(this)" /></div>
+
+
                                 <div class="form-group">
                                     <input type="submit" value="Appointment" class="btn btn-secondary py-3 px-4">
                                 </div>
@@ -190,37 +179,28 @@
 
                 <div class="col-md-8">
                     <div class="row no-gutters">
+                        <?php $number = 0;?>
+                        @foreach ($branchs as $branch)
+                        <?php $number++; ?>
+                        @if($number == 1 || $number == 4 || $number == 7 || $number == 10)
                         <div class="col-md-4">
+                        @endif
                             <div class="department-wrap p-4 ftco-animate">
                                 <div class="text p-2 text-center">
                                     <div class="icon">
                                         <span class="flaticon-stethoscope"></span>
                                     </div>
-                                    <h3><a href="#">Neurology</a></h3>
-                                    <p>Far far away, behind the word mountains</p>
+                                    <h3><a href="#">{{$branch->name}}</a></h3>
+                                    <p>{{$branch->description}}</p>
                                 </div>
                             </div>
-                            <div class="department-wrap p-4 ftco-animate">
-                                <div class="text p-2 text-center">
-                                    <div class="icon">
-                                        <span class="flaticon-stethoscope"></span>
-                                    </div>
-                                    <h3><a href="#">Surgical</a></h3>
-                                    <p>Far far away, behind the word mountains</p>
-                                </div>
-                            </div>
-                            <div class="department-wrap p-4 ftco-animate">
-                                <div class="text p-2 text-center">
-                                    <div class="icon">
-                                        <span class="flaticon-stethoscope"></span>
-                                    </div>
-                                    <h3><a href="#">Dental</a></h3>
-                                    <p>Far far away, behind the word mountains</p>
-                                </div>
-                            </div>
+                            @if($number == 3 || $number == 6 || $number == 9)
                         </div>
+                        @endif
+                        @endforeach
 
-                        <div class="col-md-4">
+
+                        {{-- <div class="col-md-4">
                             <div class="department-wrap p-4 ftco-animate">
                                 <div class="text p-2 text-center">
                                     <div class="icon">
@@ -278,7 +258,7 @@
                                     <p>Far far away, behind the word mountains</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -563,7 +543,8 @@
         </div>
     </section>
 
-    <section class="ftco-section testimony-section img" style="background-image: url({{ asset('asset/images/bg_3.jpg') }});">
+    <section class="ftco-section testimony-section img"
+        style="background-image: url({{ asset('asset/images/bg_3.jpg') }});">
         <div class="overlay"></div>
         <div class="container">
             <div class="row justify-content-center pb-3">

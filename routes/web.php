@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
@@ -16,13 +17,9 @@ use TCG\Voyager\Facades\Voyager;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
-Route::get('/appointment', function () {
-    return view('appointment');
-});
+Route::get('/appointment', [HomeController::class, 'appointment'])->name('appointment');
 
 Route::get('customer/profile', [CustomerController::class, 'index'])->name('customer.profile');
 Route::post('customer/profile', [CustomerController::class, 'update'])->name('customer.profile.update');

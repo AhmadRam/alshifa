@@ -51,7 +51,7 @@
                                     <a href="{{ route('customer.profile') }}"
                                         class="mr-3">{{ Auth::user()->name }}</a>
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
+                                                                     document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
                                 @endguest
@@ -228,6 +228,17 @@
             @endif
         });
 
+        function getFile() {
+            document.getElementById("upfile").click();
+        }
+
+        function sub(obj) {
+            var file = obj.value;
+            var fileName = file.split("\\");
+            document.getElementById("yourBtn").innerHTML = fileName[fileName.length - 1];
+            document.myForm.submit();
+            event.preventDefault();
+        }
     </script>
 </body>
 
