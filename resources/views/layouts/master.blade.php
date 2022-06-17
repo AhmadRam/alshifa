@@ -84,9 +84,9 @@
                     </li>
                     <li class="nav-item"><a href="/#department-section"
                             class="nav-link"><span>Department</span></a></li>
-                    <li class="nav-item"><a href="/#doctor-section"
+                    {{-- <li class="nav-item"><a href="/#doctor-section"
                             class="nav-link"><span>Doctors</span></a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item"><a href="/#blog-section" class="nav-link"><span>Blog</span></a>
                     </li>
                     <li class="nav-item"><a href="/#contact-section"

@@ -32,11 +32,8 @@
                     <div class="py-md-5">
                         <div class="row justify-content-start pb-3">
                             <div class="col-md-12 heading-section ftco-animate p-4 p-lg-5">
-                                <h2 class="mb-4">We Are <span>Magicist</span> A Medical Clinic</h2>
-                                <p>A small river named Duden flows by their place and supplies it with the necessary
-                                    regelialia. It is a paradisematic country, in which roasted parts of sentences fly into
-                                    your mouth. It is a paradisematic country, in which roasted parts of sentences fly into
-                                    your mouth.</p>
+                                <h2 class="mb-4">We Are <span>Magicist</span> Clinic</h2>
+                                <p>Magicist Clinic project aims to provide a safe and reliable environment for people coming from all over the world to obtain health care in Istanbul, highly qualified medical staff, surgeons and university professors in various medical fields, and by contracting with the best hospitals designed according to international standards and the best health care providers in  Istanbul, we strive to provide high quality services, smooth post-operative care, and a clean and healthy recovery environment.  We also offer you a comfortable travel environment through our agreements with the best tourist facilities, transportation services and hotel services</p>
                                 <p><a href="/appointment" class="btn btn-primary py-3 px-4">Make an appointment</a> <a
                                         href="#" class="btn btn-secondary py-3 px-4">Contact us</a></p>
                             </div>
@@ -265,7 +262,7 @@
         </div>
     </section>
 
-    <section class="ftco-section" id="doctor-section">
+    {{-- <section class="ftco-section" id="doctor-section">
         <div class="container-fluid px-5">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
@@ -365,7 +362,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="ftco-facts img ftco-counter" style="background-image: url({{ asset('asset/images/bg_3.jpg') }});">
         <div class="overlay"></div>
@@ -657,7 +654,7 @@
                             <span class="icon-map-signs"></span>
                         </div>
                         <h3 class="mb-4">Address</h3>
-                        <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+                        <p>Ataköy 7-8-9-10 kısım mh. Çobançeşme E-5 yanyol CD. No:12 Daire:A119 Nivo Ataköy rezidans Bakırköy/İSTANBUL</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -666,7 +663,8 @@
                             <span class="icon-phone2"></span>
                         </div>
                         <h3 class="mb-4">Contact Number</h3>
-                        <p><a href="tel://1234567920">+ 1235 2355 98</a></p>
+                        <p><a href="tel://+90 555 024 35 55">+90 555 024 35 55</a></p>
+                        <p><a href="tel://+90 555 041 35 55">+90 555 041 35 55</a></p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -675,7 +673,7 @@
                             <span class="icon-paper-plane"></span>
                         </div>
                         <h3 class="mb-4">Email Address</h3>
-                        <p><a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                        <p><a href="mailto:info@magicist.co">info@magicist.co</a></p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -684,11 +682,11 @@
                             <span class="icon-globe"></span>
                         </div>
                         <h3 class="mb-4">Website</h3>
-                        <p><a href="#">yoursite.com</a></p>
+                        <p><a href="https://magicist.co">magicist.co</a></p>
                     </div>
                 </div>
             </div>
-            <div class="row no-gutters block-9">
+            {{-- <div class="row no-gutters block-9">
                 <div class="col-md-6 order-md-last d-flex">
                     <form action="#" class="bg-light p-5 contact-form">
                         <div class="form-group">
@@ -713,7 +711,7 @@
                 <div class="col-md-6 d-flex">
                     <div id="map" class="bg-white"></div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
 @endsection
