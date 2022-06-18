@@ -10801,7 +10801,7 @@ h5,
 .ftco-navbar-light {
     background: rgba(255, 255, 255, 0.5) !important;
     position: absolute;
-    top: 33px;
+    /* top: 33px; */
     left: 0;
     right: 0;
     z-index: 3;

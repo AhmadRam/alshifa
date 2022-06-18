@@ -33,7 +33,14 @@
                         <div class="row justify-content-start pb-3">
                             <div class="col-md-12 heading-section ftco-animate p-4 p-lg-5">
                                 <h2 class="mb-4">We Are <span>Magicist</span> Clinic</h2>
-                                <p>Magicist Clinic project aims to provide a safe and reliable environment for people coming from all over the world to obtain health care in Istanbul, highly qualified medical staff, surgeons and university professors in various medical fields, and by contracting with the best hospitals designed according to international standards and the best health care providers in  Istanbul, we strive to provide high quality services, smooth post-operative care, and a clean and healthy recovery environment.  We also offer you a comfortable travel environment through our agreements with the best tourist facilities, transportation services and hotel services</p>
+                                <p>Magicist Clinic project aims to provide a safe and reliable environment for people coming
+                                    from all over the world to obtain health care in Istanbul, highly qualified medical
+                                    staff, surgeons and university professors in various medical fields, and by contracting
+                                    with the best hospitals designed according to international standards and the best
+                                    health care providers in Istanbul, we strive to provide high quality services, smooth
+                                    post-operative care, and a clean and healthy recovery environment. We also offer you a
+                                    comfortable travel environment through our agreements with the best tourist facilities,
+                                    transportation services and hotel services</p>
                                 <p><a href="/appointment" class="btn btn-primary py-3 px-4">Make an appointment</a> <a
                                         href="#" class="btn btn-secondary py-3 px-4">Contact us</a></p>
                             </div>
@@ -105,7 +112,8 @@
                 </div>
                 <div class="col-md-5 d-flex">
                     <div class="appointment-wrap bg-white p-4 p-md-5 d-flex align-items-center">
-                        <form action="#" class="appointment-form ftco-animate">
+                        <form method="POST" action="{{route('consultation')}}" class="appointment-form ftco-animate" enctype='multipart/form-data' >
+                            @csrf
                             <h3>Free Consultation</h3>
                             <div class="">
                                 <div class="form-group">
@@ -117,33 +125,35 @@
                                     <div class="form-field">
                                         <div class="select-wrap">
                                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                            <select name="branch" id="" class="form-control">
-                                                <option value="">Select Your Services</option>
-                                                <option value="">Neurology</option>
-                                                <option value="">Cardiology</option>
-                                                <option value="">Dental</option>
-                                                <option value="">Ophthalmology</option>
-                                                <option value="">Other Services</option>
+                                            <select name="branch_id" id="" class="form-control">
+                                                <option value="">branch</option>
+                                                @foreach ($branchs as $branch)
+                                                    <option value="{{ $branch->id }}">{{ $branch->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="email" name="email">
+                                </div>
+                                <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Phone" name="phone">
                                 </div>
+
                             </div>
                             <div class="">
                                 <div class="form-group">
-                                    <textarea name="description" id="" cols="30" rows="2" class="form-control" placeholder="description"></textarea>
+                                    <textarea name="description" id="" cols="30" rows="2" class="form-control"
+                                        placeholder="description"></textarea>
                                 </div>
 
-                                    <div id="fileBtn" onclick="getFile()">click to upload a file</div>
-                                    <div style='height: 0px;width: 0px; overflow:hidden;'><input id="upfile" type="file"
-                                            value="upload" onchange="sub(this)" /></div>
-
+                                <div id="fileBtn" onclick="getFile()">click to upload a file</div>
+                                <div style='height: 0px;width: 0px; overflow:hidden;'><input id="upfile" name="document"
+                                        type="file" value="upload" onchange="sub(this)" /></div>
 
                                 <div class="form-group">
-                                    <input type="submit" value="Appointment" class="btn btn-secondary py-3 px-4">
+                                    <input type="submit" value="Consult Now" class="btn btn-secondary py-3 px-4">
                                 </div>
                             </div>
                         </form>
@@ -176,28 +186,28 @@
 
                 <div class="col-md-8">
                     <div class="row no-gutters">
-                        <?php $number = 0;?>
+                        <?php $number = 0; ?>
                         @foreach ($branchs as $branch)
-                        <?php $number++; ?>
-                        @if($number == 1 || $number == 4 || $number == 7 || $number == 10)
-                        <div class="col-md-4">
-                        @endif
+                            <?php $number++; ?>
+                            @if ($number == 1 || $number == 4 || $number == 7 || $number == 10)
+                                <div class="col-md-4">
+                            @endif
                             <div class="department-wrap p-4 ftco-animate">
                                 <div class="text p-2 text-center">
                                     <div class="icon">
                                         <span class="flaticon-stethoscope"></span>
                                     </div>
-                                    <h3><a href="#">{{$branch->name}}</a></h3>
-                                    <p>{{$branch->description}}</p>
+                                    <h3><a href="#">{{ $branch->name }}</a></h3>
+                                    <p>{{ $branch->description }}</p>
                                 </div>
                             </div>
-                            @if($number == 3 || $number == 6 || $number == 9)
-                        </div>
-                        @endif
-                        @endforeach
+                            @if ($number == 3 || $number == 6 || $number == 9)
+                    </div>
+                    @endif
+                    @endforeach
 
 
-                        {{-- <div class="col-md-4">
+                    {{-- <div class="col-md-4">
                             <div class="department-wrap p-4 ftco-animate">
                                 <div class="text p-2 text-center">
                                     <div class="icon">
@@ -256,9 +266,9 @@
                                 </div>
                             </div>
                         </div> --}}
-                    </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -654,7 +664,8 @@
                             <span class="icon-map-signs"></span>
                         </div>
                         <h3 class="mb-4">Address</h3>
-                        <p>Ataköy 7-8-9-10 kısım mh. Çobançeşme E-5 yanyol CD. No:12 Daire:A119 Nivo Ataköy rezidans Bakırköy/İSTANBUL</p>
+                        <p>Ataköy 7-8-9-10 kısım mh. Çobançeşme E-5 yanyol CD. No:12 Daire:A119 Nivo Ataköy rezidans
+                            Bakırköy/İSTANBUL</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex ftco-animate">

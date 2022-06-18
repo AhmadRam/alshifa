@@ -29,7 +29,7 @@
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-    <div class="py-1 bg-black top">
+    {{-- <div class="py-1 bg-black top">
         <div class="container">
             <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
                 <div class="col-lg-12 d-block">
@@ -44,7 +44,7 @@
                                     class="icon-paper-plane"></span></div>
                                     <a href = "mailto: info@magicist.co" style="color: white"><span class="text">info@magicist.co</span></a>
                         </div>
-                        {{-- <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
+                        <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
                             <p class="mb-0 register-link">
                                 @guest
                                     <a href="{{ route('register') }}" class="mr-3">Sign Up</a>
@@ -62,16 +62,16 @@
                                 class="d-none">
                                 @csrf
                             </form>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target"
         id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="/"><img src="{{ asset('asset/images/Logo.png') }}" height="60px" width="100px"/></a>
+            <a class="navbar-brand" href="/"><img src="{{ asset('asset/images/Logo.png') }}" height="70px" width="110px"/></a>
             <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
                 data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -80,18 +80,17 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav nav ml-auto">
                     <li class="nav-item"><a href="/#" class="nav-link"><span>Home</span></a></li>
-                    <li class="nav-item"><a href="/#about-section" class="nav-link"><span>About</span></a>
                     </li>
                     <li class="nav-item"><a href="/#department-section"
-                            class="nav-link"><span>Department</span></a></li>
+                            class="nav-link"><span>Departments</span></a></li>
                     {{-- <li class="nav-item"><a href="/#doctor-section"
                             class="nav-link"><span>Doctors</span></a>
                     </li> --}}
-                    <li class="nav-item"><a href="/#blog-section" class="nav-link"><span>Blog</span></a>
+                    <li class="nav-item"><a href="/#blog-section" class="nav-link"><span>Blogs</span></a>
                     </li>
-                    <li class="nav-item"><a href="/#contact-section"
-                            class="nav-link"><span>Contact</span></a></li>
-                    <li class="nav-item cta mr-md-2"><a href="/appointment" class="nav-link">Appointment</a>
+                    <li class="nav-item"><a href="/#contact-section" class="nav-link"><span>Contact Us</span></a></li>
+                    <li class="nav-item"><a href="/#about-section" class="nav-link"><span>About Us</span></a>
+                    <li class="nav-item cta mr-md-2"><a href="/appointment" class="nav-link">Book Surgery</a>
                     </li>
                 </ul>
             </div>

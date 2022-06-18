@@ -21,6 +21,8 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::get('/appointment', [HomeController::class, 'appointment'])->name('appointment');
 
+Route::post('/consultation', [HomeController::class, 'consultation'])->name('consultation');
+
 Route::get('customer/profile', [CustomerController::class, 'index'])->name('customer.profile');
 Route::post('customer/profile', [CustomerController::class, 'update'])->name('customer.profile.update');
 
