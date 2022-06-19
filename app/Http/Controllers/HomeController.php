@@ -6,6 +6,7 @@ use App\Branch;
 use App\Consultation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
 class HomeController extends Controller
 {
@@ -36,7 +37,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function appointment()
+    public function appointments()
     {
         return view('appointment');
     }
@@ -46,24 +47,25 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function consultation(Request $request)
+    public function consultations(Request $request)
     {
-        if ($request->file('document')) {
-            $file = $request->file('document');
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $location = 'storage/consultations/' . date('FY');
-            $file->move($location, $filename);
-        }
+        app(VoyagerBaseController::class)->store($request);
 
-        $consultation = new consultation;
-        $consultation->full_name = request('full_name');
-        $consultation->phone = request('phone');
-        $consultation->email = request('email');
-        $consultation->description = request('description');
-        $consultation->branch_id = request('branch_id');
-        $consultation->document = 'consultations/' . date('FY') . '/' . $filename;
-        $consultation->save();
+        // if ($request->file('document')) {
+        //     $file = $request->file('document');
+        //     $filename = time() . '_' . $file->getClientOriginalName();
+        //     $location = 'storage/consultations/' . date('FY');
+        //     $file->move($location, $filename);
+        // }
+        // $consultation = new consultation;
+        // $consultation->full_name = request('full_name');
+        // $consultation->phone = request('phone');
+        // $consultation->email = request('email');
+        // $consultation->description = request('description');
+        // $consultation->branch_id = request('branch_id');
+        // $consultation->document = json_encode('[{"download_link":"consultations\\' . date('FY') . '/' . $filename . '","original_name":"' . $filename . '"}]');
+        // $consultation->save();
 
-        return redirect()->back()->with('success', 'Consultation submitted successfully');
+        return redirect()->back()->with('success', 'Added New Consultation Successfully');
     }
 }

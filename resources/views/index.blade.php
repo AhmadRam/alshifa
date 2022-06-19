@@ -112,7 +112,7 @@
                 </div>
                 <div class="col-md-5 d-flex">
                     <div class="appointment-wrap bg-white p-4 p-md-5 d-flex align-items-center">
-                        <form method="POST" action="{{route('consultation')}}" class="appointment-form ftco-animate" enctype='multipart/form-data' >
+                        <form method="POST" action="{{route('customer.consultations.store')}}" class="appointment-form ftco-animate" enctype='multipart/form-data' >
                             @csrf
                             <h3>Free Consultation</h3>
                             <div class="">
