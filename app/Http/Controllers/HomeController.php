@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Branch;
 use App\Consultation;
+use App\Hospital;
+use App\Hotel;
+use App\Transfer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
@@ -29,7 +32,13 @@ class HomeController extends Controller
     {
         $branchs = Branch::where('status', 1)->get();
 
-        return view('index', compact('branchs'));
+        $hotels = Hotel::all();
+
+        $hospitals = Hospital::all();
+
+        $transfers = Transfer::all();
+
+        return view('index', compact('branchs', 'hotels', 'hospitals','transfers'));
     }
 
     /**
