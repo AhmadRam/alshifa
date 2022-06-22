@@ -13,7 +13,7 @@
                         placeholder="{{ __('Name') }}" name="name" value="{{ old('name') }}" required
                         autocomplete="name" autofocus>
 
-                        @error('name')
+                    @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -57,12 +57,12 @@
 
             </form>
         </div>
+    </div>
 
 
 
 
-{{--
-        <div class="row justify-content-center">
+    {{-- <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Register') }}</div>
@@ -141,5 +141,4 @@
                 </div>
             </div>
         </div> --}}
-    </div>
 @endsection

@@ -177,7 +177,8 @@
             </div>
         </div>
     </section>
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2 bg-light" id="department-section">
+
+    {{-- <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2 bg-light" id="department-section">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-8 text-center p-0 mt-3 mb-2">
@@ -185,11 +186,12 @@
                         <h2 id="heading">Operation Plan</h2>
                         <p>Fill all form field to go to next step</p>
 
-                        <form id="msform">
+                        <form id="msform" method="POST" action="{{ route('customer.operation-plans.store') }}">
+                            @csrf
                             <!-- progressbar -->
                             <ul id="progressbar">
-                                <li class="active" id="account"><strong>branch</strong></li>
-                                <li id="personal"><strong>hospital</strong></li>
+                                <li class="active" id="account"><strong>informations</strong></li>
+                                <li id="personal"><strong>branch & hospital</strong></li>
                                 <li id="payment"><strong>hotel</strong></li>
                                 <li id="confirm"><strong>transfer</strong></li>
                             </ul>
@@ -203,41 +205,53 @@
                                 <div class="form-card">
                                     <div class="row">
                                         <div class="col-7">
-                                            <h2 class="fs-title">branch:</h2>
+                                            <h2 class="fs-title">Informations :</h2>
                                         </div>
                                         <div class="col-4">
                                             <h2 class="steps">Step 1 - 4</h2>
                                         </div>
                                     </div>
-                                    <label>
-                                        @foreach ($branchs as $branch)
-                                            <input type="radio" name="branch_id" value="{{ $branch->id }}">
-                                            <img src="{{ Voyager::image($branch->photo) }}" height="100px">
-                                            <h4 style="text-align: center">{{ $branch->name }}</h4>
-                                        @endforeach
-                                    </label>
+
+                                    <div class="form-group" style="padding-left: 25px">
+                                        <input type="text" class="form-control" placeholder="Full Name"
+                                            name="full_name" required>
+                                        <input type="text" class="form-control" placeholder="E-mail" name="email"
+                                            required>
+                                        <input type="text" class="form-control" placeholder="Phone" name="phone"
+                                            required>
+                                    </div>
                                 </div>
-                                <input type="button" name="next" class="next action-button" value="Next" />
+                                <input type="button" name="next" class="next btn btn-secondary py-3 px-4"
+                                    value="Next" style="height:55px; width:85px" />
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
                                     <div class="row">
                                         <div class="col-7">
-                                            <h2 class="fs-title">choose hospital:</h2>
+                                            <h2 class="fs-title">choose branch :</h2>
                                         </div>
                                         <div class="col-4">
                                             <h2 class="steps">Step 2 - 4</h2>
                                         </div>
                                     </div>
-                                    @foreach ($hospitals as $hospital)
-                                        <input type="radio" name="hospital_id" value="{{ $hospital->id }}">
-                                        <img src="{{ Voyager::image($hospital->photo) }}" height="100px">
-                                        <h4 style="text-align: center">{{ $hospital->name }}</h4>
+                                    @foreach ($branchs as $key => $branch)
+                                        <label style="padding: 10px" id="selected_branch">
+                                            <input type="radio" name="branch_id" id="{{ $key }}"
+                                                value="{{ $branch->id }}" {{ $key == 0 ? 'checked' : '' }} onchange="getHospital({{ $branch->id }})">
+                                            <img src="{{ Voyager::image($branch->photo) }}" height="100px">
+                                            <p style="text-align: center">{{ $branch->name }}</p>
+                                        </label>
                                     @endforeach
+                                    <div id="hospitals">
+
+                                    </div>
                                 </div>
-                                <input type="button" name="next" class="next action-button" value="Next" />
-                                <input type="button" name="previous" class="previous action-button-previous"
-                                    value="Previous" />
+                                <input type="button" name="previous"
+                                    class="previous btn btn-outline-secondary py-3 px-4-previous" value="Previous"
+                                    style="height:55px; width:95px" />
+                                <input type="button" name="next" class="next btn btn-secondary py-3 px-4"
+                                    value="Next" style="height:55px; width:85px" />
+
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
@@ -249,17 +263,20 @@
                                             <h2 class="steps">Step 3 - 4</h2>
                                         </div>
                                     </div>
-                                    <label>
-                                        @foreach ($hotels as $hotel)
-                                            <input type="radio" name="hotel_id" value="{{ $hotel->id }}" checked>
+                                    @foreach ($hotels as $key => $hotel)
+                                        <label style="padding: 10px">
+                                            <input type="radio" name="hotel_id" id ="{{ $key }}"
+                                                value="{{ $hotel->id }}" {{ $key == 0 ? 'checked' : '' }}>
                                             <img src="{{ Voyager::image($hotel->photo) }}" height="100px">
-                                            <h4 style="text-align: center">{{ $hotel->name }}</h4>
-                                        @endforeach
-                                    </label>
+                                            <p style="text-align: center">{{ $hotel->name }}</p>
+                                        </label>
+                                    @endforeach
                                 </div>
-                                <input type="button" name="next" class="next action-button" value="Next" />
-                                <input type="button" name="previous" class="previous action-button-previous"
-                                    value="Previous" />
+                                <input type="button" name="previous"
+                                    class="previous btn btn-outline-secondary py-3 px-4-previous" value="Previous"
+                                    style="height:55px; width:95px" />
+                                <input type="button" name="next" class="next btn btn-secondary py-3 px-4"
+                                    value="Next" style="height:55px; width:85px" />
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
@@ -271,43 +288,89 @@
                                             <h2 class="steps">Step 4 - 4</h2>
                                         </div>
                                     </div>
-                                    <label>
-                                        @foreach ($transfers as $transfer)
-                                            <input type="radio" name="transfer_id" value="{{ $transfer->id }}"
-                                                checked>
+                                    @foreach ($transfers as $key => $transfer)
+                                        <label style="padding: 10px">
+                                            <input type="radio" name="transfer_id" id="{{ $key }}"
+                                                value="{{ $transfer->id }}" {{ $key == 0 ? 'checked' : '' }}>
                                             <img src="{{ Voyager::image($transfer->photo) }}" height="100px">
-                                            <h4 style="text-align: center">{{ $transfer->name }}</h4>
-                                        @endforeach
-                                    </label>
+                                            <p style="text-align: center">{{ $transfer->name }}</p>
+                                        </label>
+                                    @endforeach
                                 </div>
-                                <input type="button" name="next" class="next action-button" value="Submit" />
-                                <input type="button" name="previous" class="previous action-button-previous"
-                                    value="Previous" />
+                                <input type="button" name="previous"
+                                    class="previous btn btn-outline-secondary py-3 px-4-previous" value="Previous"
+                                    style="height:55px; width:95px" />
+                                <input type="submit" class="btn btn-secondary py-3 px-4" value="Submit"
+                                    style="height:55px; width:95px" />
                             </fieldset>
-                            {{-- <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h2 class="fs-title">finish:</h2>
-                                        </div>
-                                        <div class="col-4">
-                                            <h2 class="steps">Step 5 - 5</h2>
-                                        </div>
-                                    </div>
-                                    <br><br>
-                                    <div class="row justify-content-center">
-                                        <div class="col-7 text-center">
-                                            <h5 class="purple-text text-center">You Have Successfully Signed Up</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset> --}}
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+    </section> --}}
+    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2 bg-light" id="department-section">
+        <div id="svg_wrap"></div>
+        <div class="body">
+            <form method="POST" action="{{ route('customer.operation-plans.store') }}">
+                @csrf
+            <h1 class="h1">Operation Plan</h1>
+            <section class="section">
+                <p class="p">Personal information</p>
+                <input class="input" type="text" name="full_name" placeholder="Full Name" />
+                <input class="input" type="text" name="email" placeholder="E-mail" />
+                <input class="input" type="text" name="phone" placeholder="Phone" />
+            </section>
+
+            <section class="section">
+                <p class="p">Branchs</p>
+                @foreach ($branchs as $key => $branch)
+                    <label style="padding: 10px" id="selected_branch">
+                        <input type="radio" name="branch_id" id="{{ $key }}" value="{{ $branch->id }}"
+                         onchange="getHospital({{ $branch->id }})">
+                        <img src="{{ Voyager::image($branch->photo) }}" height="100px">
+                        <p style="text-align: center">{{ $branch->name }}</p>
+                    </label>
+                @endforeach
+            </section>
+
+            <section class="section">
+                <p class="p">Hospitals</p>
+                <div id="hospitals">
+                </div>
+            </section>
+
+            <section class="section">
+                <p class="p">Hotels</p>
+                @foreach ($hotels as $key => $hotel)
+                    <label style="padding: 10px">
+                        <input type="radio" name="hotel_id" id ="{{ $key }}" value="{{ $hotel->id }}"
+                        >
+                        <img src="{{ Voyager::image($hotel->photo) }}" height="100px">
+                        <p style="text-align: center">{{ $hotel->name }}</p>
+                    </label>
+                @endforeach
+            </section>
+
+            <section class="section">
+                <p class="p">Transfers</p>
+                @foreach ($transfers as $key => $transfer)
+                    <label style="padding: 10px">
+                        <input type="radio" name="transfer_id" id="{{ $key }}"
+                            value="{{ $transfer->id }}">
+                        <img src="{{ Voyager::image($transfer->photo) }}" height="100px">
+                        <p style="text-align: center">{{ $transfer->name }}</p>
+                    </label>
+                @endforeach
+            </section>
+
+            <div class="button" id="prev">&larr; Previous</div>
+            <div class="button" id="next">Next &rarr;</div>
+            <input type="submit" class="button" id="submit" value="Agree and send application"/>
+        </form>
+        </div>
     </section>
+
     <section class="ftco-section ftco-no-pt ftco-no-pb" id="department-section">
         <div class="container-fluid px-0">
             <div class="row no-gutters">
@@ -858,3 +921,20 @@
         </div>
     </section>
 @endsection
+
+<script>
+    function getHospital(id) {
+        let url = `/getHospitals/${id}`;
+        $.ajax({
+            url: url,
+            type: 'get',
+            success: function(data) {
+                document.getElementById('hospitals').innerHTML = '';
+                data.data.forEach(item => {
+                    document.getElementById('hospitals').innerHTML +=
+                        `<label style="padding: 10px"><input type="radio" name="hospital_id" id="${item.id}" value="${item.id}"><img src="${window.location.protocol}//${window.location.host}/storage/${item.photo}" height="100px"><p style="text-align: center">${item.name}</p></label>`;
+                });
+            }
+        });
+    }
+</script>

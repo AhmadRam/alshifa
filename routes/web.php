@@ -23,8 +23,14 @@ Route::get('/appointment', [HomeController::class, 'appointments'])->name('view.
 
 Route::post('/consultation', [HomeController::class, 'consultations'])->name('customer.consultations.store');
 
+Route::post('/operation-plan', [HomeController::class, 'operations'])->name('customer.operation-plans.store');
+
+Route::get('getHospitals/{id}', [HomeController::class, 'getHospitals']);
+
+
 Route::get('customer/profile', [CustomerController::class, 'index'])->name('customer.profile');
 Route::post('customer/profile', [CustomerController::class, 'update'])->name('customer.profile.update');
+
 
 
 Route::group(['prefix' => 'admin'], function () {

@@ -6,9 +6,12 @@ use App\Branch;
 use App\Consultation;
 use App\Hospital;
 use App\Hotel;
+use App\OperationPlan;
 use App\Transfer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
 class HomeController extends Controller
@@ -38,7 +41,7 @@ class HomeController extends Controller
 
         $transfers = Transfer::all();
 
-        return view('index', compact('branchs', 'hotels', 'hospitals','transfers'));
+        return view('index', compact('branchs', 'hotels', 'hospitals', 'transfers'));
     }
 
     /**
@@ -58,23 +61,32 @@ class HomeController extends Controller
      */
     public function consultations(Request $request)
     {
-        app(VoyagerBaseController::class)->store($request);
+        $slug = 'consultations';
 
-        // if ($request->file('document')) {
-        //     $file = $request->file('document');
-        //     $filename = time() . '_' . $file->getClientOriginalName();
-        //     $location = 'storage/consultations/' . date('FY');
-        //     $file->move($location, $filename);
-        // }
-        // $consultation = new consultation;
-        // $consultation->full_name = request('full_name');
-        // $consultation->phone = request('phone');
-        // $consultation->email = request('email');
-        // $consultation->description = request('description');
-        // $consultation->branch_id = request('branch_id');
-        // $consultation->document = json_encode('[{"download_link":"consultations\\' . date('FY') . '/' . $filename . '","original_name":"' . $filename . '"}]');
-        // $consultation->save();
+        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
 
-        return redirect()->back()->with('success', 'Added New Consultation Successfully');
+        app(VoyagerBaseController::class)->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
+
+        return redirect()->back()->with('success', 'Consultation Submitted Successfully');
+    }
+
+    public function operations(Request $request)
+    {
+        $slug = 'operation-plans';
+
+        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+
+        app(VoyagerBaseController::class)->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
+
+        return redirect()->back()->with('success', 'Operation plan Submitted Successfully');
+    }
+
+    public function getHospitals($id)
+    {
+        $hospitals = DB::table('branch_hospitals')->where('branch_id', $id)->pluck('hospital_id');
+        if (!empty($hospitals)) {
+            $hospitals = Hospital::whereIn('id', $hospitals)->get();
+        }
+        return response()->json(['data' => $hospitals]);
     }
 }
