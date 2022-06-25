@@ -85,17 +85,17 @@
                 <ul class="navbar-nav nav ml-auto">
                     <li class="nav-item"><a href="/#" class="nav-link"><span>Home</span></a></li>
                     </li>
+
                     <li class="nav-item">
                         <div class="dropdown">
-                            <a class="nav-link">Departments</a>
+                        <a class="">Departments</a>
                             <div class="dropdown-content">
-                              <a href="#">Link 1</a>
-                              <a href="#">Link 2</a>
-                              <a href="#">Link 3</a>
+                              @foreach ($departments as $department)
+                              <a href="#">{{$department->name}}</a>
+                              @endforeach
                             </div>
                           </div>
                         </li>
-
 
                     <li class="nav-item"><a href="/#doctor-section"
                             class="nav-link"><span>Hospitals</span></a>

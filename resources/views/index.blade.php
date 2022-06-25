@@ -9,11 +9,10 @@
                 data-scrollax-parent="true">
                 <div class="col-md-6 pt-5 ftco-animate">
                     <div class="mt-5">
-                        <span class="subheading">Welcome to Magicist</span>
-                        <h1 class="mb-4">We are here <br>for your Care</h1>
-                        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and
-                            Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-                        <p><a href="/appointment" class="btn btn-primary py-3 px-4">Make an appointment</a></p>
+                        <span class="subheading">Welcome to MAGICIST CLINIC</span>
+                        <h1 class="mb-4">We are here <br>for your Healthcare</h1>
+                        <p class="mb-4">Magicist clinic  has reached a high patient satisfaction, which is the reason behind the medical reputation of MAGICIST clinic in the medical sector.</p>
+                        <p><a href="/appointment" class="btn btn-primary py-3 px-4">plan your Journey</a></p>
                     </div>
                 </div>
             </div>
@@ -112,53 +111,7 @@
                 </div>
                 <div class="col-md-5 d-flex">
                     <div class="appointment-wrap bg-white p-4 p-md-5 d-flex align-items-center">
-                        <form method="POST" action="{{ route('customer.consultations.store') }}"
-                            class="appointment-form ftco-animate" enctype='multipart/form-data'>
-                            @csrf
-                            <h3>Free Consultation</h3>
-                            <div class="">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Full Name" name="full_name"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="">
-                                <div class="form-group">
-                                    <div class="form-field">
-                                        <div class="select-wrap">
-                                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                            <select name="branch_id" id="" class="form-control" required>
-                                                <option value="">branch</option>
-                                                @foreach ($branches as $branch)
-                                                    <option value="{{ $branch->id }}">{{ $branch->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="email" name="email">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Phone" name="phone" required>
-                                </div>
-
-                            </div>
-                            <div class="">
-                                <div class="form-group">
-                                    <textarea name="description" id="" cols="30" rows="2" class="form-control"
-                                        placeholder="description"></textarea>
-                                </div>
-
-                                <div id="fileBtn" onclick="getFile()">click to upload a file</div>
-                                <div style='height: 0px;width: 0px; overflow:hidden;'><input id="upfile"
-                                        name="document" type="file" value="upload" onchange="sub(this)" /></div>
-
-                                <div class="form-group">
-                                    <input type="submit" value="Consult Now" class="btn btn-secondary py-3 px-4">
-                                </div>
-                            </div>
-                        </form>
+                        @include('consultationForm')
                     </div>
                 </div>
             </div>
@@ -191,7 +144,7 @@
                             <!-- progressbar -->
                             <ul id="progressbar">
                                 <li class="active" id="account"><strong>informations</strong></li>
-                                <li id="personal"><strong>branch & hospital</strong></li>
+                                <li id="personal"><strong>department & hospital</strong></li>
                                 <li id="payment"><strong>hotel</strong></li>
                                 <li id="confirm"><strong>transfer</strong></li>
                             </ul>
@@ -228,18 +181,18 @@
                                 <div class="form-card">
                                     <div class="row">
                                         <div class="col-7">
-                                            <h2 class="fs-title">choose branch :</h2>
+                                            <h2 class="fs-title">choose department :</h2>
                                         </div>
                                         <div class="col-4">
                                             <h2 class="steps">Step 2 - 4</h2>
                                         </div>
                                     </div>
-                                    @foreach ($branches as $key => $branch)
-                                        <label style="padding: 10px" id="selected_branch">
-                                            <input type="radio" name="branch_id" id="{{ $key }}"
-                                                value="{{ $branch->id }}" {{ $key == 0 ? 'checked' : '' }} onchange="getHospital({{ $branch->id }})">
-                                            <img src="{{ Voyager::image($branch->photo) }}" height="100px">
-                                            <p style="text-align: center">{{ $branch->name }}</p>
+                                    @foreach ($departments as $key => $department)
+                                        <label style="padding: 10px" id="selected_department">
+                                            <input type="radio" name="department_id" id="{{ $key }}"
+                                                value="{{ $department->id }}" {{ $key == 0 ? 'checked' : '' }} onchange="getHospital({{ $department->id }})">
+                                            <img src="{{ Voyager::image($department->photo) }}" height="100px">
+                                            <p style="text-align: center">{{ $department->name }}</p>
                                         </label>
                                     @endforeach
                                     <div id="hospitals">
@@ -324,12 +277,12 @@
 
                 <section class="section">
                     <p class="p">Departments</p>
-                    @foreach ($branches as $key => $branch)
-                        <label style="padding: 10px" id="selected_branch">
-                            <input type="radio" name="branch_id" id="{{ $key }}" value="{{ $branch->id }}"
-                                onchange="getHospital({{ $branch->id }})">
-                            <img src="{{ Voyager::image($branch->photo) }}" height="100px">
-                            <p style="text-align: center">{{ $branch->name }}</p>
+                    @foreach ($departments as $key => $department)
+                        <label style="padding: 10px" id="selected_department">
+                            <input type="radio" name="department_id" id="{{ $key }}" value="{{ $department->id }}"
+                                onchange="getHospital({{ $department->id }})">
+                            <img src="{{ Voyager::image($department->photo) }}" height="100px">
+                            <p style="text-align: center">{{ $department->name }}</p>
                         </label>
                     @endforeach
                 </section>
@@ -382,7 +335,7 @@
                 <div class="col-md-8">
                     <div class="row no-gutters">
                         <?php $number = 0; ?>
-                        @foreach ($branches as $branch)
+                        @foreach ($departments as $department)
                             <?php $number++; ?>
                             @if ($number == 1 || $number == 4 || $number == 7 || $number == 10)
                                 <div class="col-md-4">
@@ -392,8 +345,8 @@
                                     <div class="icon">
                                         <span class="flaticon-stethoscope"></span>
                                     </div>
-                                    <h3><a href="#">{{ $branch->name }}</a></h3>
-                                    <p>{{ $branch->description }}</p>
+                                    <h3><a href="#">{{ $department->name }}</a></h3>
+                                    <p>{{ $department->description }}</p>
                                 </div>
                             </div>
                             @if ($number == 3 || $number == 6 || $number == 9)
@@ -584,7 +537,7 @@
                         <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18">
                                 <div class="text">
-                                    <strong class="number" data-number="{{ $branches->count() }}">0</strong>
+                                    <strong class="number" data-number="{{ $departments->count() }}">0</strong>
                                     <span>Number of departments</span>
                                 </div>
                             </div>

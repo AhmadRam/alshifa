@@ -19,13 +19,15 @@ use TCG\Voyager\Facades\Voyager;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
-Route::get('/appointment', [HomeController::class, 'appointments'])->name('view.appointments.index');
+Route::get('appointment', [HomeController::class, 'appointments'])->name('view.appointments.index');
 
-Route::post('/consultation', [HomeController::class, 'consultations'])->name('customer.consultations.store');
+Route::post('consultation', [HomeController::class, 'consultations'])->name('customer.consultations.store');
 
-Route::post('/operation-plan', [HomeController::class, 'operations'])->name('customer.operation-plans.store');
+Route::post('operation-plan', [HomeController::class, 'operations'])->name('customer.operation-plans.store');
 
 Route::get('getHospitals/{id}', [HomeController::class, 'getHospitals']);
+
+Route::get('department/{id}', [HomeController::class, 'departmentPage'])->name('view.departments.index');
 
 
 Route::get('customer/profile', [CustomerController::class, 'index'])->name('customer.profile');

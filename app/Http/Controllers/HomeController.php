@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Branch;
+use App\Department;
 use App\Consultation;
 use App\Hospital;
 use App\Hotel;
@@ -33,7 +33,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $branches = Branch::where('status', 1)->get();
+        $departments = Department::where('status', 1)->get();
 
         $hotels = Hotel::all();
 
@@ -41,7 +41,7 @@ class HomeController extends Controller
 
         $transfers = Transfer::all();
 
-        return view('index', compact('branches', 'hotels', 'hospitals', 'transfers'));
+        return view('index', compact('departments', 'hotels', 'hospitals', 'transfers'));
     }
 
     /**
@@ -51,9 +51,9 @@ class HomeController extends Controller
      */
     public function appointments()
     {
-        $branches = Branch::where('status', 1)->get();
+        $departments = Department::where('status', 1)->get();
 
-        return view('appointment', compact('branches'));
+        return view('appointment', compact('departments'));
     }
 
     /**
@@ -85,10 +85,17 @@ class HomeController extends Controller
 
     public function getHospitals($id)
     {
-        $hospitals = DB::table('branch_hospitals')->where('branch_id', $id)->pluck('hospital_id');
+        $hospitals = DB::table('department_hospitals')->where('department_id', $id)->pluck('hospital_id');
         if (!empty($hospitals)) {
             $hospitals = Hospital::whereIn('id', $hospitals)->get();
         }
         return response()->json(['data' => $hospitals]);
+    }
+
+    public function departmentPage($id)
+    {
+        $department = Department::find($id);
+
+        return view('department', compact('department'));
     }
 }
