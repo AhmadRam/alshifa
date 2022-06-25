@@ -33,7 +33,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $branchs = Branch::where('status', 1)->get();
+        $branches = Branch::where('status', 1)->get();
 
         $hotels = Hotel::all();
 
@@ -41,7 +41,7 @@ class HomeController extends Controller
 
         $transfers = Transfer::all();
 
-        return view('index', compact('branchs', 'hotels', 'hospitals', 'transfers'));
+        return view('index', compact('branches', 'hotels', 'hospitals', 'transfers'));
     }
 
     /**
@@ -51,7 +51,9 @@ class HomeController extends Controller
      */
     public function appointments()
     {
-        return view('appointment');
+        $branches = Branch::where('status', 1)->get();
+
+        return view('appointment', compact('branches'));
     }
 
     /**

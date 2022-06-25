@@ -85,16 +85,27 @@
                 <ul class="navbar-nav nav ml-auto">
                     <li class="nav-item"><a href="/#" class="nav-link"><span>Home</span></a></li>
                     </li>
-                    <li class="nav-item"><a href="/#department-section"
-                            class="nav-link"><span>Departments</span></a></li>
-                    {{-- <li class="nav-item"><a href="/#doctor-section"
-                            class="nav-link"><span>Doctors</span></a>
-                    </li> --}}
-                    <li class="nav-item"><a href="/#blog-section" class="nav-link"><span>Blogs</span></a>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link">Departments</a>
+                            <div class="dropdown-content">
+                              <a href="#">Link 1</a>
+                              <a href="#">Link 2</a>
+                              <a href="#">Link 3</a>
+                            </div>
+                          </div>
+                        </li>
+
+
+                    <li class="nav-item"><a href="/#doctor-section"
+                            class="nav-link"><span>Hospitals</span></a>
+                    </li>
+                    <li class="nav-item"><a href="/#doctor-section"
+                            class="nav-link"><span>Hotels</span></a>
                     </li>
                     <li class="nav-item"><a href="/#contact-section" class="nav-link"><span>Contact Us</span></a></li>
                     <li class="nav-item"><a href="/#about-section" class="nav-link"><span>About Us</span></a>
-                    <li class="nav-item cta mr-md-2"><a href="/appointment" class="nav-link">Book Surgery</a>
+                    <li class="nav-item cta mr-md-2"><a href="/appointment" class="nav-link">FREE CONSULTATION</a>
                     </li>
                 </ul>
             </div>

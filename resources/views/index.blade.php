@@ -34,15 +34,15 @@
                             <div class="col-md-12 heading-section ftco-animate p-4 p-lg-5">
                                 <h2 class="mb-4">We Are <span>Magicist</span> Clinic</h2>
                                 <p>Magicist Clinic project aims to provide a safe and reliable environment for people coming
-                                    from all over the world to obtain health care in Istanbul, highly qualified medical
-                                    staff, surgeons and university professors in various medical fields, and by contracting
+                                    from all over the world to obtain health care for international patients in Istanbul, highly qualified medical
+                                    staff, surgeons and professors in various medical fields, and by contracting
                                     with the best hospitals designed according to international standards and the best
                                     health care providers in Istanbul, we strive to provide high quality services, smooth
                                     post-operative care, and a clean and healthy recovery environment. We also offer you a
                                     comfortable travel environment through our agreements with the best tourist facilities,
                                     transportation services and hotel services</p>
-                                <p><a href="/appointment" class="btn btn-primary py-3 px-4">Make an appointment</a> <a
-                                        href="#" class="btn btn-secondary py-3 px-4">Contact us</a></p>
+                                <p><a href="/appointment" class="btn btn-primary py-3 px-4">FREE CONSULTATION</a> <a
+                                        href="/#about-section" class="btn btn-secondary py-3 px-4">Contact us</a></p>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                             <select name="branch_id" id="" class="form-control" required>
                                                 <option value="">branch</option>
-                                                @foreach ($branchs as $branch)
+                                                @foreach ($branches as $branch)
                                                     <option value="{{ $branch->id }}">{{ $branch->name }}</option>
                                                 @endforeach
                                             </select>
@@ -234,7 +234,7 @@
                                             <h2 class="steps">Step 2 - 4</h2>
                                         </div>
                                     </div>
-                                    @foreach ($branchs as $key => $branch)
+                                    @foreach ($branches as $key => $branch)
                                         <label style="padding: 10px" id="selected_branch">
                                             <input type="radio" name="branch_id" id="{{ $key }}"
                                                 value="{{ $branch->id }}" {{ $key == 0 ? 'checked' : '' }} onchange="getHospital({{ $branch->id }})">
@@ -309,65 +309,65 @@
             </div>
         </div>
     </section> --}}
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2 bg-light" id="department-section">
+    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2 bg-light">
         <div id="svg_wrap"></div>
         <div class="body">
             <form method="POST" action="{{ route('customer.operation-plans.store') }}">
                 @csrf
-            <h1 class="h1">Operation Plan</h1>
-            <section class="section">
-                <p class="p">Personal information</p>
-                <input class="input" type="text" name="full_name" placeholder="Full Name" />
-                <input class="input" type="text" name="email" placeholder="E-mail" />
-                <input class="input" type="text" name="phone" placeholder="Phone" />
-            </section>
+                <h1 class="h1">Operation Plan</h1>
+                <section class="section">
+                    <p class="p">Personal information</p>
+                    <input class="input" type="text" name="full_name" placeholder="Full Name" />
+                    <input class="input" type="text" name="email" placeholder="E-mail" />
+                    <input class="input" type="text" name="phone" placeholder="Phone" />
+                </section>
 
-            <section class="section">
-                <p class="p">Branchs</p>
-                @foreach ($branchs as $key => $branch)
-                    <label style="padding: 10px" id="selected_branch">
-                        <input type="radio" name="branch_id" id="{{ $key }}" value="{{ $branch->id }}"
-                         onchange="getHospital({{ $branch->id }})">
-                        <img src="{{ Voyager::image($branch->photo) }}" height="100px">
-                        <p style="text-align: center">{{ $branch->name }}</p>
-                    </label>
-                @endforeach
-            </section>
+                <section class="section">
+                    <p class="p">Departments</p>
+                    @foreach ($branches as $key => $branch)
+                        <label style="padding: 10px" id="selected_branch">
+                            <input type="radio" name="branch_id" id="{{ $key }}" value="{{ $branch->id }}"
+                                onchange="getHospital({{ $branch->id }})">
+                            <img src="{{ Voyager::image($branch->photo) }}" height="100px">
+                            <p style="text-align: center">{{ $branch->name }}</p>
+                        </label>
+                    @endforeach
+                </section>
 
-            <section class="section">
-                <p class="p">Hospitals</p>
-                <div id="hospitals">
-                </div>
-            </section>
+                <section class="section">
+                    <p class="p">Hospitals</p>
+                    <div id="hospitals">
+                    </div>
+                </section>
 
-            <section class="section">
-                <p class="p">Hotels</p>
-                @foreach ($hotels as $key => $hotel)
-                    <label style="padding: 10px">
-                        <input type="radio" name="hotel_id" id ="{{ $key }}" value="{{ $hotel->id }}"
-                        >
-                        <img src="{{ Voyager::image($hotel->photo) }}" height="100px">
-                        <p style="text-align: center">{{ $hotel->name }}</p>
-                    </label>
-                @endforeach
-            </section>
+                <section class="section">
+                    <p class="p">Hotels</p>
+                    @foreach ($hotels as $key => $hotel)
+                        <label style="padding: 10px">
+                            <input type="radio" name="hotel_id" id ="{{ $key }}"
+                                value="{{ $hotel->id }}">
+                            <img src="{{ Voyager::image($hotel->photo) }}" height="100px">
+                            <p style="text-align: center">{{ $hotel->name }}</p>
+                        </label>
+                    @endforeach
+                </section>
 
-            <section class="section">
-                <p class="p">Transfers</p>
-                @foreach ($transfers as $key => $transfer)
-                    <label style="padding: 10px">
-                        <input type="radio" name="transfer_id" id="{{ $key }}"
-                            value="{{ $transfer->id }}">
-                        <img src="{{ Voyager::image($transfer->photo) }}" height="100px">
-                        <p style="text-align: center">{{ $transfer->name }}</p>
-                    </label>
-                @endforeach
-            </section>
+                <section class="section">
+                    <p class="p">Transfers</p>
+                    @foreach ($transfers as $key => $transfer)
+                        <label style="padding: 10px">
+                            <input type="radio" name="transfer_id" id="{{ $key }}"
+                                value="{{ $transfer->id }}">
+                            <img src="{{ Voyager::image($transfer->photo) }}" height="100px">
+                            <p style="text-align: center">{{ $transfer->name }}</p>
+                        </label>
+                    @endforeach
+                </section>
 
-            <div class="button" id="prev">&larr; Previous</div>
-            <div class="button" id="next">Next &rarr;</div>
-            <input type="submit" class="button" id="submit" value="Agree and send application"/>
-        </form>
+                <div class="button" id="prev">&larr; Previous</div>
+                <div class="button" id="next">Next &rarr;</div>
+                <input type="submit" class="button" id="submit" value="Agree and send application" />
+            </form>
         </div>
     </section>
 
@@ -382,7 +382,7 @@
                 <div class="col-md-8">
                     <div class="row no-gutters">
                         <?php $number = 0; ?>
-                        @foreach ($branchs as $branch)
+                        @foreach ($branches as $branch)
                             <?php $number++; ?>
                             @if ($number == 1 || $number == 4 || $number == 7 || $number == 10)
                                 <div class="col-md-4">
@@ -575,31 +575,32 @@
             <div class="row d-flex align-items-center">
                 <div class="col-md-5 heading-section heading-section-white">
                     <span class="subheading">Fun facts</span>
-                    <h2 class="mb-4">Over 5,100 patients trust us</h2>
-                    <p class="mb-0"><a href="#" class="btn btn-secondary px-4 py-3">Make an appointment</a></p>
+                    <h2 class="mb-4">Over 5,468 patients trust us</h2>
+                    <p class="mb-0"><a href="/appointment" class="btn btn-secondary px-4 py-3">Make an appointment</a>
+                    </p>
                 </div>
                 <div class="col-md-7">
                     <div class="row pt-4">
                         <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18">
                                 <div class="text">
-                                    <strong class="number" data-number="30">0</strong>
-                                    <span>Years of Experienced</span>
+                                    <strong class="number" data-number="{{ $branches->count() }}">0</strong>
+                                    <span>Number of departments</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18">
                                 <div class="text">
-                                    <strong class="number" data-number="4500">0</strong>
-                                    <span>Happy Patients</span>
+                                    <strong class="number" data-number="2658">0</strong>
+                                    <span>Satisfied Patients</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18">
                                 <div class="text">
-                                    <strong class="number" data-number="84">0</strong>
+                                    <strong class="number" data-number="34">0</strong>
                                     <span>Number of Doctors</span>
                                 </div>
                             </div>
@@ -607,7 +608,7 @@
                         <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18">
                                 <div class="text">
-                                    <strong class="number" data-number="300">0</strong>
+                                    <strong class="number" data-number="220">0</strong>
                                     <span>Number of Staffs</span>
                                 </div>
                             </div>
@@ -623,8 +624,8 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-5">
                 <div class="col-md-10 heading-section text-center ftco-animate">
-                    <h2 class="mb-4">Gets Every Single Updates Here</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                    <h2 class="mb-4">Our doctors researches</h2>
+                    <p>Get the most accurate and up to date medical information through out our researchers</p>
                 </div>
             </div>
             <div class="row d-flex">
@@ -848,7 +849,6 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <h2 class="mb-4">Contact Us</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
                 </div>
             </div>
@@ -858,7 +858,6 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-map-signs"></span>
                         </div>
-                        <h3 class="mb-4">Address</h3>
                         <p>Ataköy 7-8-9-10 kısım mh. Çobançeşme E-5 yanyol CD. No:12 Daire:A119 Nivo Ataköy rezidans
                             Bakırköy/İSTANBUL</p>
                     </div>
@@ -868,7 +867,6 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-phone2"></span>
                         </div>
-                        <h3 class="mb-4">Contact Number</h3>
                         <p><a href="tel://+90 555 024 35 55">+90 555 024 35 55</a></p>
                         <p><a href="tel://+90 555 041 35 55">+90 555 041 35 55</a></p>
                     </div>
@@ -878,7 +876,6 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-paper-plane"></span>
                         </div>
-                        <h3 class="mb-4">Email Address</h3>
                         <p><a href="mailto:info@magicist.co">info@magicist.co</a></p>
                     </div>
                 </div>
@@ -887,7 +884,6 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-globe"></span>
                         </div>
-                        <h3 class="mb-4">Website</h3>
                         <p><a href="https://magicist.co">magicist.co</a></p>
                     </div>
                 </div>
