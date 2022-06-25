@@ -117,4 +117,20 @@ class HomeController extends Controller
 
         return view('operationPlan', compact('departments', 'hotels', 'hospitals', 'transfers'));
     }
+
+    public function patientsCommentPage()
+    {
+        return view('patientsComment');
+    }
+
+    public function patientsComment(Request $request)
+    {
+        $slug = 'patients-comments';
+
+        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+
+        app(VoyagerBaseController::class)->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
+
+        return redirect()->back()->with('success', 'Your rate Submitted Successfully');
+    }
 }

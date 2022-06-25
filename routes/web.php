@@ -27,6 +27,10 @@ Route::get('operation-plan', [HomeController::class, 'operationPlanPage'])->name
 
 Route::post('operation-plan', [HomeController::class, 'operations'])->name('customer.operation-plans.store');
 
+Route::get('patients-comment', [HomeController::class, 'patientsCommentPage'])->name('customer.patients-comment.view');
+
+Route::post('patients-comment', [HomeController::class, 'patientsComment'])->name('customer.patients-comment.store');
+
 Route::get('getHospitals/{id}', [HomeController::class, 'getHospitals']);
 
 Route::get('department/{id}', [HomeController::class, 'departmentPage'])->name('departments.view');
