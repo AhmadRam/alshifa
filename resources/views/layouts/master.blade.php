@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Magicist</title>
+    <title>Magicist clinic</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -97,10 +97,10 @@
                           </div>
                         </li>
 
-                    <li class="nav-item"><a href="/#doctor-section"
+                    <li class="nav-item"><a href="/#Hospitals-section"
                             class="nav-link"><span>Hospitals</span></a>
                     </li>
-                    <li class="nav-item"><a href="/#doctor-section"
+                    <li class="nav-item"><a href="/#Hotels-section"
                             class="nav-link"><span>Hotels</span></a>
                     </li>
                     <li class="nav-item"><a href="/#contact-section" class="nav-link"><span>Contact Us</span></a></li>
@@ -119,10 +119,11 @@
         style="background-image: url({{ asset('asset/images/footer-bg.jpg') }});">
         <div class="overlay"></div>
         <div class="container-fluid px-md-5">
-            <div class="row mb-5">
+            <div class="row mb-8">
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Magicist</h2>
+                        <a class="navbar-brand" href="/"><img src="{{ asset('asset/images/Logo.png') }}" height="70px" width="110px"/></a>
+                        {{-- <h2 class="ftco-heading-2">Magicist clinic</h2> --}}
                         <p>Far far away, behind the word mountains, far from the countries.</p>
                         <ul class="ftco-footer-social list-unstyled mt-5">
                             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -132,7 +133,7 @@
                     </div>
                 </div>
                 <div class="col-md">
-                    <div class="ftco-footer-widget mb-4 ml-md-4">
+                    {{-- <div class="ftco-footer-widget mb-4 ml-md-4">
                         <h2 class="ftco-heading-2">Departments</h2>
                         <ul class="list-unstyled">
                             <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Neurology</a></li>
@@ -142,33 +143,9 @@
                             <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Cardiology</a></li>
                             <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Dental</a></li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
-                <div class="col-md">
-                    <div class="ftco-footer-widget mb-4 ml-md-4">
-                        <h2 class="ftco-heading-2">Links</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
-                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
-                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Departments</a></li>
-                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Doctors</a></li>
-                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Blog</a></li>
-                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Pricing</a></li>
-                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Services</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Emergency Services</a></li>
-                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Qualified Doctors</a></li>
-                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Outdoors Checkup</a></li>
-                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>24 Hours Services</a></li>
-                        </ul>
-                    </div>
-                </div>
+
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Have a Questions?</h2>

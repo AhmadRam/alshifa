@@ -11,7 +11,8 @@
                     <div class="mt-5">
                         <span class="subheading">Welcome to MAGICIST CLINIC</span>
                         <h1 class="mb-4">We are here <br>for your Healthcare</h1>
-                        <p class="mb-4">Magicist clinic  has reached a high patient satisfaction, which is the reason behind the medical reputation of Magicist clinic in the medical sector.</p>
+                        <p class="mb-4">Magicist clinic has reached a high patient satisfaction, which is the reason
+                            behind the medical reputation of Magicist Clinic in the medical sector.</p>
                         <p><a href="/#operation_plan" class="btn btn-primary py-3 px-4">Plan Your Journey</a></p>
                     </div>
                 </div>
@@ -33,7 +34,8 @@
                             <div class="col-md-12 heading-section ftco-animate p-4 p-lg-5">
                                 <h2 class="mb-4">We Are <span>Magicist</span> Clinic</h2>
                                 <p>Magicist Clinic project aims to provide a safe and reliable environment for people coming
-                                    from all over the world to obtain health care for international patients in Istanbul, highly qualified medical
+                                    from all over the world to obtain health care for international patients in Istanbul,
+                                    highly qualified medical
                                     staff, surgeons and professors in various medical fields, and by contracting
                                     with the best hospitals designed according to international standards and the best
                                     health care providers in Istanbul, we strive to provide high quality services, smooth
@@ -68,7 +70,9 @@
                                             class="flaticon-ambulance"></span></div>
                                     <div class="media-body pl-md-4">
                                         <h3 class="heading mb-3">International hospitals</h3>
-                                        <p>Magicist clinic gives patients a wide network of internationally accredited hospitals and centers. Therefore, you can get the most advanced healthcare you need..</p>
+                                        <p>Magicist clinic gives patients a wide network of internationally accredited
+                                            hospitals and centers. Therefore, you can get the most advanced healthcare you
+                                            need..</p>
                                     </div>
                                 </div>
                             </div>
@@ -258,25 +262,19 @@
             </div>
         </div>
     </section> --}}
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2 bg-light" id="operation_plan">
+    <section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="operation_plan">
         <div id="svg_wrap"></div>
         <div class="body">
             <form method="POST" action="{{ route('customer.operation-plans.store') }}">
                 @csrf
                 <h1 class="h1">Operation Plan</h1>
-                <section class="section">
-                    <p class="p">Personal information</p>
-                    <input class="input" type="text" name="full_name" placeholder="Full Name" />
-                    <input class="input" type="text" name="email" placeholder="E-mail" />
-                    <input class="input" type="text" name="phone" placeholder="Phone" />
-                </section>
 
                 <section class="section">
                     <p class="p">Departments</p>
                     @foreach ($departments as $key => $department)
                         <label style="padding: 10px" id="selected_department">
-                            <input type="radio" name="department_id" id="{{ $key }}" value="{{ $department->id }}"
-                                onchange="getHospital({{ $department->id }})">
+                            <input type="radio" name="department_id" id="{{ $key }}"
+                                value="{{ $department->id }}" onchange="getHospital({{ $department->id }})">
                             <img src="{{ Voyager::image($department->photo) }}" height="100px">
                             <p style="text-align: center">{{ $department->name }}</p>
                         </label>
@@ -293,8 +291,7 @@
                     <p class="p">Hotels</p>
                     @foreach ($hotels as $key => $hotel)
                         <label style="padding: 10px">
-                            <input type="radio" name="hotel_id" id ="{{ $key }}"
-                                value="{{ $hotel->id }}">
+                            <input type="radio" name="hotel_id" id ="{{ $key }}" value="{{ $hotel->id }}">
                             <img src="{{ Voyager::image($hotel->photo) }}" height="100px">
                             <p style="text-align: center">{{ $hotel->name }}</p>
                         </label>
@@ -313,6 +310,12 @@
                     @endforeach
                 </section>
 
+                <section class="section">
+                    <p class="p">Personal information</p>
+                    <input class="input" type="text" name="full_name" placeholder="Full Name" />
+                    <input class="input" type="text" name="email" placeholder="E-mail" />
+                    <input class="input" type="text" name="phone" placeholder="Phone" />
+                </section>
                 <div class="button" id="prev">&larr; Previous</div>
                 <div class="button" id="next">Next &rarr;</div>
                 <input type="submit" class="button" id="submit" value="Agree and send application" />
@@ -416,107 +419,50 @@
         </div>
     </section>
 
-    {{-- <section class="ftco-section" id="doctor-section">
+    <section class="ftco-section" id="Hospitals-section">
         <div class="container-fluid px-5">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h2 class="mb-4">Our Qualified Doctors</h2>
-                    <p>Separated they live in. A small river named Duden flows by their place and supplies it with the
-                        necessary regelialia. It is a paradisematic country</p>
+                    <h2 class="mb-4">Our Hospitals</h2>
+                    {{-- <p>Separated they live in. A small river named Duden flows by their place and supplies it with the
+                        necessary regelialia. It is a paradisematic country</p> --}}
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-lg-3 ftco-animate">
-                    <div class="staff">
-                        <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch"
-                                style="background-image: url({{ asset('asset/images/doc-1.jpg)') }};"></div>
-                        </div>
-                        <div class="text pt-3 text-center">
-                            <h3 class="mb-2">Dr. Lloyd Wilson</h3>
-                            <span class="position mb-2">Neurologist</span>
-                            <div class="faded">
-                                <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                                </ul>
-                                <p><a href="#" class="btn btn-primary">Book now</a></p>
+                @foreach ($hospitals as $hospital)
+                    <div class="col-md-6 col-lg-3 ftco-animate">
+                        <div class="staff">
+                            <div class="img-wrap d-flex align-items-stretch">
+                                <div class="img align-self-stretch"
+                                    style="background-image: url({{ Voyager::image(json_decode($hospital->photo)[0]) }};">
+                                </div>
+                            </div>
+                            <div class="text pt-3 text-center">
+                                <h3 class="mb-2">{{ $hospital->name }}</h3>
+                                {{-- <span class="position mb-2">Neurologist</span> --}}
+                                <div class="faded">
+                                    <p>{{ $hospital->short_description }}</p>
+                                    <ul class="ftco-social text-center">
+                                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a>
+                                        </li>
+                                        <li class="ftco-animate"><a href="#"><span
+                                                    class="icon-facebook"></span></a></li>
+                                        <li class="ftco-animate"><a href="#"><span
+                                                    class="icon-google-plus"></span></a></li>
+                                        <li class="ftco-animate"><a href="#"><span
+                                                    class="icon-instagram"></span></a></li>
+                                    </ul>
+                                    <p><a href="#" class="btn btn-primary">View</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 ftco-animate">
-                    <div class="staff">
-                        <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch"
-                                style="background-image: url({{ asset('asset/images/doc-2.jpg)') }};"></div>
-                        </div>
-                        <div class="text pt-3 text-center">
-                            <h3 class="mb-2">Dr. Rachel Parker</h3>
-                            <span class="position mb-2">Ophthalmologist</span>
-                            <div class="faded">
-                                <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                                </ul>
-                                <p><a href="#" class="btn btn-primary">Book now</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 ftco-animate">
-                    <div class="staff">
-                        <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch"
-                                style="background-image: url({{ asset('asset/images/doc-3.jpg)') }};"></div>
-                        </div>
-                        <div class="text pt-3 text-center">
-                            <h3 class="mb-2">Dr. Ian Smith</h3>
-                            <span class="position mb-2">Dentist</span>
-                            <div class="faded">
-                                <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                                </ul>
-                                <p><a href="#" class="btn btn-primary">Book now</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 ftco-animate">
-                    <div class="staff">
-                        <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch"
-                                style="background-image: url({{ asset('asset/images/doc-4.jpg)') }};"></div>
-                        </div>
-                        <div class="text pt-3 text-center">
-                            <h3 class="mb-2">Dr. Alicia Henderson</h3>
-                            <span class="position mb-2">Pediatrician</span>
-                            <div class="faded">
-                                <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                                </ul>
-                                <p><a href="#" class="btn btn-primary">Book now</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
-    </section> --}}
+    </section>
 
     <section class="ftco-facts img ftco-counter" style="background-image: url({{ asset('asset/images/bg_3.jpg') }});">
         <div class="overlay"></div>
@@ -568,6 +514,50 @@
         </div>
     </section>
 
+    <section class="ftco-section" id="Hotels-section">
+        <div class="container-fluid px-5">
+            <div class="row justify-content-center mb-5 pb-2">
+                <div class="col-md-8 text-center heading-section ftco-animate">
+                    <h2 class="mb-4">Our Hotels</h2>
+                    {{-- <p>Separated they live in. A small river named Duden flows by their place and supplies it with the
+                        necessary regelialia. It is a paradisematic country</p> --}}
+                </div>
+            </div>
+            <div class="row">
+                @foreach ($hotels as $hotel)
+                    <div class="col-md-6 col-lg-3 ftco-animate">
+                        <div class="staff">
+                            <div class="img-wrap d-flex align-items-stretch">
+                                <div class="img align-self-stretch"
+                                    style="background-image: url({{ Voyager::image(json_decode($hotel->photo)[0]) }};">
+                                </div>
+                            </div>
+                            <div class="text pt-3 text-center">
+                                <h3 class="mb-2">{{ $hotel->name }}</h3>
+                                {{-- <span class="position mb-2">Neurologist</span> --}}
+                                <div class="faded">
+                                    <p>{{ $hotel->short_description }}</p>
+                                    <ul class="ftco-social text-center">
+                                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a>
+                                        </li>
+                                        <li class="ftco-animate"><a href="#"><span
+                                                    class="icon-facebook"></span></a></li>
+                                        <li class="ftco-animate"><a href="#"><span
+                                                    class="icon-google-plus"></span></a></li>
+                                        <li class="ftco-animate"><a href="#"><span
+                                                    class="icon-instagram"></span></a></li>
+                                    </ul>
+                                    <p><a href="#" class="btn btn-primary">View</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+
+            </div>
+        </div>
+    </section>
 
     <section class="ftco-section bg-light" id="blog-section">
         <div class="container">
@@ -578,119 +568,25 @@
                 </div>
             </div>
             <div class="row d-flex">
-                <div class="col-md-4 ftco-animate">
-                    <div class="blog-entry">
-                        <a href="blog-single.html" class="block-20"
-                            style="background-image: url({{ asset('asset/images/image_1.jpg') }});">
-                        </a>
-                        <div class="text d-block">
-                            <div class="meta mb-3">
-                                <div><a href="#">June 9, 2019</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                @foreach ($researches as $researche)
+                    <div class="col-md-4 ftco-animate">
+                        <div class="blog-entry">
+                            <a href="#" class="block-20"
+                                style="background-image: url({{ Voyager::image($researche->photo) }});">
+                            </a>
+                            <div class="text d-block">
+                                <div class="meta mb-3">
+                                    <div><a href="#">{{ $researche->created_at->format('Y.m.d H:i:s') }}</a></div>
+                                    {{-- <div><a href="#">Admin</a></div> --}}
+                                    {{-- <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div> --}}
+                                </div>
+                                <h3 class="heading"><a href="#">{{ $researche->short_description }}.</p>
+                                        <p><a href="#" class="btn btn-primary py-2 px-3">Read more</a></p>
                             </div>
-                            <h3 class="heading"><a href="#">Scary Thing That You Don’t Get Enough Sleep</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
-                            <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
                         </div>
                     </div>
-                </div>
+                @endforeach
 
-                <div class="col-md-4 ftco-animate">
-                    <div class="blog-entry">
-                        <a href="blog-single.html" class="block-20"
-                            style="background-image: url({{ asset('asset/images/image_2.jpg') }});">
-                        </a>
-                        <div class="text d-block">
-                            <div class="meta mb-3">
-                                <div><a href="#">June 9, 2019</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                            </div>
-                            <h3 class="heading"><a href="#">Scary Thing That You Don’t Get Enough Sleep</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
-                            <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 ftco-animate">
-                    <div class="blog-entry">
-                        <a href="blog-single.html" class="block-20"
-                            style="background-image: url({{ asset('asset/images/image_3.jpg') }});">
-                        </a>
-                        <div class="text d-block">
-                            <div class="meta mb-3">
-                                <div><a href="#">June 9, 2019</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                            </div>
-                            <h3 class="heading"><a href="#">Scary Thing That You Don’t Get Enough Sleep</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
-                            <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 ftco-animate">
-                    <div class="blog-entry">
-                        <a href="blog-single.html" class="block-20"
-                            style="background-image: url({{ asset('asset/images/image_4.jpg') }});">
-                        </a>
-                        <div class="text d-block">
-                            <div class="meta mb-3">
-                                <div><a href="#">June 9, 2019</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                            </div>
-                            <h3 class="heading"><a href="#">Scary Thing That You Don’t Get Enough Sleep</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
-                            <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 ftco-animate">
-                    <div class="blog-entry">
-                        <a href="blog-single.html" class="block-20"
-                            style="background-image: url({{ asset('asset/images/image_5.jpg') }});">
-                        </a>
-                        <div class="text d-block">
-                            <div class="meta mb-3">
-                                <div><a href="#">June 9, 2019</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                            </div>
-                            <h3 class="heading"><a href="#">Scary Thing That You Don’t Get Enough Sleep</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
-                            <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 ftco-animate">
-                    <div class="blog-entry">
-                        <a href="blog-single.html" class="block-20"
-                            style="background-image: url({{ asset('asset/images/image_6.jpg') }});">
-                        </a>
-                        <div class="text d-block">
-                            <div class="meta mb-3">
-                                <div><a href="#">June 9, 2019</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                            </div>
-                            <h3 class="heading"><a href="#">Scary Thing That You Don’t Get Enough Sleep</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
-                            <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -708,86 +604,24 @@
             <div class="row ftco-animate justify-content-center">
                 <div class="col-md-12">
                     <div class="carousel-testimony owl-carousel ftco-owl">
-                        <div class="item">
-                            <div class="testimony-wrap text-center py-4 pb-5">
-                                <div class="user-img"
-                                    style="background-image: url({{ asset('asset/images/person_1.jpg') }})">
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="icon-quote-left"></i>
-                                    </span>
-                                </div>
-                                <div class="text px-4">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the
-                                        countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Jeff Freshman</p>
-                                    <span class="position">Patients</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap text-center py-4 pb-5">
-                                <div class="user-img"
-                                    style="background-image: url({{ asset('asset/images/person_2.jpg') }})">
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="icon-quote-left"></i>
-                                    </span>
-                                </div>
-                                <div class="text px-4">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the
-                                        countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Jeff Freshman</p>
-                                    <span class="position">Patients</span>
+                        @foreach ($patientsComments as $patientsComment)
+                            <div class="item" style="background-color: #7b59a466">
+                                <div class="testimony-wrap text-center py-4 pb-5">
+                                    <div class="user-img"
+                                        style="background-image: url({{ Voyager::image($patientsComment->photo) }})">
+                                        <span class="quote d-flex align-items-center justify-content-center">
+                                            <i class="icon-quote-left"></i>
+                                        </span>
+                                    </div>
+                                    <div class="text px-4">
+                                        <p class="mb-4" style="color: black">{{ $patientsComment->comment }}.</p>
+                                        <p class="name">{{ $patientsComment->name }}</p>
+                                        <span class="position">Patients</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap text-center py-4 pb-5">
-                                <div class="user-img"
-                                    style="background-image: url({{ asset('asset/images/person_3.jpg') }})">
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="icon-quote-left"></i>
-                                    </span>
-                                </div>
-                                <div class="text px-4">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the
-                                        countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Jeff Freshman</p>
-                                    <span class="position">Patients</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap text-center py-4 pb-5">
-                                <div class="user-img"
-                                    style="background-image: url({{ asset('asset/images/person_1.jpg') }})">
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="icon-quote-left"></i>
-                                    </span>
-                                </div>
-                                <div class="text px-4">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the
-                                        countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Jeff Freshman</p>
-                                    <span class="position">Patients</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap text-center py-4 pb-5">
-                                <div class="user-img"
-                                    style="background-image: url({{ asset('asset/images/person_3.jpg') }})">
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="icon-quote-left"></i>
-                                    </span>
-                                </div>
-                                <div class="text px-4">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the
-                                        countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Jeff Freshman</p>
-                                    <span class="position">Patients</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>

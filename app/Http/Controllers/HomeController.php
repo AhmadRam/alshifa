@@ -7,6 +7,8 @@ use App\Consultation;
 use App\Hospital;
 use App\Hotel;
 use App\OperationPlan;
+use App\PatientsComment;
+use App\Research;
 use App\Transfer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -41,7 +43,11 @@ class HomeController extends Controller
 
         $transfers = Transfer::all();
 
-        return view('index', compact('departments', 'hotels', 'hospitals', 'transfers'));
+        $researches = Research::all();
+
+        $patientsComments = PatientsComment::all();
+
+        return view('index', compact('departments', 'hotels', 'hospitals', 'transfers', 'researches', 'patientsComments'));
     }
 
     /**
