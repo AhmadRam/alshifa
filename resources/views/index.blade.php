@@ -7,12 +7,12 @@
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start"
                 data-scrollax-parent="true">
-                <div class="col-md-6 pt-5 ftco-animate">
+                <div class="col-md-7 pt-5 ftco-animate">
                     <div class="mt-5">
                         <span class="subheading">Welcome to MAGICIST CLINIC</span>
                         <h1 class="mb-4">We are here <br>for your Healthcare</h1>
-                        <p class="mb-4">Magicist clinic  has reached a high patient satisfaction, which is the reason behind the medical reputation of MAGICIST clinic in the medical sector.</p>
-                        <p><a href="/appointment" class="btn btn-primary py-3 px-4">plan your Journey</a></p>
+                        <p class="mb-4">Magicist clinic  has reached a high patient satisfaction, which is the reason behind the medical reputation of Magicist clinic in the medical sector.</p>
+                        <p><a href="/#operation_plan" class="btn btn-primary py-3 px-4">Plan Your Journey</a></p>
                     </div>
                 </div>
             </div>
@@ -67,9 +67,8 @@
                                     <div class="icon justify-content-center align-items-center d-flex"><span
                                             class="flaticon-ambulance"></span></div>
                                     <div class="media-body pl-md-4">
-                                        <h3 class="heading mb-3">Emergency Services</h3>
-                                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                                            regelialia.</p>
+                                        <h3 class="heading mb-3">International hospitals</h3>
+                                        <p>Magicist clinic gives patients a wide network of internationally accredited hospitals and centers. Therefore, you can get the most advanced healthcare you need..</p>
                                     </div>
                                 </div>
                             </div>
@@ -79,8 +78,7 @@
                                             class="flaticon-doctor"></span></div>
                                     <div class="media-body pl-md-4">
                                         <h3 class="heading mb-3">Qualified Doctors</h3>
-                                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                                            regelialia.</p>
+                                        <p>Check your health by our professional doctors,surgeons and medical staff.</p>
                                     </div>
                                 </div>
                             </div>
@@ -89,9 +87,8 @@
                                     <div class="icon justify-content-center align-items-center d-flex"><span
                                             class="flaticon-stethoscope"></span></div>
                                     <div class="media-body pl-md-4">
-                                        <h3 class="heading mb-3">Outdoors Checkup</h3>
-                                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                                            regelialia.</p>
+                                        <h3 class="heading mb-3">Accommodation Services</h3>
+                                        <p>We provide wide range 5 stars Hotels choices.</p>
                                     </div>
                                 </div>
                             </div>
@@ -100,9 +97,8 @@
                                     <div class="icon justify-content-center align-items-center d-flex"><span
                                             class="flaticon-24-hours"></span></div>
                                     <div class="media-body pl-md-4">
-                                        <h3 class="heading mb-3">24 Hours Service</h3>
-                                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                                            regelialia.</p>
+                                        <h3 class="heading mb-3">Transfer Services</h3>
+                                        <p>VIP and standart trasportaion services.</p>
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +114,7 @@
         </div>
     </section>
 
-    <section class="ftco-intro img" style="background-image: url({{ asset('asset/images/bg_2.jpg') }});">
+    {{-- <section class="ftco-intro img" style="background-image: url({{ asset('asset/images/bg_2.jpg') }});">
         <div class="overlay"></div>
         <div class="container">
             <div class="row justify-content-center">
@@ -129,7 +125,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{-- <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2 bg-light" id="department-section">
         <div class="container-fluid">
@@ -262,7 +258,7 @@
             </div>
         </div>
     </section> --}}
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2 bg-light">
+    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2 bg-light" id="operation_plan">
         <div id="svg_wrap"></div>
         <div class="body">
             <form method="POST" action="{{ route('customer.operation-plans.store') }}">
@@ -561,8 +557,8 @@
                         <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18">
                                 <div class="text">
-                                    <strong class="number" data-number="220">0</strong>
-                                    <span>Number of Staffs</span>
+                                    <strong class="number" data-number="{{ $hospitals->count() }}">0</strong>
+                                    <span>Number of Hospitals</span>
                                 </div>
                             </div>
                         </div>

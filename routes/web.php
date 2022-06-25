@@ -27,7 +27,7 @@ Route::post('operation-plan', [HomeController::class, 'operations'])->name('cust
 
 Route::get('getHospitals/{id}', [HomeController::class, 'getHospitals']);
 
-Route::get('department/{id}', [HomeController::class, 'departmentPage'])->name('view.departments.index');
+Route::get('department/{id}', [HomeController::class, 'departmentPage'])->name('departments.view');
 
 
 Route::get('customer/profile', [CustomerController::class, 'index'])->name('customer.profile');

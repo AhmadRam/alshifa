@@ -90,8 +90,8 @@
                         <div class="dropdown">
                         <a class="">Departments</a>
                             <div class="dropdown-content">
-                              @foreach ($departments as $department)
-                              <a href="#">{{$department->name}}</a>
+                              @foreach (App\Department::where('status',1)->get() as $department)
+                              <a href="{{route('departments.view',$department->id)}}">{{$department->name}}</a>
                               @endforeach
                             </div>
                           </div>

@@ -35,9 +35,9 @@
                 placeholder="Description"></textarea>
         </div>
 
-        <div id="fileBtn" onclick="getFile()">Click to upload a file</div>
+        {{-- <div id="fileBtn" onclick="getFile()">Click to upload a file</div>
         <div style='height: 0px;width: 0px; overflow:hidden;'><input id="upfile" name="document" type="file"
-                value="upload" onchange="sub(this)" /></div>
+                value="upload" onchange="sub(this)" /></div> --}}
 
         <div class="form-group">
             <input type="submit" value="Send Consultation" class="btn btn-secondary py-3 px-4">
