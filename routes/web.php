@@ -23,6 +23,8 @@ Route::get('appointment', [HomeController::class, 'appointments'])->name('view.a
 
 Route::post('consultation', [HomeController::class, 'consultations'])->name('customer.consultations.store');
 
+Route::get('operation-plan', [HomeController::class, 'operationPlanPage'])->name('customer.operation-plans.view');
+
 Route::post('operation-plan', [HomeController::class, 'operations'])->name('customer.operation-plans.store');
 
 Route::get('getHospitals/{id}', [HomeController::class, 'getHospitals']);

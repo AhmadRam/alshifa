@@ -13,7 +13,7 @@
                         <h1 class="mb-4">We are here <br>for your Healthcare</h1>
                         <p class="mb-4">Magicist clinic has reached a high patient satisfaction, which is the reason
                             behind the medical reputation of Magicist Clinic in the medical sector.</p>
-                        <p><a href="/#operation_plan" class="btn btn-primary py-3 px-4">Plan Your Journey</a></p>
+                        <p><a href="{{route('customer.operation-plans.view')}}" class="btn btn-primary py-3 px-4">Plan Your Journey</a></p>
                     </div>
                 </div>
             </div>
@@ -131,198 +131,6 @@
         </div>
     </section> --}}
 
-    {{-- <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2 bg-light" id="department-section">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-8 text-center p-0 mt-3 mb-2">
-                    <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                        <h2 id="heading">Operation Plan</h2>
-                        <p>Fill all form field to go to next step</p>
-
-                        <form id="msform" method="POST" action="{{ route('customer.operation-plans.store') }}">
-                            @csrf
-                            <!-- progressbar -->
-                            <ul id="progressbar">
-                                <li class="active" id="account"><strong>informations</strong></li>
-                                <li id="personal"><strong>department & hospital</strong></li>
-                                <li id="payment"><strong>hotel</strong></li>
-                                <li id="confirm"><strong>transfer</strong></li>
-                            </ul>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <br>
-                            <!-- fieldsets -->
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h2 class="fs-title">Informations :</h2>
-                                        </div>
-                                        <div class="col-4">
-                                            <h2 class="steps">Step 1 - 4</h2>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group" style="padding-left: 25px">
-                                        <input type="text" class="form-control" placeholder="Full Name"
-                                            name="full_name" required>
-                                        <input type="text" class="form-control" placeholder="E-mail" name="email"
-                                            required>
-                                        <input type="text" class="form-control" placeholder="Phone" name="phone"
-                                            required>
-                                    </div>
-                                </div>
-                                <input type="button" name="next" class="next btn btn-secondary py-3 px-4"
-                                    value="Next" style="height:55px; width:85px" />
-                            </fieldset>
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h2 class="fs-title">choose department :</h2>
-                                        </div>
-                                        <div class="col-4">
-                                            <h2 class="steps">Step 2 - 4</h2>
-                                        </div>
-                                    </div>
-                                    @foreach ($departments as $key => $department)
-                                        <label style="padding: 10px" id="selected_department">
-                                            <input type="radio" name="department_id" id="{{ $key }}"
-                                                value="{{ $department->id }}" {{ $key == 0 ? 'checked' : '' }} onchange="getHospital({{ $department->id }})">
-                                            <img src="{{ Voyager::image($department->photo) }}" height="100px">
-                                            <p style="text-align: center">{{ $department->name }}</p>
-                                        </label>
-                                    @endforeach
-                                    <div id="hospitals">
-
-                                    </div>
-                                </div>
-                                <input type="button" name="previous"
-                                    class="previous btn btn-outline-secondary py-3 px-4-previous" value="Previous"
-                                    style="height:55px; width:95px" />
-                                <input type="button" name="next" class="next btn btn-secondary py-3 px-4"
-                                    value="Next" style="height:55px; width:85px" />
-
-                            </fieldset>
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h2 class="fs-title">choose hotel:</h2>
-                                        </div>
-                                        <div class="col-4">
-                                            <h2 class="steps">Step 3 - 4</h2>
-                                        </div>
-                                    </div>
-                                    @foreach ($hotels as $key => $hotel)
-                                        <label style="padding: 10px">
-                                            <input type="radio" name="hotel_id" id ="{{ $key }}"
-                                                value="{{ $hotel->id }}" {{ $key == 0 ? 'checked' : '' }}>
-                                            <img src="{{ Voyager::image($hotel->photo) }}" height="100px">
-                                            <p style="text-align: center">{{ $hotel->name }}</p>
-                                        </label>
-                                    @endforeach
-                                </div>
-                                <input type="button" name="previous"
-                                    class="previous btn btn-outline-secondary py-3 px-4-previous" value="Previous"
-                                    style="height:55px; width:95px" />
-                                <input type="button" name="next" class="next btn btn-secondary py-3 px-4"
-                                    value="Next" style="height:55px; width:85px" />
-                            </fieldset>
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h2 class="fs-title">choose transfer:</h2>
-                                        </div>
-                                        <div class="col-4">
-                                            <h2 class="steps">Step 4 - 4</h2>
-                                        </div>
-                                    </div>
-                                    @foreach ($transfers as $key => $transfer)
-                                        <label style="padding: 10px">
-                                            <input type="radio" name="transfer_id" id="{{ $key }}"
-                                                value="{{ $transfer->id }}" {{ $key == 0 ? 'checked' : '' }}>
-                                            <img src="{{ Voyager::image($transfer->photo) }}" height="100px">
-                                            <p style="text-align: center">{{ $transfer->name }}</p>
-                                        </label>
-                                    @endforeach
-                                </div>
-                                <input type="button" name="previous"
-                                    class="previous btn btn-outline-secondary py-3 px-4-previous" value="Previous"
-                                    style="height:55px; width:95px" />
-                                <input type="submit" class="btn btn-secondary py-3 px-4" value="Submit"
-                                    style="height:55px; width:95px" />
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="operation_plan">
-        <div id="svg_wrap"></div>
-        <div class="body">
-            <form method="POST" action="{{ route('customer.operation-plans.store') }}">
-                @csrf
-                <h1 class="h1">Operation Plan</h1>
-
-                <section class="section">
-                    <p class="p">Departments</p>
-                    @foreach ($departments as $key => $department)
-                        <label style="padding: 10px" id="selected_department">
-                            <input type="radio" name="department_id" id="{{ $key }}"
-                                value="{{ $department->id }}" onchange="getHospital({{ $department->id }})">
-                            <img src="{{ Voyager::image($department->photo) }}" height="100px">
-                            <p style="text-align: center">{{ $department->name }}</p>
-                        </label>
-                    @endforeach
-                </section>
-
-                <section class="section">
-                    <p class="p">Hospitals</p>
-                    <div id="hospitals">
-                    </div>
-                </section>
-
-                <section class="section">
-                    <p class="p">Hotels</p>
-                    @foreach ($hotels as $key => $hotel)
-                        <label style="padding: 10px">
-                            <input type="radio" name="hotel_id" id ="{{ $key }}" value="{{ $hotel->id }}">
-                            <img src="{{ Voyager::image($hotel->photo) }}" height="100px">
-                            <p style="text-align: center">{{ $hotel->name }}</p>
-                        </label>
-                    @endforeach
-                </section>
-
-                <section class="section">
-                    <p class="p">Transfers</p>
-                    @foreach ($transfers as $key => $transfer)
-                        <label style="padding: 10px">
-                            <input type="radio" name="transfer_id" id="{{ $key }}"
-                                value="{{ $transfer->id }}">
-                            <img src="{{ Voyager::image($transfer->photo) }}" height="100px">
-                            <p style="text-align: center">{{ $transfer->name }}</p>
-                        </label>
-                    @endforeach
-                </section>
-
-                <section class="section">
-                    <p class="p">Personal information</p>
-                    <input class="input" type="text" name="full_name" placeholder="Full Name" />
-                    <input class="input" type="text" name="email" placeholder="E-mail" />
-                    <input class="input" type="text" name="phone" placeholder="Phone" />
-                </section>
-                <div class="button" id="prev">&larr; Previous</div>
-                <div class="button" id="next">Next &rarr;</div>
-                <input type="submit" class="button" id="submit" value="Agree and send application" />
-            </form>
-        </div>
-    </section>
-
     <section class="ftco-section ftco-no-pt ftco-no-pb" id="department-section">
         <div class="container-fluid px-0">
             <div class="row no-gutters">
@@ -344,7 +152,7 @@
                                     <div class="icon">
                                         <span class="flaticon-stethoscope"></span>
                                     </div>
-                                    <h3><a href="#">{{ $department->name }}</a></h3>
+                                    <h3><a href="{{route('departments.view',$department->id)}}">{{ $department->name }}</a></h3>
                                     <p>{{ $department->description }}</p>
                                 </div>
                             </div>
@@ -434,7 +242,7 @@
                         <div class="staff">
                             <div class="img-wrap d-flex align-items-stretch">
                                 <div class="img align-self-stretch"
-                                    style="background-image: url({{ Voyager::image(json_decode($hospital->photo)[0]) }};">
+                                    style="background-image: url({{ Voyager::image(json_decode($hospital->photo)[0]) }}">
                                 </div>
                             </div>
                             <div class="text pt-3 text-center">
@@ -464,7 +272,7 @@
         </div>
     </section>
 
-    <section class="ftco-facts img ftco-counter" style="background-image: url({{ asset('asset/images/bg_3.jpg') }});">
+    <section class="ftco-facts img ftco-counter" style="background-image: url({{ asset('asset/images/bg_3.jpg') }})">
         <div class="overlay"></div>
         <div class="container">
             <div class="row d-flex align-items-center">
@@ -529,7 +337,7 @@
                         <div class="staff">
                             <div class="img-wrap d-flex align-items-stretch">
                                 <div class="img align-self-stretch"
-                                    style="background-image: url({{ Voyager::image(json_decode($hotel->photo)[0]) }};">
+                                    style="background-image: url({{ Voyager::image(json_decode($hotel->photo)[0]) }}">
                                 </div>
                             </div>
                             <div class="text pt-3 text-center">
@@ -572,7 +380,7 @@
                     <div class="col-md-4 ftco-animate">
                         <div class="blog-entry">
                             <a href="#" class="block-20"
-                                style="background-image: url({{ Voyager::image($researche->photo) }});">
+                                style="background-image: url({{ Voyager::image($researche->photo) }})">
                             </a>
                             <div class="text d-block">
                                 <div class="meta mb-3">

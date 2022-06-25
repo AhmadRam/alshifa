@@ -104,4 +104,17 @@ class HomeController extends Controller
 
         return view('department', compact('department'));
     }
+
+    public function operationPlanPage()
+    {
+        $departments = Department::where('status', 1)->get();
+
+        $hotels = Hotel::all();
+
+        $hospitals = Hospital::all();
+
+        $transfers = Transfer::all();
+
+        return view('operationPlan', compact('departments', 'hotels', 'hospitals', 'transfers'));
+    }
 }
