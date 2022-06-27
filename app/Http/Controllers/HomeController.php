@@ -43,11 +43,9 @@ class HomeController extends Controller
 
         $transfers = Transfer::all();
 
-        $researches = Research::all();
-
         $patientsComments = PatientsComment::all();
 
-        return view('index', compact('departments', 'hotels', 'hospitals', 'transfers', 'researches', 'patientsComments'));
+        return view('index', compact('departments', 'hotels', 'hospitals', 'transfers', 'patientsComments'));
     }
 
     /**

@@ -13,7 +13,8 @@
                         <h1 class="mb-4">We are here <br>for your Healthcare</h1>
                         <p class="mb-4">Magicist clinic has reached a high patient satisfaction, which is the reason
                             behind the medical reputation of Magicist Clinic in the medical sector.</p>
-                        <p><a href="{{route('customer.operation-plans.view')}}" class="btn btn-primary py-3 px-4">Plan Your Journey</a></p>
+                        <p><a href="{{ route('customer.operation-plans.view') }}" class="btn btn-primary py-3 px-4">Plan
+                                Your Journey</a></p>
                     </div>
                 </div>
             </div>
@@ -152,7 +153,9 @@
                                     <div class="icon">
                                         <span class="flaticon-stethoscope"></span>
                                     </div>
-                                    <h3><a href="{{route('departments.view',$department->id)}}">{{ $department->name }}</a></h3>
+                                    <h3><a
+                                            href="{{ route('departments.view', $department->id) }}">{{ $department->name }}</a>
+                                    </h3>
                                     <p>{{ $department->description }}</p>
                                 </div>
                             </div>
@@ -236,39 +239,82 @@
                         necessary regelialia. It is a paradisematic country</p> --}}
                 </div>
             </div>
-            <div class="row">
-                @foreach ($hospitals as $hospital)
-                    <div class="col-md-6 col-lg-3 ftco-animate">
-                        <div class="staff">
-                            <div class="img-wrap d-flex align-items-stretch">
-                                <div class="img align-self-stretch"
-                                    style="background-image: url({{ Voyager::image(json_decode($hospital->photo)[0]) }}">
+
+            <div class="row mx-auto my-auto">
+                <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <?php
+                        $skip = 0;
+                        $isLoop = true;
+                        ?>
+                        @while ($isLoop)
+                            <div class="carousel-item py-8 {{ $skip == 0 ? 'active' : '' }}">
+                                <div class="row">
+                                    <?php $hospitalsSliders = \App\Hospital::skip($skip)
+                                        ->take(4)
+                                        ->get(); ?>
+                                    @foreach ($hospitalsSliders as $key => $hospitalSlider)
+                                        <div class="col col{{ $key + 1 }}">
+                                            <div class="col-md-12 ftco-animate">
+                                                <div class="staff" style="max-width: 336px">
+                                                    <div class="img-wrap d-flex align-items-stretch">
+                                                        <div class="img align-self-stretch"
+                                                            style="background-image: url({{ Voyager::image(json_decode($hospitalSlider->photo)[0]) }}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="text pt-3 text-center">
+                                                        <h3 class="mb-2">{{ $hospitalSlider->name }}</h3>
+                                                        {{-- <span class="position mb-2">Neurologist</span> --}}
+                                                        <div class="faded">
+                                                            <p>{{ $hospitalSlider->short_description }}</p>
+                                                            <ul class="ftco-social text-center">
+                                                                <li class="ftco-animate"><a href="#"><span
+                                                                            class="icon-twitter"></span></a>
+                                                                </li>
+                                                                <li class="ftco-animate"><a href="#"><span
+                                                                            class="icon-facebook"></span></a></li>
+                                                                <li class="ftco-animate"><a href="#"><span
+                                                                            class="icon-google-plus"></span></a></li>
+                                                                <li class="ftco-animate"><a href="#"><span
+                                                                            class="icon-instagram"></span></a></li>
+                                                            </ul>
+                                                            <p><a href="#" class="btn btn-primary">View</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php if ($key == 3) {
+                                            $skip = $skip + 4;
+                                        }
+                                        ?>
+                                    @endforeach
+
                                 </div>
                             </div>
-                            <div class="text pt-3 text-center">
-                                <h3 class="mb-2">{{ $hospital->name }}</h3>
-                                {{-- <span class="position mb-2">Neurologist</span> --}}
-                                <div class="faded">
-                                    <p>{{ $hospital->short_description }}</p>
-                                    <ul class="ftco-social text-center">
-                                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a>
-                                        </li>
-                                        <li class="ftco-animate"><a href="#"><span
-                                                    class="icon-facebook"></span></a></li>
-                                        <li class="ftco-animate"><a href="#"><span
-                                                    class="icon-google-plus"></span></a></li>
-                                        <li class="ftco-animate"><a href="#"><span
-                                                    class="icon-instagram"></span></a></li>
-                                    </ul>
-                                    <p><a href="#" class="btn btn-primary">View</a></p>
-                                </div>
-                            </div>
-                        </div>
+                            <?php if ($hospitalsSliders->count() != 4) {
+                                break;
+                            }
+                            ?>
+                        @endwhile
+
                     </div>
-                @endforeach
-
-
+                </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-slide="next">
+                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         </div>
     </section>
 
@@ -331,71 +377,155 @@
                         necessary regelialia. It is a paradisematic country</p> --}}
                 </div>
             </div>
-            <div class="row">
-                @foreach ($hotels as $hotel)
-                    <div class="col-md-6 col-lg-3 ftco-animate">
-                        <div class="staff">
-                            <div class="img-wrap d-flex align-items-stretch">
-                                <div class="img align-self-stretch"
-                                    style="background-image: url({{ Voyager::image(json_decode($hotel->photo)[0]) }}">
+            <div class="row mx-auto my-auto">
+                <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <?php
+                        $skip = 0;
+                        $isLoop = true;
+                        ?>
+                        @while ($isLoop)
+                            <div class="carousel-item py-8 {{ $skip == 0 ? 'active' : '' }}">
+                                <div class="row">
+                                    <?php $hotelsSliders = \App\Hotel::skip($skip)
+                                        ->take(4)
+                                        ->get(); ?>
+                                    @foreach ($hotelsSliders as $key => $hotelSlider)
+                                        <div class="col col{{ $key + 1 }}">
+                                            <div class="col-md-12 ftco-animate">
+                                                <div class="staff" style="max-width: 336px">
+                                                    <div class="img-wrap d-flex align-items-stretch">
+                                                        <div class="img align-self-stretch"
+                                                            style="background-image: url({{ Voyager::image(json_decode($hotelSlider->photo)[0]) }}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="text pt-3 text-center">
+                                                        <h3 class="mb-2">{{ $hotelSlider->name }}</h3>
+                                                        {{-- <span class="position mb-2">Neurologist</span> --}}
+                                                        <div class="faded">
+                                                            <p>{{ $hotelSlider->short_description }}</p>
+                                                            <ul class="ftco-social text-center">
+                                                                <li class="ftco-animate"><a href="#"><span
+                                                                            class="icon-twitter"></span></a>
+                                                                </li>
+                                                                <li class="ftco-animate"><a href="#"><span
+                                                                            class="icon-facebook"></span></a></li>
+                                                                <li class="ftco-animate"><a href="#"><span
+                                                                            class="icon-google-plus"></span></a></li>
+                                                                <li class="ftco-animate"><a href="#"><span
+                                                                            class="icon-instagram"></span></a></li>
+                                                            </ul>
+                                                            <p><a href="#" class="btn btn-primary">View</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php if ($key == 3) {
+                                            $skip = $skip + 4;
+                                        }
+                                        ?>
+                                    @endforeach
+
                                 </div>
                             </div>
-                            <div class="text pt-3 text-center">
-                                <h3 class="mb-2">{{ $hotel->name }}</h3>
-                                {{-- <span class="position mb-2">Neurologist</span> --}}
-                                <div class="faded">
-                                    <p>{{ $hotel->short_description }}</p>
-                                    <ul class="ftco-social text-center">
-                                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a>
-                                        </li>
-                                        <li class="ftco-animate"><a href="#"><span
-                                                    class="icon-facebook"></span></a></li>
-                                        <li class="ftco-animate"><a href="#"><span
-                                                    class="icon-google-plus"></span></a></li>
-                                        <li class="ftco-animate"><a href="#"><span
-                                                    class="icon-instagram"></span></a></li>
-                                    </ul>
-                                    <p><a href="#" class="btn btn-primary">View</a></p>
-                                </div>
-                            </div>
-                        </div>
+                            <?php if ($hotelsSliders->count() != 4) {
+                                break;
+                            }
+                            ?>
+                        @endwhile
+
                     </div>
-                @endforeach
-
-
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-slide="next">
+                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="ftco-section bg-light" id="blog-section">
-        <div class="container">
+        <div class="container-fluid px-5">
             <div class="row justify-content-center mb-5 pb-5">
                 <div class="col-md-10 heading-section text-center ftco-animate">
                     <h2 class="mb-4">Our doctors researches</h2>
                     <p>Get the most accurate and up to date medical information through out our researchers</p>
                 </div>
             </div>
-            <div class="row d-flex">
-                @foreach ($researches as $researche)
-                    <div class="col-md-4 ftco-animate">
-                        <div class="blog-entry">
-                            <a href="#" class="block-20"
-                                style="background-image: url({{ Voyager::image($researche->photo) }})">
-                            </a>
-                            <div class="text d-block">
-                                <div class="meta mb-3">
-                                    <div><a href="#">{{ $researche->created_at->format('Y.m.d H:i:s') }}</a></div>
-                                    {{-- <div><a href="#">Admin</a></div> --}}
-                                    {{-- <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div> --}}
-                                </div>
-                                <h3 class="heading"><a href="#">{{ $researche->short_description }}.</p>
-                                        <p><a href="#" class="btn btn-primary py-2 px-3">Read more</a></p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
+            <div class="row mx-auto my-auto">
+                <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <?php
+                        $skip = 0;
+                        $isLoop = true;
+                        ?>
+                        @while ($isLoop)
+                            <div class="carousel-item py-8 {{ $skip == 0 ? 'active' : '' }}">
+                                <div class="row">
+                                    <?php $researches = \App\Research::skip($skip)
+                                        ->take(4)
+                                        ->get(); ?>
+                                    @foreach ($researches as $key => $researche)
+                                        <div class="col col{{ $key + 1 }}">
+                                            <div class="col-md-4 ftco-animate">
+                                                <div class="blog-entry">
+                                                    <a href="#" class="block-20"
+                                                        style="background-image: url({{ Voyager::image($researche->photo) }})">
+                                                    </a>
+                                                    <div class="text d-block">
+                                                        <div class="meta mb-3">
+                                                            <div><a
+                                                                    href="#">{{ $researche->created_at->format('Y.m.d H:i:s') }}</a>
+                                                            </div>
+                                                            {{-- <div><a href="#">Admin</a></div> --}}
+                                                            {{-- <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div> --}}
+                                                        </div>
+                                                        <h3 class="heading"><a
+                                                                href="#">{{ $researche->short_description }}.</p>
+                                                                <p><a href="#"
+                                                                        class="btn btn-primary py-2 px-3">Read more</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php if ($key == 3) {
+                                                $skip = $skip + 4;
+                                            }
+                                            ?>
+                                    @endforeach
 
+                                </div>
+                            </div>
+                            <?php if ($researches->count() != 4) {
+                                break;
+                            }
+                            ?>
+                        @endwhile
+
+                    </div>
+                </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-slide="next">
+                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
