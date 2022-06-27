@@ -56,11 +56,13 @@
 
                         <div id="carouselExampleControls" class="col-md-4 carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
+                                @if(is_array(json_decode($department->photo)))
                                 @foreach (json_decode($department->photo) as $key => $photo)
                                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                                         <img src="{{ Voyager::image($photo) }}" class="d-block w-100" alt="...">
                                     </div>
                                 @endforeach
+                                @endif
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                                 data-bs-slide="prev">
