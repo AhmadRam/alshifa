@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="hero-wrap hero-wrap-2"
-        style="background-image: url({{ Voyager::image(json_decode($department->banner_photo)[0]) }});height:400px"
+        style="background-image: url({{ Voyager::image(json_decode($department->banner_photo)[0] ?? null) }});height:400px"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
