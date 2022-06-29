@@ -13340,7 +13340,7 @@ p {
 
 .section {
     padding: 50px;
-    max-width: 850px;
+    max-width: 1400px;
     margin: 30px auto;
     background: white;
     background: rgba(255, 255, 255, 0.9);
@@ -13351,7 +13351,7 @@ p {
 }
 
 .input {
-    width: 100%;
+    width: 50%;
     margin: 7px 0px;
     display: inline-block;
     padding: 12px 25px;

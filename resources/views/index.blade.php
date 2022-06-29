@@ -639,19 +639,3 @@
     </section>
 @endsection
 
-<script>
-    function getHospital(id) {
-        let url = `/getHospitals/${id}`;
-        $.ajax({
-            url: url,
-            type: 'get',
-            success: function(data) {
-                document.getElementById('hospitals').innerHTML = '';
-                data.data.forEach(item => {
-                    document.getElementById('hospitals').innerHTML +=
-                        `<label style="padding: 10px"><input type="radio" name="hospital_id" id="${item.id}" value="${item.id}"><img src="${window.location.protocol}//${window.location.host}/storage/${item.photo}" height="100px"><p style="text-align: center">${item.name}</p></label>`;
-                });
-            }
-        });
-    }
-</script>
