@@ -32,7 +32,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
@@ -118,6 +118,24 @@
 
     @yield('content')
 
+    <div class="floating-container">
+        <div class="floating-button">+</div>
+        <div class="element-container">
+
+          <a target="_blank" href="//api.whatsapp.com/send?phone=905550243555MOBILE_NUMBER&text=Hello"> <span class="float-element tooltip-left">
+            <i class="material-icons">phone
+            </i></a>
+          </span>
+          <a target="_blank" href="//api.whatsapp.com/send?phone=905550413555MOBILE_NUMBER&text=Hello"><span style="background: green" class="float-element">
+            <i class="material-icons">phone</i></a>
+          </span>
+          <a href="mailto: info@magicist.co"> <span style="background: red" class="float-element">
+            <i class="material-icons">email
+      </i></a>
+          </span>
+
+        </div>
+      </div>
 
     <footer class="ftco-footer ftco-section img"
         style="background-image: url({{ asset('asset/images/footer-bg.jpg') }});">
@@ -156,8 +174,8 @@
                         <div class="block-23 mb-3">
                             <ul>
                                 <li><span class="icon icon-map-marker"></span><span class="text">Ataköy 7-8-9-10 kısım mh. Çobançeşme E-5 yanyol CD. No:12 Daire:A119 Nivo Ataköy rezidans Bakırköy/İSTANBUL</span></li>
-                                <li><a href="tel:+90 555 024 35 55"><span class="icon icon-phone"></span><span class="text">+90 555 024 35 55</a></span></li>
-                                <li><a href="tel:+90 555 041 35 55"><span class="icon icon-phone"></span><span class="text">+90 555 041 35 55</a></span></li>
+                                <li><a target="_blank" href="//api.whatsapp.com/send?phone=905550243555MOBILE_NUMBER&text=Hello"><span class="icon icon-phone"></span><span class="text">+90 555 024 35 55</a></span></li>
+                                <li><a target="_blank" href="//api.whatsapp.com/send?phone=905550413555MOBILE_NUMBER&text=Hello"><span class="icon icon-phone"></span><span class="text">+90 555 041 35 55</a></span></li>
                                 <li><a href = "mailto: info@magicist.co"><span class="icon icon-envelope pr-4"></span><span
                                             class="text">info@magicist.co</span></a></li>
                             </ul>
