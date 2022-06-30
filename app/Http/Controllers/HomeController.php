@@ -91,7 +91,7 @@ class HomeController extends Controller
     {
         $hospitals = DB::table('department_hospitals')->where('department_id', $id)->pluck('hospital_id');
         if (!empty($hospitals)) {
-            $hospitals = Hospital::whereIn('id', $hospitals)->get();
+            $hospitals = Hospital::whereIn('id', $hospitals)->orderBy('sort_order', 'asc')->get();
         }
         return response()->json(['data' => $hospitals]);
     }
@@ -105,15 +105,9 @@ class HomeController extends Controller
 
     public function operationPlanPage()
     {
-        $departments = Department::where('status', 1)->get();
-
-        $hotels = Hotel::all();
-
-        $hospitals = Hospital::all();
-
         $transfers = Transfer::all();
 
-        return view('operationPlan', compact('departments', 'hotels', 'hospitals', 'transfers'));
+        return view('operationPlan', compact('transfers'));
     }
 
     public function patientsCommentPage()

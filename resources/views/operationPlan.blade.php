@@ -21,7 +21,7 @@
                                 @while ($isLoop)
                                     <div class="carousel-item py-8 {{ $skip == 0 ? 'active' : '' }}">
                                         <div class="row">
-                                            <?php $departments = \App\Department::skip($skip)
+                                            <?php $departments = \App\Department::where('status', 1)->orderBy('sort_order', 'asc')->skip($skip)
                                                 ->take(4)
                                                 ->get(); ?>
                                             @foreach ($departments as $key => $department)
@@ -100,7 +100,7 @@
                                 @while ($isLoop)
                                     <div class="carousel-item py-8 {{ $skip == 0 ? 'active' : '' }}">
                                         <div class="row">
-                                            <?php $hotels = \App\Hotel::skip($skip)
+                                            <?php $hotels = \App\Hotel::orderBy('sort_order', 'asc')->skip($skip)
                                                 ->take(4)
                                                 ->get(); ?>
                                             @foreach ($hotels as $key => $hotel)

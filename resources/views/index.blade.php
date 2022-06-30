@@ -143,7 +143,7 @@
                 <div class="col-md-8">
                     <div class="row no-gutters">
                         <?php $number = 0; ?>
-                        @foreach ($departments as $department)
+                        @foreach ($departments->orderBy('sort_order', 'asc') as $department)
                             <?php $number++; ?>
                             @if ($number == 1 || $number == 4 || $number == 7 || $number == 10)
                                 <div class="col-md-4">
@@ -250,7 +250,7 @@
                         @while ($isLoop)
                             <div class="carousel-item py-8 {{ $skip == 0 ? 'active' : '' }}">
                                 <div class="row">
-                                    <?php $hospitalsSliders = \App\Hospital::skip($skip)
+                                    <?php $hospitalsSliders = \App\Hospital::orderBy('sort_order', 'asc')->skip($skip)
                                         ->take(4)
                                         ->get(); ?>
                                     @foreach ($hospitalsSliders as $key => $hospitalSlider)
@@ -259,7 +259,7 @@
                                                 <div class="staff" style="max-width: 336px">
                                                     <div class="img-wrap d-flex align-items-stretch">
                                                         <div class="img align-self-stretch"
-                                                            style="background-image: url({{ Voyager::image(json_decode($hospitalSlider->photo)[0]) }}">
+                                                            style="background-image: url({{ Voyager::image(json_decode($hospitalSlider->photo)[0] ?? null) }}">
                                                         </div>
                                                     </div>
                                                     <div class="text pt-3 text-center">
@@ -387,7 +387,7 @@
                         @while ($isLoop)
                             <div class="carousel-item py-8 {{ $skip == 0 ? 'active' : '' }}">
                                 <div class="row">
-                                    <?php $hotelsSliders = \App\Hotel::skip($skip)
+                                    <?php $hotelsSliders = \App\Hotel::orderBy('sort_order', 'asc')->skip($skip)
                                         ->take(4)
                                         ->get(); ?>
                                     @foreach ($hotelsSliders as $key => $hotelSlider)
@@ -396,7 +396,7 @@
                                                 <div class="staff" style="max-width: 336px">
                                                     <div class="img-wrap d-flex align-items-stretch">
                                                         <div class="img align-self-stretch"
-                                                            style="background-image: url({{ Voyager::image(json_decode($hotelSlider->photo)[0]) }}">
+                                                            style="background-image: url({{ Voyager::image(json_decode($hotelSlider->photo)[0] ?? null) }}">
                                                         </div>
                                                     </div>
                                                     <div class="text pt-3 text-center">
