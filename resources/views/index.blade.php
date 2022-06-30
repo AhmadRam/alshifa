@@ -519,15 +519,21 @@
                         @foreach ($patientsComments as $patientsComment)
                             <div class="item" style="background-color: #7b59a466">
                                 <div class="testimony-wrap text-center py-4 pb-5">
-                                    <div class="user-img"
+                                    {{-- <div class="user-img"
                                         style="background-image: url({{ Voyager::image($patientsComment->photo) }})">
                                         <span class="quote d-flex align-items-center justify-content-center">
                                             <i class="icon-quote-left"></i>
                                         </span>
-                                    </div>
+                                    </div> --}}
                                     <div class="text px-4">
-                                        <p class="mb-4" style="color: black">{{ $patientsComment->comment }}.</p>
-                                        <p class="name">{{ $patientsComment->name }}</p>
+                                        <h2 class="mb-4" style="color: black">{{ $patientsComment->comment }}</h2>
+                                        @for ($i = 0; $i < $patientsComment->rating; $i++)
+                                            <span class="fa fa-star" style="color: orange"></span>
+                                        @endfor
+                                        @for ($i = 0; $i < (5 - $patientsComment->rating); $i++)
+                                            <span class="fa fa-star"></span>
+                                        @endfor
+                                        <h4 class="name">{{ $patientsComment->name }}</h4>
                                         <span class="position">Patients</span>
                                     </div>
                                 </div>
