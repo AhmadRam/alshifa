@@ -35,17 +35,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $departments = Department::where('status', 1)->get();
-
-        $hotels = Hotel::all();
+        $departments = Department::where('status', 1)->orderBy('sort_order', 'asc')->get();
 
         $hospitals = Hospital::all();
 
-        $transfers = Transfer::all();
-
         $patientsComments = PatientsComment::all();
 
-        return view('index', compact('departments', 'hotels', 'hospitals', 'transfers', 'patientsComments'));
+        return view('index', compact('departments', 'hospitals', 'patientsComments'));
     }
 
     /**

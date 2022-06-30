@@ -143,7 +143,7 @@
                 <div class="col-md-8">
                     <div class="row no-gutters">
                         <?php $number = 0; ?>
-                        @foreach ($departments->orderBy('sort_order', 'asc') as $department)
+                        @foreach ($departments as $department)
                             <?php $number++; ?>
                             @if ($number == 1 || $number == 4 || $number == 7 || $number == 10)
                                 <div class="col-md-4">
@@ -241,7 +241,7 @@
             </div>
 
             <div class="row mx-auto my-auto">
-                <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+                <div id="hospitals" class="carousel slide w-100" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         <?php
                         $skip = 0;
@@ -303,11 +303,11 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
+                    <a class="carousel-control-prev text-dark" href="#hospitals" role="button" data-slide="prev">
                         <span class="fa fa-chevron-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-slide="next">
+                    <a class="carousel-control-next text-dark" href="#hospitals" role="button" data-slide="next">
                         <span class="fa fa-chevron-right" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -378,7 +378,7 @@
                 </div>
             </div>
             <div class="row mx-auto my-auto">
-                <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+                <div id="hotels" class="carousel slide w-100" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         <?php
                         $skip = 0;
@@ -440,11 +440,11 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
+                    <a class="carousel-control-prev text-dark" href="#hotels" role="button" data-slide="prev">
                         <span class="fa fa-chevron-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-slide="next">
+                    <a class="carousel-control-next text-dark" href="#hotels" role="button" data-slide="next">
                         <span class="fa fa-chevron-right" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -462,7 +462,7 @@
                 </div>
             </div>
             <div class="row mx-auto my-auto">
-                <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+                <div id="researchs" class="carousel slide w-100" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         <?php
                         $skip = 0;
@@ -515,11 +515,11 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
+                    <a class="carousel-control-prev text-dark" href="#researchs" role="button" data-slide="prev">
                         <span class="fa fa-chevron-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-slide="next">
+                    <a class="carousel-control-next text-dark" href="#researchs" role="button" data-slide="next">
                         <span class="fa fa-chevron-right" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
