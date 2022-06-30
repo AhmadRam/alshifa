@@ -128,7 +128,7 @@
                                     <h3><a
                                             href="{{ route('departments.view', $department->id) }}">{{ $department->name }}</a>
                                     </h3>
-                                    <p>{{ $department->description }}</p>
+                                    <p>{{ $department->short_description }}</p>
                                 </div>
                             </div>
                             @if ($number == 3 || $number == 6 || $number == 9)
