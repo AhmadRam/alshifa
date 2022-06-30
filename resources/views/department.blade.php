@@ -45,7 +45,7 @@
                                 <h2 class="mb-3">{{ $department->title }}</h2>
                             </div>
 
-                            <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+                            <div class="col-md-10 d-flex align-self-stretch ftco-animate">
                                 <div class="media block-6 services d-flex">
                                     <div class="media-body pl-md-4">
                                         <p>{{ $department->description }}</p>
