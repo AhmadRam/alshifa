@@ -65,48 +65,20 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 d-flex align-self-stretch ftco-animate">
-                                <div class="media block-6 services d-flex">
-                                    <div class="icon justify-content-center align-items-center d-flex"><span
-                                            class="flaticon-ambulance"></span></div>
-                                    <div class="media-body pl-md-4">
-                                        <h3 class="heading mb-3">International hospitals</h3>
-                                        <p>Magicist clinic gives patients a wide network of internationally accredited
-                                            hospitals and centers. Therefore, you can get the most advanced healthcare you
-                                            need..</p>
+
+                            @foreach ($our_services as $our_service)
+                                <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+                                    <div class="media block-6 services d-flex">
+                                        <div class="icon justify-content-center align-items-center d-flex"><span
+                                                class="{{ $our_service->icon }}"></span></div>
+                                        <div class="media-body pl-md-4">
+                                            <h3 class="heading mb-3">{{ $our_service->title }}</h3>
+                                            <p>{{ $our_service->description }}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 d-flex align-self-stretch ftco-animate">
-                                <div class="media block-6 services d-flex">
-                                    <div class="icon justify-content-center align-items-center d-flex"><span
-                                            class="flaticon-doctor"></span></div>
-                                    <div class="media-body pl-md-4">
-                                        <h3 class="heading mb-3">Qualified Doctors</h3>
-                                        <p>Check your health by our professional doctors,surgeons and medical staff.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 d-flex align-self-stretch ftco-animate">
-                                <div class="media block-6 services d-flex">
-                                    <div class="icon justify-content-center align-items-center d-flex"><span
-                                            class="flaticon-stethoscope"></span></div>
-                                    <div class="media-body pl-md-4">
-                                        <h3 class="heading mb-3">Accommodation Services</h3>
-                                        <p>We provide wide range 5 stars Hotels choices.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 d-flex align-self-stretch ftco-animate">
-                                <div class="media block-6 services d-flex">
-                                    <div class="icon justify-content-center align-items-center d-flex"><span
-                                            class="flaticon-24-hours"></span></div>
-                                    <div class="media-body pl-md-4">
-                                        <h3 class="heading mb-3">Transfer Services</h3>
-                                        <p>VIP and standart trasportaion services.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
                     </div>
                 </div>
@@ -250,7 +222,8 @@
                         @while ($isLoop)
                             <div class="carousel-item py-8 {{ $skip == 0 ? 'active' : '' }}">
                                 <div class="row">
-                                    <?php $hospitalsSliders = \App\Hospital::orderBy('sort_order', 'asc')->skip($skip)
+                                    <?php $hospitalsSliders = \App\Hospital::orderBy('sort_order', 'asc')
+                                        ->skip($skip)
                                         ->take(4)
                                         ->get(); ?>
                                     @foreach ($hospitalsSliders as $key => $hospitalSlider)
@@ -387,7 +360,8 @@
                         @while ($isLoop)
                             <div class="carousel-item py-8 {{ $skip == 0 ? 'active' : '' }}">
                                 <div class="row">
-                                    <?php $hotelsSliders = \App\Hotel::orderBy('sort_order', 'asc')->skip($skip)
+                                    <?php $hotelsSliders = \App\Hotel::orderBy('sort_order', 'asc')
+                                        ->skip($skip)
                                         ->take(4)
                                         ->get(); ?>
                                     @foreach ($hotelsSliders as $key => $hotelSlider)
@@ -462,7 +436,7 @@
                 </div>
             </div>
             <div class="row mx-auto my-auto">
-                <div id="researchs" class="carousel slide w-100" data-ride="carousel">
+                <div id="esearchs" class="carousel slide w-100" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         <?php
                         $skip = 0;
@@ -515,11 +489,11 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a class="carousel-control-prev text-dark" href="#researchs" role="button" data-slide="prev">
+                    <a class="carousel-control-prev text-dark" href="#esearchs" role="button" data-slide="prev">
                         <span class="fa fa-chevron-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next text-dark" href="#researchs" role="button" data-slide="next">
+                    <a class="carousel-control-next text-dark" href="#esearchs" role="button" data-slide="next">
                         <span class="fa fa-chevron-right" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -638,4 +612,3 @@
         </div>
     </section>
 @endsection
-

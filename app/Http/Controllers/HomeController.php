@@ -7,6 +7,7 @@ use App\Consultation;
 use App\Hospital;
 use App\Hotel;
 use App\OperationPlan;
+use App\OurService;
 use App\PatientsComment;
 use App\Research;
 use App\Transfer;
@@ -41,7 +42,9 @@ class HomeController extends Controller
 
         $patientsComments = PatientsComment::all();
 
-        return view('index', compact('departments', 'hospitals', 'patientsComments'));
+        $our_services = OurService::all();
+
+        return view('index', compact('departments', 'hospitals', 'patientsComments', 'our_services'));
     }
 
     /**
