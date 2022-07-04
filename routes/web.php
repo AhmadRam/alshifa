@@ -35,6 +35,12 @@ Route::get('getHospitals/{id}', [HomeController::class, 'getHospitals']);
 
 Route::get('department/{id}', [HomeController::class, 'departmentPage'])->name('departments.view');
 
+Route::get('hospital/{id}', [HomeController::class, 'hospitalPage'])->name('hospitals.view');
+
+Route::get('hotel/{id}', [HomeController::class, 'hotelPage'])->name('hotels.view');
+
+Route::get('research/{id}', [HomeController::class, 'ResearchPage'])->name('researches.view');
+
 
 Route::get('customer/profile', [CustomerController::class, 'index'])->name('customer.profile');
 Route::post('customer/profile', [CustomerController::class, 'update'])->name('customer.profile.update');

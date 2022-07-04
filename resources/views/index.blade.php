@@ -251,7 +251,7 @@
                                                                 <li class="ftco-animate"><a href="#"><span
                                                                             class="icon-instagram"></span></a></li>
                                                             </ul>
-                                                            <p><a href="#" class="btn btn-primary">View</a></p>
+                                                            <p><a href="{{route('hospitals.view',$hospitalSlider->id)}}" class="btn btn-primary">View</a></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -389,7 +389,7 @@
                                                                 <li class="ftco-animate"><a href="#"><span
                                                                             class="icon-instagram"></span></a></li>
                                                             </ul>
-                                                            <p><a href="#" class="btn btn-primary">View</a></p>
+                                                            <p><a href="{{route('hotels.view',$hotelSlider->id)}}" class="btn btn-primary">View</a></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -448,24 +448,24 @@
                                     <?php $researches = \App\Research::skip($skip)
                                         ->take(4)
                                         ->get(); ?>
-                                    @foreach ($researches as $key => $researche)
+                                    @foreach ($researches as $key => $research)
                                         <div class="col col{{ $key + 1 }}">
                                             <div class="col-md-4 ftco-animate">
-                                                <div class="blog-entry">
+                                                <div class="blog-entry" style="max-width: 336px">
                                                     <a href="#" class="block-20"
-                                                        style="background-image: url({{ Voyager::image($researche->photo) }})">
+                                                        style="background-image: url({{ Voyager::image($research->photo) }})">
                                                     </a>
                                                     <div class="text d-block">
                                                         <div class="meta mb-3">
                                                             <div><a
-                                                                    href="#">{{ $researche->created_at->format('Y.m.d H:i:s') }}</a>
+                                                                    href="#">{{ $research->created_at->format('Y.m.d H:i:s') }}</a>
                                                             </div>
                                                             {{-- <div><a href="#">Admin</a></div> --}}
                                                             {{-- <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div> --}}
                                                         </div>
                                                         <h3 class="heading"><a
-                                                                href="#">{{ $researche->short_description }}.</p>
-                                                                <p><a href="#"
+                                                                href="{{route('researches.view',$research->id)}}">{{ $research->short_description }}.</p>
+                                                                <p><a href="{{route('researches.view',$research->id)}}"
                                                                         class="btn btn-primary py-2 px-3">Read more</a></p>
                                                     </div>
                                                 </div>
@@ -534,7 +534,7 @@
                                             <span class="fa fa-star"></span>
                                         @endfor
                                         <h4 class="name">{{ $patientsComment->name }}</h4>
-                                        <span class="position">Patients</span>
+                                        <span class="position">{{ $patientsComment->created_at }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -550,7 +550,7 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                    <p>CONTACT US</p>
                 </div>
             </div>
             <div class="row d-flex contact-info mb-5">
@@ -568,8 +568,8 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-phone2"></span>
                         </div>
-                        <p><a href="tel://+90 555 024 35 55">+90 555 024 35 55</a></p>
-                        <p><a href="tel://+90 555 041 35 55">+90 555 041 35 55</a></p>
+                        <p><a href="//api.whatsapp.com/send?phone=905550243555MOBILE_NUMBER&text=Hello">+90 555 024 35 55</a></p>
+                        <p><a href="//api.whatsapp.com/send?phone=905550413555MOBILE_NUMBER&text=Hello">+90 555 041 35 55</a></p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex ftco-animate">

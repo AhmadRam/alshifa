@@ -102,6 +102,27 @@ class HomeController extends Controller
         return view('department', compact('department'));
     }
 
+    public function hospitalPage($id)
+    {
+        $hospital = Hospital::find($id);
+
+        return view('hospital', compact('hospital'));
+    }
+
+    public function hotelPage($id)
+    {
+        $hotel = Hotel::find($id);
+
+        return view('hotel', compact('hotel'));
+    }
+
+    public function researchPage($id)
+    {
+        $research = Research::find($id);
+
+        return view('research', compact('research'));
+    }
+
     public function operationPlanPage()
     {
         $transfers = Transfer::all();

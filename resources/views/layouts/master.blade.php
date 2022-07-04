@@ -125,25 +125,6 @@
 
     @yield('content')
 
-    <div class="floating-container">
-        <div class="floating-button">+</div>
-        <div class="element-container">
-
-          <a target="_blank" href="//api.whatsapp.com/send?phone=905550243555MOBILE_NUMBER&text=Hello"> <span class="float-element tooltip-left">
-            <i class="material-icons">phone
-            </i></a>
-          </span>
-          <a target="_blank" href="//api.whatsapp.com/send?phone=905550413555MOBILE_NUMBER&text=Hello"><span style="background: green" class="float-element">
-            <i class="material-icons">phone</i></a>
-          </span>
-          <a href="mailto: info@magicist.co"> <span style="background: red" class="float-element">
-            <i class="material-icons">email
-      </i></a>
-          </span>
-
-        </div>
-      </div>
-
     <footer class="ftco-footer ftco-section img"
         style="background-image: url({{ asset('asset/images/footer-bg.jpg') }});">
         <div class="overlay"></div>
@@ -207,6 +188,25 @@
             </div> --}}
         </div>
     </footer>
+
+    <div class="floating-container">
+        <div class="floating-button">+</div>
+        <div class="element-container">
+
+          <a target="_blank" href="//api.whatsapp.com/send?phone=905550243555MOBILE_NUMBER&text=Hello"> <span style="background: #7541b5" class="float-element tooltip-left">
+            <i class="material-icons">phone
+            </i></a>
+          </span>
+          <a target="_blank" href="//api.whatsapp.com/send?phone=905550413555MOBILE_NUMBER&text=Hello"><span style="background: #FE4979" class="float-element">
+            <i class="material-icons">phone</i></a>
+          </span>
+          <a href="mailto: info@magicist.co"> <span style="background: #e26687" class="float-element">
+            <i class="material-icons">email
+      </i></a>
+          </span>
+
+        </div>
+      </div>
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
