@@ -103,7 +103,7 @@
                         <div class="dropdown">
                         <a class="">Departments</a>
                             <div class="dropdown-content">
-                              @foreach (App\Department::where('status',1)->get() as $department)
+                              @foreach (App\Department::where('status',1)->orderBy('sort_order', 'asc')->get() as $department)
                               <a href="{{route('departments.view',$department->id)}}">{{$department->name}}</a>
                               @endforeach
                             </div>

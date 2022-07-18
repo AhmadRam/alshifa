@@ -54,7 +54,7 @@ class HomeController extends Controller
      */
     public function appointments()
     {
-        $departments = Department::where('status', 1)->get();
+        $departments = Department::where('status', 1)->orderBy('sort_order', 'asc')->get();
 
         return view('appointment', compact('departments'));
     }
