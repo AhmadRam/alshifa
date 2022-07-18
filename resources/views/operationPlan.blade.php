@@ -22,7 +22,9 @@
                                 @while ($isLoop)
                                     <div class="carousel-item py-8 {{ $skip == 0 ? 'active' : '' }}">
                                         <div class="row">
-                                            <?php $departments = \App\Department::where('status', 1)->orderBy('sort_order', 'asc')->skip($skip)
+                                            <?php $departments = \App\Department::where('status', 1)
+                                                ->orderBy('sort_order', 'asc')
+                                                ->skip($skip)
                                                 ->take(4)
                                                 ->get(); ?>
                                             @foreach ($departments as $key => $department)
@@ -101,7 +103,8 @@
                                 @while ($isLoop)
                                     <div class="carousel-item py-8 {{ $skip == 0 ? 'active' : '' }}">
                                         <div class="row">
-                                            <?php $hotels = \App\Hotel::orderBy('sort_order', 'asc')->skip($skip)
+                                            <?php $hotels = \App\Hotel::orderBy('sort_order', 'asc')
+                                                ->skip($skip)
                                                 ->take(4)
                                                 ->get(); ?>
                                             @foreach ($hotels as $key => $hotel)
@@ -109,10 +112,10 @@
                                                     <div class="col-md-12 ftco-animate">
                                                         <div class="staff" style="max-width: 336px">
                                                             <label style="padding: 10px">
-                                                                <input id="hotel" type="radio" name="hotel_id" id
-                                                                    ="{{ $key }}" value="{{ $hotel->id }}">
+                                                                <input id="hotel" type="radio" name="hotel_id"
+                                                                    id="{{ $key }}" value="{{ $hotel->id }}">
                                                                 <img src="{{ Voyager::image($hotel->photo) }}"
-                                                                    height="100px">
+                                                                    height="270px" width="270px">
                                                                 <p style="text-align: center">{{ $hotel->name }}</p>
                                                             </label>
                                                         </div>
@@ -157,7 +160,7 @@
                         <label style="padding: 10px">
                             <input id="transfer" type="radio" name="transfer_id" id="{{ $key }}"
                                 value="{{ $transfer->id }}">
-                            <img src="{{ Voyager::image($transfer->photo) }}" height="100px">
+                            <img src="{{ Voyager::image($transfer->photo) }}" height="270px" width="270px">
                             <p style="text-align: center">{{ $transfer->name }}</p>
                         </label>
                     @endforeach
@@ -165,8 +168,8 @@
 
                 <section class="section">
                     <h3>Personal information :</h3>
-                    <input class="input" type="text" name="full_name" placeholder="Full Name" required/>
-                    <input class="input" type="text" name="email" placeholder="E-mail" required/>
+                    <input class="input" type="text" name="full_name" placeholder="Full Name" required />
+                    <input class="input" type="text" name="email" placeholder="E-mail" required />
                     <input class="input" type="text" name="phone" placeholder="Phone" />
                 </section>
                 <div class="button" id="prev">&larr; Previous</div>
@@ -189,10 +192,9 @@
                 document.getElementById('hospitals').innerHTML = '';
                 data.data.forEach(item => {
                     document.getElementById('hospitals').innerHTML +=
-                        `<label style="padding: 10px"><input id="hospital" type="radio" name="hospital_id" id="${item.id}" value="${item.id}"><img src="${window.location.protocol}//${window.location.host}/storage/${item.photo}" height="100px"><p style="text-align: center">${item.name}</p></label>`;
+                        `<label style="padding: 10px"><input id="hospital" type="radio" name="hospital_id" id="${item.id}" value="${item.id}"><img src="${window.location.protocol}//${window.location.host}/storage/${item.photo}" height="270px" width="270px"><p style="text-align: center">${item.name}</p></label>`;
                 });
             }
         });
     }
 </script>
-
