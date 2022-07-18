@@ -41,6 +41,8 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/css/toastr.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -136,9 +138,9 @@
                         {{-- <h2 class="ftco-heading-2">Magicist clinic</h2> --}}
                         <p>Far far away, behind the word mountains, far from the countries.</p>
                         <ul class="ftco-footer-social list-unstyled mt-5">
-                            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                            {{-- <li class="ftco-animate"><a href="#"><span class="fab fa-tiktok fa-2x"></span></a></li> --}}
+                            <li class="ftco-animate"><a href="https://www.facebook.com/Magicistclinic.ar" target="_blank"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="https://www.instagram.com/magicistclinics/" target="_blank"><span class="icon-instagram"></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -189,7 +191,7 @@
         </div>
     </footer>
 
-    <div class="floating-container">
+    {{-- <div class="floating-container">
         <div class="floating-button">+</div>
         <div class="element-container">
 
@@ -206,7 +208,15 @@
           </span>
 
         </div>
-      </div>
+      </div> --}}
+
+      <a href="https:////api.whatsapp.com/send?phone=905550413555MOBILE_NUMBER&text=Hello" class="whatsapp" target="_blank">
+        <i class="fa fa-whatsapp my-whatsapp"></i>
+        </a>
+
+        {{-- <a href="https:////api.whatsapp.com/send?phone=905550243555MOBILE_NUMBER&text=Hello" class="whatsapp my-whatsapp2" target="_blank">
+        <i class="fa fa-whatsapp my-whatsapp"></i>
+        </a> --}}
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">

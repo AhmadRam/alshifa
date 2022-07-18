@@ -540,8 +540,11 @@
                                 </div>
                             </div>
                         @endforeach
-
                     </div>
+
+                    <p style="text-align: center;margin-top: 40px;"><a href="{{route('customer.patients-comment.view')}}"
+                        class="btn btn-primary py-2 px-3">Write your review</a></p>
+
                 </div>
             </div>
         </div>
