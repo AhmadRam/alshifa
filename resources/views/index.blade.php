@@ -20,7 +20,7 @@
             </div>
         </div>
     </section>
-
+    <br>
     <section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
         <div class="container">
             <div class="row d-flex">
@@ -121,7 +121,7 @@
                                 <div class="col-md-4">
                             @endif
                             <div class="department-wrap p-4 ftco-animate">
-                                <div class="text p-2 text-center">
+                                <div class="text p-2 text-center" style="height: 170px;">
                                     <div class="icon">
                                         <span class="flaticon-stethoscope"></span>
                                     </div>
@@ -229,7 +229,7 @@
                                     @foreach ($hospitalsSliders as $key => $hospitalSlider)
                                         <div class="col col{{ $key + 1 }}">
                                             <div class="col-md-12 ftco-animate">
-                                                <div class="staff" style="max-width: 336px">
+                                                <div class="staff">
                                                     <div class="img-wrap d-flex align-items-stretch">
                                                         <div class="img align-self-stretch"
                                                             style="background-image: url({{ Voyager::image(json_decode($hospitalSlider->photo)[0] ?? null) }}">
@@ -295,13 +295,14 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row d-flex align-items-center">
-                <div class="col-md-5 heading-section heading-section-white">
+                {{-- <div class="col-md-5 heading-section heading-section-white">
                     <span class="subheading">Fun facts</span>
                     <h2 class="mb-4">Over 5,468 patients trust us</h2>
                     <p class="mb-0"><a href="/appointment" class="btn btn-secondary px-4 py-3">Make an appointment</a>
                     </p>
-                </div>
-                <div class="col-md-7">
+                </div> --}}
+                {{-- <div class="col-md-7"> --}}
+                <div class="col-md-12">
                     <div class="row pt-4">
                         <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18">
@@ -367,7 +368,7 @@
                                     @foreach ($hotelsSliders as $key => $hotelSlider)
                                         <div class="col col{{ $key + 1 }}">
                                             <div class="col-md-12 ftco-animate">
-                                                <div class="staff" style="max-width: 336px">
+                                                <div class="staff">
                                                     <div class="img-wrap d-flex align-items-stretch">
                                                         <div class="img align-self-stretch"
                                                             style="background-image: url({{ Voyager::image(json_decode($hotelSlider->photo)[0] ?? null) }}">

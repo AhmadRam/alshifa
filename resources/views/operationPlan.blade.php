@@ -8,6 +8,7 @@
                 @csrf
                 <h1 class="h1">Operation Plan</h1>
 
+                {{-- <section class="section"> --}}
                 <section class="section">
                     <h3>Choose Department :</h3>
 
@@ -33,7 +34,7 @@
                                                                     id="{{ $key }}" value="{{ $department->id }}"
                                                                     onchange="getHospital({{ $department->id }})">
                                                                 <img src="{{ Voyager::image($department->photo) }}"
-                                                                    height="100px">
+                                                                    height="270px" width="270px">
                                                                 <p style="text-align: center">{{ $department->name }}</p>
                                                             </label>
                                                         </div>
