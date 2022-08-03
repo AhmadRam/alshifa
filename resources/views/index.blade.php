@@ -9,10 +9,10 @@
                 data-scrollax-parent="true">
                 <div class="col-md-7 pt-5 ftco-animate">
                     <div class="mt-5">
-                        <span class="subheading">Welcome to MAGICIST CLINIC</span>
+                        <span class="subheading">Welcome to Alshifa CLINIC</span>
                         <h1 class="mb-4">We are here <br>for your Healthcare</h1>
-                        <p class="mb-4">Magicist clinic has reached a high patient satisfaction, which is the reason
-                            behind the medical reputation of Magicist Clinic in the medical sector.</p>
+                        <p class="mb-4">Alshifa clinic has reached a high patient satisfaction, which is the reason
+                            behind the medical reputation of Alshifa Clinic in the medical sector.</p>
                         <p><a href="{{ route('customer.operation-plans.view') }}" class="btn btn-primary py-3 px-4">Plan
                                 Your Journey</a></p>
                     </div>
@@ -33,8 +33,8 @@
                     <div class="py-md-5">
                         <div class="row justify-content-start pb-3">
                             <div class="col-md-12 heading-section ftco-animate p-4 p-lg-5">
-                                <h2 class="mb-4">We Are <span>Magicist</span> Clinic</h2>
-                                <p>Magicist Clinic project aims to provide a safe and reliable environment for people coming
+                                <h2 class="mb-4">We Are <span>Alshifa</span> Clinic</h2>
+                                <p>Alshifa Clinic project aims to provide a safe and reliable environment for people coming
                                     from all over the world to obtain health care for international patients in Istanbul,
                                     highly qualified medical
                                     staff, surgeons and professors in various medical fields, and by contracting
@@ -581,7 +581,7 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-paper-plane"></span>
                         </div>
-                        <p><a href="mailto:info@magicist.co">info@magicist.co</a></p>
+                        <p><a href="mailto:info@Alshifa.co">info@Alshifa.co</a></p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -589,7 +589,7 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-globe"></span>
                         </div>
-                        <p><a href="https://magicist.co">magicist.co</a></p>
+                        <p><a href="https://Alshifa.co">Alshifa.co</a></p>
                     </div>
                 </div>
             </div>

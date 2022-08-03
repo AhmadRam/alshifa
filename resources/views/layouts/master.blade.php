@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Magicist clinic</title>
+    <title>Alshifa clinic</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -59,7 +59,7 @@
                         <div class="col-md pr-4 d-flex topper align-items-center">
                             <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
                                     class="icon-paper-plane"></span></div>
-                                    <a href = "mailto: info@magicist.co" style="color: white"><span class="text">info@magicist.co</span></a>
+                                    <a href = "mailto: info@Alshifa.co" style="color: white"><span class="text">info@Alshifa.co</span></a>
                         </div>
                         <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
                             <p class="mb-0 register-link">
@@ -135,12 +135,12 @@
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
                         <a class="navbar-brand" href="/"><img src="{{ asset('asset/images/Logo.png') }}" height="70px" width="110px"/></a>
-                        {{-- <h2 class="ftco-heading-2">Magicist clinic</h2> --}}
+                        {{-- <h2 class="ftco-heading-2">Alshifa clinic</h2> --}}
                         <p>Far far away, behind the word mountains, far from the countries.</p>
                         <ul class="ftco-footer-social list-unstyled mt-5">
                             {{-- <li class="ftco-animate"><a href="#"><span class="fab fa-tiktok fa-2x"></span></a></li> --}}
-                            <li class="ftco-animate"><a href="https://www.facebook.com/Magicistclinic.ar" target="_blank"><span class="icon-facebook"></span></a></li>
-                            <li class="ftco-animate"><a href="https://www.instagram.com/magicistclinics/" target="_blank"><span class="icon-instagram"></span></a></li>
+                            <li class="ftco-animate"><a href="https://www.facebook.com/Alshifaclinic.ar" target="_blank"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="https://www.instagram.com/Alshifaclinics/" target="_blank"><span class="icon-instagram"></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -166,8 +166,8 @@
                                 <li><span class="icon icon-map-marker"></span><span class="text">Ataköy 7-8-9-10 kısım mh. Çobançeşme E-5 yanyol CD. No:12 Daire:A119 Nivo Ataköy rezidans Bakırköy/İSTANBUL</span></li>
                                 <li><a target="_blank" href="//api.whatsapp.com/send?phone=905550243555MOBILE_NUMBER&text=Hello"><span class="icon icon-phone"></span><span class="text">+90 555 024 35 55</a></span></li>
                                 <li><a target="_blank" href="//api.whatsapp.com/send?phone=905550413555MOBILE_NUMBER&text=Hello"><span class="icon icon-phone"></span><span class="text">+90 555 041 35 55</a></span></li>
-                                <li><a href = "mailto: info@magicist.co"><span class="icon icon-envelope pr-4"></span><span
-                                            class="text">info@magicist.co</span></a></li>
+                                <li><a href = "mailto: info@Alshifa.co"><span class="icon icon-envelope pr-4"></span><span
+                                            class="text">info@Alshifa.co</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -202,7 +202,7 @@
           <a target="_blank" href="//api.whatsapp.com/send?phone=905550413555MOBILE_NUMBER&text=Hello"><span style="background: #FE4979" class="float-element">
             <i class="material-icons">phone</i></a>
           </span>
-          <a href="mailto: info@magicist.co"> <span style="background: #e26687" class="float-element">
+          <a href="mailto: info@Alshifa.co"> <span style="background: #e26687" class="float-element">
             <i class="material-icons">email
       </i></a>
           </span>
