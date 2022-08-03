@@ -54,12 +54,12 @@
                         <div class="col-md pr-4 d-flex topper align-items-center">
                             <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
                                     class="icon-phone2"></span></div>
-                            <span class="text"><a href="tel:+90 555 041 35 55" style="color: white">+90 555 041 35 55</a> / <a href="tel:+90 555 024 35 55" style="color: white">+90 555 024 35 55</a></span>
+                            <span class="text"><a href="tel:+96566670028" style="color: white">+96566670028</a> / <a href="tel:+90 555 024 35 55" style="color: white">+90 555 024 35 55</a></span>
                         </div>
                         <div class="col-md pr-4 d-flex topper align-items-center">
                             <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
                                     class="icon-paper-plane"></span></div>
-                                    <a href = "mailto: info@Alshifa.co" style="color: white"><span class="text">info@Alshifa.co</span></a>
+                                    <a href = "mailto: info@alshifa-kw.com" style="color: white"><span class="text">info@alshifa-kw.com</span></a>
                         </div>
                         <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
                             <p class="mb-0 register-link">
@@ -139,8 +139,8 @@
                         <p>Far far away, behind the word mountains, far from the countries.</p>
                         <ul class="ftco-footer-social list-unstyled mt-5">
                             {{-- <li class="ftco-animate"><a href="#"><span class="fab fa-tiktok fa-2x"></span></a></li> --}}
-                            <li class="ftco-animate"><a href="https://www.facebook.com/Alshifaclinic.ar" target="_blank"><span class="icon-facebook"></span></a></li>
-                            <li class="ftco-animate"><a href="https://www.instagram.com/Alshifaclinics/" target="_blank"><span class="icon-instagram"></span></a></li>
+                            <li class="ftco-animate"><a href="https://www.facebook.com/alshifa.kw" target="_blank"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="https://www.instagram.com/alshifa.kw/" target="_blank"><span class="icon-instagram"></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -163,11 +163,11 @@
                         <h2 class="ftco-heading-2">Have a Questions?</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon icon-map-marker"></span><span class="text">Ataköy 7-8-9-10 kısım mh. Çobançeşme E-5 yanyol CD. No:12 Daire:A119 Nivo Ataköy rezidans Bakırköy/İSTANBUL</span></li>
-                                <li><a target="_blank" href="//api.whatsapp.com/send?phone=905550243555MOBILE_NUMBER&text=Hello"><span class="icon icon-phone"></span><span class="text">+90 555 024 35 55</a></span></li>
-                                <li><a target="_blank" href="//api.whatsapp.com/send?phone=905550413555MOBILE_NUMBER&text=Hello"><span class="icon icon-phone"></span><span class="text">+90 555 041 35 55</a></span></li>
-                                <li><a href = "mailto: info@Alshifa.co"><span class="icon icon-envelope pr-4"></span><span
-                                            class="text">info@Alshifa.co</span></a></li>
+                                <li><span class="icon icon-map-marker"></span><span class="text">Kuwait</span></li>
+                                {{-- <li><a target="_blank" href="//api.whatsapp.com/send?phone=905550243555MOBILE_NUMBER&text=Hello"><span class="icon icon-phone"></span><span class="text">+90 555 024 35 55</a></span></li> --}}
+                                <li><a target="_blank" href="//api.whatsapp.com/send?phone=96566670028MOBILE_NUMBER&text=Hello"><span class="icon icon-phone"></span><span class="text">+96566670028</a></span></li>
+                                <li><a href = "mailto: info@alshifa-kw.com"><span class="icon icon-envelope pr-4"></span><span
+                                            class="text">info@alshifa-kw.com</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,10 +199,10 @@
             <i class="material-icons">phone
             </i></a>
           </span>
-          <a target="_blank" href="//api.whatsapp.com/send?phone=905550413555MOBILE_NUMBER&text=Hello"><span style="background: #FE4979" class="float-element">
+          <a target="_blank" href="//api.whatsapp.com/send?phone=96566670028MOBILE_NUMBER&text=Hello"><span style="background: #FE4979" class="float-element">
             <i class="material-icons">phone</i></a>
           </span>
-          <a href="mailto: info@Alshifa.co"> <span style="background: #e26687" class="float-element">
+          <a href="mailto: info@alshifa-kw.com"> <span style="background: #e26687" class="float-element">
             <i class="material-icons">email
       </i></a>
           </span>
@@ -210,7 +210,7 @@
         </div>
       </div> --}}
 
-      <a href="https:////api.whatsapp.com/send?phone=905550413555MOBILE_NUMBER&text=Hello" class="whatsapp" target="_blank">
+      <a href="https:////api.whatsapp.com/send?phone=96566670028MOBILE_NUMBER&text=Hello" class="whatsapp" target="_blank">
         <i class="fa fa-whatsapp my-whatsapp"></i>
         </a>
 

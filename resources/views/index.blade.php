@@ -572,8 +572,8 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-phone2"></span>
                         </div>
-                        <p><a href="//api.whatsapp.com/send?phone=905550243555MOBILE_NUMBER&text=Hello">+90 555 024 35 55</a></p>
-                        <p><a href="//api.whatsapp.com/send?phone=905550413555MOBILE_NUMBER&text=Hello">+90 555 041 35 55</a></p>
+                        {{-- <p><a href="//api.whatsapp.com/send?phone=905550243555MOBILE_NUMBER&text=Hello">+90 555 024 35 55</a></p> --}}
+                        <p><a href="//api.whatsapp.com/send?phone=96566670028MOBILE_NUMBER&text=Hello">+96566670028</a></p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -581,7 +581,7 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-paper-plane"></span>
                         </div>
-                        <p><a href="mailto:info@Alshifa.co">info@Alshifa.co</a></p>
+                        <p><a href="mailto:info@alshifa-kw.com">info@alshifa-kw.com</a></p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -589,7 +589,7 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-globe"></span>
                         </div>
-                        <p><a href="https://Alshifa.co">Alshifa.co</a></p>
+                        <p><a href="https://alshifa-kw.com">alshifa-kw.com</a></p>
                     </div>
                 </div>
             </div>
