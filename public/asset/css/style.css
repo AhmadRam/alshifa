@@ -4616,7 +4616,7 @@ input[type="button"].btn-block {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-    color: #495057;
+    color: #495057 !important;
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -4759,6 +4759,10 @@ input[type="button"].btn-block {
 .navbar-toggler:hover,
 .navbar-toggler:focus {
     text-decoration: none;
+}
+
+.navbar-toggler * {
+    color: #000 !important;
 }
 
 .navbar-toggler:not(:disabled):not(.disabled) {
@@ -10835,8 +10839,6 @@ h5,
 
 .ftco-navbar-light .navbar-brand {
     color: #000000;
-    padding-top: .7rem;
-    padding-bottom: .7rem;
 }
 
 .ftco-navbar-light .navbar-brand:hover,
@@ -10916,7 +10918,6 @@ h5,
         padding-right: 0;
         padding-bottom: 1rem;
         padding-top: 0;
-        color: #fff;
     }
 }
 
@@ -10972,7 +10973,6 @@ h5,
 
 .ftco-navbar-light .navbar-toggler {
     border: none;
-    color: rgba(255, 255, 255, 0.5) !important;
     cursor: pointer;
     padding-right: 0;
     text-transform: uppercase;
@@ -11090,6 +11090,10 @@ h5,
 .navbar-brand {
     font-weight: 900;
     font-size: 24px;
+}
+
+.navbar-brand img {
+    object-fit: contain;
 }
 
 .navbar-brand span {

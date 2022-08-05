@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset('asset/css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
 
 
@@ -100,16 +100,23 @@
                     </li>
 
                     <li class="nav-item">
-                        <div class="dropdown">
-                        <a class="">Departments</a>
+                        <div class="dropdown p-0">
+                        {{-- <a class="">Departments</a>
                             <div class="dropdown-content">
                               @foreach (App\Department::where('status',1)->orderBy('sort_order', 'asc')->get() as $department)
                               <a href="{{route('departments.view',$department->id)}}">{{$department->name}}</a>
                               @endforeach
                             </div>
                           </div>
-                        </li>
-
+                        </li> --}}
+                        <a class=" dropdown-toggle pt-md-0 pb-3 d-inline-block nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            Departments
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            @foreach (App\Department::where('status',1)->orderBy('sort_order', 'asc')->get() as $department)
+                            <li><a class="dropdown-item" href="{{route('departments.view',$department->id)}}">{{$department->name}}</a></li>
+                            @endforeach
+                          </ul>
                     <li class="nav-item"><a href="/#Hospitals-section"
                             class="nav-link"><span>Hospitals</span></a>
                     </li>
