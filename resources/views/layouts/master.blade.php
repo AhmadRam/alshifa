@@ -89,34 +89,25 @@
         id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" href="/"><img src="{{ asset('asset/images/Logo.png') }}" height="70px" width="110px"/></a>
-            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle text-center p-2" type="button" data-toggle="collapse"
                 data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
+                <span class="oi oi-menu"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav nav ml-auto">
                     <li class="nav-item"><a href="/#" class="nav-link"><span>Home</span></a></li>
                     </li>
-
-                    <li class="nav-item">
-                        <div class="dropdown p-0">
-                        {{-- <a class="">Departments</a>
-                            <div class="dropdown-content">
-                              @foreach (App\Department::where('status',1)->orderBy('sort_order', 'asc')->get() as $department)
-                              <a href="{{route('departments.view',$department->id)}}">{{$department->name}}</a>
-                              @endforeach
-                            </div>
-                          </div>
-                        </li> --}}
-                        <a class=" dropdown-toggle pt-md-0 pb-3 d-inline-block nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            Departments
+                    <li class="nav-item position-relative">
+                        <a class=" dropdown-toggle text-black nav-link d-flex align-items-center" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span>Departments</span> 
                           </a>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <ul class="dropdown-menu position-absolute" aria-labelledby="dropdownMenuLink">
                             @foreach (App\Department::where('status',1)->orderBy('sort_order', 'asc')->get() as $department)
                             <li><a class="dropdown-item" href="{{route('departments.view',$department->id)}}">{{$department->name}}</a></li>
                             @endforeach
                           </ul>
+                        </li> 
                     <li class="nav-item"><a href="/#Hospitals-section"
                             class="nav-link"><span>Hospitals</span></a>
                     </li>

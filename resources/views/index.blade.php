@@ -69,8 +69,13 @@
                             @foreach ($our_services as $our_service)
                                 <div class="col-md-6 d-flex align-self-stretch ftco-animate">
                                     <div class="media block-6 services d-flex">
-                                        <div class="icon justify-content-center align-items-center d-flex"><span
-                                                class="{{ $our_service->icon }}"></span></div>
+                                        <div class="icon justify-content-center align-items-center d-flex">
+                                            @if ($our_service->icon)
+                                                <span class="{{ $our_service->icon }}"></span>
+                                            @else
+                                                <img class="w-50" src="{{ asset('asset/images/loc.png') }}" alt="">
+                                            @endif
+                                        </div>
                                         <div class="media-body pl-md-4">
                                             <h3 class="heading mb-3">{{ $our_service->title }}</h3>
                                             <p>{{ $our_service->description }}</p>
@@ -251,7 +256,8 @@
                                                                 <li class="ftco-animate"><a href="#"><span
                                                                             class="icon-instagram"></span></a></li>
                                                             </ul>
-                                                            <p><a href="{{route('hospitals.view',$hospitalSlider->id)}}" class="btn btn-primary">View</a></p>
+                                                            <p><a href="{{ route('hospitals.view', $hospitalSlider->id) }}"
+                                                                    class="btn btn-primary">View</a></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -390,7 +396,8 @@
                                                                 <li class="ftco-animate"><a href="#"><span
                                                                             class="icon-instagram"></span></a></li>
                                                             </ul>
-                                                            <p><a href="{{route('hotels.view',$hotelSlider->id)}}" class="btn btn-primary">View</a></p>
+                                                            <p><a href="{{ route('hotels.view', $hotelSlider->id) }}"
+                                                                    class="btn btn-primary">View</a></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -465,8 +472,9 @@
                                                             {{-- <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div> --}}
                                                         </div>
                                                         <h3 class="heading"><a
-                                                                href="{{route('researches.view',$research->id)}}">{{ $research->short_description }}.</p>
-                                                                <p><a href="{{route('researches.view',$research->id)}}"
+                                                                href="{{ route('researches.view', $research->id) }}">{{ $research->short_description }}.
+                                                                </p>
+                                                                <p><a href="{{ route('researches.view', $research->id) }}"
                                                                         class="btn btn-primary py-2 px-3">Read more</a></p>
                                                     </div>
                                                 </div>
@@ -531,7 +539,7 @@
                                         @for ($i = 0; $i < $patientsComment->rating; $i++)
                                             <span class="fa fa-star" style="color: orange"></span>
                                         @endfor
-                                        @for ($i = 0; $i < (5 - $patientsComment->rating); $i++)
+                                        @for ($i = 0; $i < 5 - $patientsComment->rating; $i++)
                                             <span class="fa fa-star"></span>
                                         @endfor
                                         <h4 class="name">{{ $patientsComment->name }}</h4>
@@ -542,8 +550,9 @@
                         @endforeach
                     </div>
 
-                    <p style="text-align: center;margin-top: 40px;"><a href="{{route('customer.patients-comment.view')}}"
-                        class="btn btn-primary py-2 px-3">Write your review</a></p>
+                    <p style="text-align: center;margin-top: 40px;"><a
+                            href="{{ route('customer.patients-comment.view') }}" class="btn btn-primary py-2 px-3">Write
+                            your review</a></p>
 
                 </div>
             </div>
