@@ -469,7 +469,6 @@ h5,
         color: $black;
         line-height: 1;
         font-weight: 700;
-        // text-transform: uppercase;
         @include media-breakpoint-down(md) {
             font-size: 40px;
         }
