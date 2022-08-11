@@ -41,21 +41,15 @@ Route::get('hotel/{id}', [HomeController::class, 'hotelPage'])->name('hotels.vie
 
 Route::get('research/{id}', [HomeController::class, 'ResearchPage'])->name('researches.view');
 
-
 Route::get('customer/profile', [CustomerController::class, 'index'])->name('customer.profile');
+
 Route::post('customer/profile', [CustomerController::class, 'update'])->name('customer.profile.update');
-
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

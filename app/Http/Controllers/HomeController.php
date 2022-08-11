@@ -3,17 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Department;
-use App\Consultation;
 use App\Hospital;
 use App\Hotel;
-use App\OperationPlan;
 use App\OurService;
 use App\PatientsComment;
 use App\Research;
 use App\Transfer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
