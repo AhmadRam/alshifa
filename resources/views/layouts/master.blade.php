@@ -101,7 +101,7 @@
                     <li class="nav-item position-relative">
                         <a class=" dropdown-toggle text-black nav-link d-flex align-items-center" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                             <span>Departments</span> 
-                          </a>
+                        </a>
                           <ul class="dropdown-menu position-absolute" aria-labelledby="dropdownMenuLink">
                             @foreach (App\Department::where('status',1)->orderBy('sort_order', 'asc')->get() as $department)
                             <li><a class="dropdown-item" href="{{route('departments.view',$department->id)}}">{{$department->name}}</a></li>
@@ -273,7 +273,6 @@
             document.myForm.submit();
             event.preventDefault();
         }
-
     //     $(document).ready(function(){
 
     // var current_fs, next_fs, previous_fs; //fieldsets

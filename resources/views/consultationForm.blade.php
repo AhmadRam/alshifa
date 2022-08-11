@@ -40,7 +40,7 @@
                 value="upload" onchange="sub(this)" /></div> --}}
 
         <div class="form-group">
-            <input type="submit" value="Send Consultation" class="btn btn-secondary py-3 px-4">
+            <input type="submit" value="Send Consultation" class="btn btn-secondary py-3 px-4 rounded-5">
         </div>
     </div>
 </form>
