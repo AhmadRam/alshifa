@@ -73,7 +73,8 @@
                                             @if ($our_service->icon)
                                                 <span class="{{ $our_service->icon }}"></span>
                                             @else
-                                                <img class="w-50" src="{{ asset('asset/images/loc.png') }}" alt="">
+                                                <img class="w-50" src="{{ asset('asset/images/loc.png') }}"
+                                                    alt="">
                                             @endif
                                         </div>
                                         <div class="media-body pl-md-4">
