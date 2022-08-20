@@ -41,7 +41,7 @@
                                     <input id="department-{{ $key }}" type="radio" name="department_id"
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
                                     <img class="w-100"
-                                        src="https://via.placeholder.com/200x200?text={{ $item->title }}"
+                                        src="{{ Voyager::image(json_decode($item->photo)[0] ?? null) }}"
                                         alt="{{ $item->title }}" title="{{ $item->title }}">
                                     <p>{{ $item->name }}</p>
                                 </label>
@@ -66,7 +66,7 @@
                 <section class="section">
                     <h3>Choose Hotels :</h3>
 
-                   
+
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <?php $hotels = \App\Department::where('status', 1)
@@ -76,8 +76,7 @@
                                 <label class="swiper-slide">
                                     <input id="department-{{ $key }}" type="radio" name="department_id"
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
-                                    <img class="w-100"
-                                        src="https://via.placeholder.com/200x200?text={{ $item->title }}"
+                                    <img class="w-100" src="https://via.placeholder.com/200x200?text={{ $item->title }}"
                                         alt="{{ $item->title }}" title="{{ $item->title }}">
                                     <p>{{ $item->name }}</p>
                                 </label>
@@ -100,8 +99,7 @@
                                 <label class="swiper-slide">
                                     <input id="department-{{ $key }}" type="radio" name="department_id"
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
-                                    <img class="w-100"
-                                        src="https://via.placeholder.com/200x200?text={{ $item->title }}"
+                                    <img class="w-100" src="https://via.placeholder.com/200x200?text={{ $item->title }}"
                                         alt="{{ $item->title }}" title="{{ $item->title }}">
                                     <p>{{ $item->name }}</p>
                                 </label>
@@ -127,7 +125,6 @@
             </form>
         </div>
     </section>
-
 @endsection
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -177,7 +174,7 @@
             slidesPerView: 4,
             spaceBetween: 20,
             centeredSlides: true,
-            
+
             // If we need pagination
             pagination: {
                 el: '.swiper-pagination',
