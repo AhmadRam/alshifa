@@ -128,7 +128,7 @@ class HomeController extends Controller
 
         $transfers = Transfer::all();
 
-        return view('operationPlan', compact('transfers'));
+        return view('operationPlan', compact('transfers','departments','transfers'));
     }
 
     public function patientsCommentPage()
