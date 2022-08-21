@@ -122,6 +122,10 @@ class HomeController extends Controller
 
     public function operationPlanPage()
     {
+        $departments = Department::where('status', 1)->orderBy('sort_order', 'asc')->get();
+
+        $hotels = Hotel::where('status', 1)->orderBy('sort_order', 'asc')->get();
+
         $transfers = Transfer::all();
 
         return view('operationPlan', compact('transfers'));

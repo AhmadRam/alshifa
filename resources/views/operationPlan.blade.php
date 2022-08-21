@@ -33,9 +33,6 @@
                     <h3>Choose Department :</h3>
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            <?php $departments = \App\Department::where('status', 1)
-                                ->orderBy('sort_order', 'asc')
-                                ->get(); ?>
                             @foreach ($departments as $key => $item)
                                 <label class="swiper-slide">
                                     <input id="department-{{ $key }}" type="radio" name="department_id"
@@ -69,9 +66,6 @@
 
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            <?php $hotels = \App\Department::where('status', 1)
-                                ->orderBy('sort_order', 'asc')
-                                ->get(); ?>
                             @foreach ($hotels as $key => $item)
                                 <label class="swiper-slide">
                                     <input id="department-{{ $key }}" type="radio" name="department_id"
