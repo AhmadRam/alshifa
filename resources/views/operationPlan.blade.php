@@ -20,7 +20,7 @@
 @endsection
 
 @section('content')
-    <section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="operation_plan">
+    <section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb container" id="operation_plan">
         <div id="svg_wrap"></div>
         <div class="body">
 
@@ -40,7 +40,7 @@
                                 <label class="swiper-slide">
                                     <input id="department-{{ $key }}" type="radio" name="department_id"
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
-                                    <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]);?>
+                                    <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]); ?>
                                     <img class="w-100" src="{{ $image }}" alt="{{ $item->title }}"
                                         title="{{ $item->title }}">
                                     <p>{{ $item->name }}</p>
@@ -150,6 +150,57 @@
             spaceBetween: 20,
             grid: {
                 rows: 2,
+            },
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 5,
+                    grid: {
+                        rows: 2,
+                    },
+                },
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                    grid: {
+                        rows: 2,
+                    },
+                },
+                // when window width is >= 640px
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                    grid: {
+                        rows: 2,
+                    },
+                },
+                // when window width is >= 768px
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                    grid: {
+                        rows: 2,
+                    },
+                },
+                // when window width is >= 992px
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                    grid: {
+                        rows: 2,
+                    },
+                },
+                // when window width is >= 1200px
+                1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 10,
+                    grid: {
+                        rows: 2,
+                    },
+                }
+
             },
             activeClass: 'swiper-slide-active',
             // If we need pagination

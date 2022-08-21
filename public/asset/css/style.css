@@ -13299,7 +13299,6 @@ p {
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@400;700&display=swap');
 .body {
-    padding: 50px;
     /* background: url('https://i.pinimg.com/originals/48/79/86/487986c17560a8ed1afdc55e480e5be2.png'); */
     background-size: cover;
     background-repeat: no-repeat;
@@ -13350,7 +13349,6 @@ p {
 }
 
 .section {
-    padding: 50px;
     /* max-width: 1400px; */
     margin: 30px auto;
     /* background: white; */
@@ -13661,18 +13659,35 @@ p {
 
 .swiper {
     width: auto;
-    height: 100vh;
+    height: 500px;
     padding: 50px;
 }
 .swiper-slide {
     width: auto;
+    max-width: 250px;
+    max-height: 350px;
     height: auto !important;
     padding: 10px 0;
     position: relative;
+}
+.swiper-slide img{
+    width: 90% !important;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    
+}
+.swiper-slide [type=radio]:checked+img {
+    outline: 2px solid #e83e8c !important;
 }
 .swiper-slide p {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: nowrap;
 }
