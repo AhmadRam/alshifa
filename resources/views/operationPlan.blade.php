@@ -76,8 +76,9 @@
                                 <label class="swiper-slide">
                                     <input id="department-{{ $key }}" type="radio" name="department_id"
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
-                                    <img class="w-100" src="https://via.placeholder.com/200x200?text={{ $item->title }}"
-                                        alt="{{ $item->title }}" title="{{ $item->title }}">
+                                    <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]); ?>
+                                    <img class="w-100" src="{{ $image }}" alt="{{ $item->title }}"
+                                        title="{{ $item->title }}">
                                     <p>{{ $item->name }}</p>
                                 </label>
                             @endforeach
@@ -99,7 +100,8 @@
                                 <label class="swiper-slide">
                                     <input id="department-{{ $key }}" type="radio" name="department_id"
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
-                                    <img class="w-100" src="https://via.placeholder.com/200x200?text={{ $item->title }}"
+                                    <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]); ?>
+                                    <img class="w-100" src="{{ $image }}"
                                         alt="{{ $item->title }}" title="{{ $item->title }}">
                                     <p>{{ $item->name }}</p>
                                 </label>
