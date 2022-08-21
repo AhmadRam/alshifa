@@ -124,7 +124,7 @@ class HomeController extends Controller
     {
         $departments = Department::where('status', 1)->orderBy('sort_order', 'asc')->get();
 
-        $hotels = Hotel::where('status', 1)->orderBy('sort_order', 'asc')->get();
+        $hotels = Hotel::orderBy('sort_order', 'asc')->get();
 
         $transfers = Transfer::all();
 
