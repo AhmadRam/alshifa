@@ -35,13 +35,17 @@ class HomeController extends Controller
     {
         $departments = Department::where('status', 1)->orderBy('sort_order', 'asc')->get();
 
-        $hospitals = Hospital::all();
+        $hospitals = Hospital::orderBy('sort_order', 'asc')->get();
+
+        $hotels = Hotel::orderBy('sort_order', 'asc')->get();
+
+        $researches = Research::all();
 
         $patientsComments = PatientsComment::all();
 
         $our_services = OurService::all();
 
-        return view('index', compact('departments', 'hospitals', 'patientsComments', 'our_services'));
+        return view('index', compact('departments', 'hospitals', 'hotels', 'researches', 'patientsComments', 'our_services'));
     }
 
     /**
@@ -128,7 +132,7 @@ class HomeController extends Controller
 
         $transfers = Transfer::all();
 
-        return view('operationPlan', compact('transfers','departments','hotels'));
+        return view('operationPlan', compact('transfers', 'departments', 'hotels'));
     }
 
     public function patientsCommentPage()
