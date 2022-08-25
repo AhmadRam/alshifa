@@ -34,14 +34,14 @@
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             @foreach ($departments as $key => $item)
-                                <label class="swiper-slide">
-                                    <input id="department-{{ $key }}" type="radio" name="department_id"
+                                <div class="swiper-slide">
+                                    <input id="department-{{ $key }}" type="radio" name="department_id" required
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
                                     <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]); ?>
                                     <img class="w-100" src="{{ $image }}" alt="{{ $item->title }}"
                                         title="{{ $item->title }}">
                                     <p>{{ $item->name }}</p>
-                                </label>
+                                </div>
                             @endforeach
                         </div>
                         <!-- Add Pagination -->
@@ -55,8 +55,15 @@
 
                 <section class="section">
                     <h3>Choose Hospital :</h3>
+                    <div class="swiper">
+                        <div class="swiper-wrapper" id="hospitals">
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
 
-                    <div id="hospitals">
                     </div>
                 </section>
 
@@ -67,14 +74,14 @@
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             @foreach ($hotels as $key => $item)
-                                <label class="swiper-slide">
-                                    <input id="department-{{ $key }}" type="radio" name="department_id"
+                                <div class="swiper-slide">
+                                    <input id="department-{{ $key }}" type="radio" name="department_id" required
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
                                     <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]); ?>
                                     <img class="w-100" src="{{ $image }}" alt="{{ $item->title }}"
                                         title="{{ $item->title }}">
                                     <p>{{ $item->name }}</p>
-                                </label>
+                                </div>
                             @endforeach
                         </div>
                         <!-- Add Pagination -->
@@ -86,19 +93,19 @@
                     </div>
                 </section>
 
-                <section class="section">
+                <section class="section">transfers
                     <h3>Choose Transfer :</h3>
                     <div class="transfers-swiper">
                         <div class="swiper-wrapper">
                             @foreach ($transfers as $key => $item)
-                                <label class="swiper-slide">
-                                    <input id="department-{{ $key }}" type="radio" name="department_id"
+                                <div class="swiper-slide">
+                                    <input id="department-{{ $key }}" type="radio" name="department_id" required
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
                                     <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]); ?>
-                                    <img class="w-100" src="{{ $image }}"
-                                        alt="{{ $item->title }}" title="{{ $item->title }}">
+                                    <img class="w-100" src="{{ $image }}" alt="{{ $item->title }}"
+                                        title="{{ $item->title }}">
                                     <p>{{ $item->name }}</p>
-                                </label>
+                                </div>
                             @endforeach
                         </div>
                         <!-- Add Pagination -->
@@ -106,7 +113,9 @@
                         <!-- Add Arrows -->
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
+
                     </div>
+                    
                 </section>
 
                 <section class="section">
@@ -116,7 +125,7 @@
                     <input class="input" type="text" name="phone" placeholder="Phone" />
                 </section>
                 <div class="button" id="prev">&larr; Previous</div>
-                <div class="button" id="next">Next &rarr;</div>
+                <button class="button" id="next">Next &rarr;</button>
                 <input type="submit" class="button" id="submit" value="Agree and send application" />
             </form>
         </div>
@@ -134,7 +143,11 @@
                     document.getElementById('hospitals').innerHTML = '';
                     data.data.forEach(item => {
                         document.getElementById('hospitals').innerHTML +=
-                            `<label style="padding: 10px"><input id="hospital" type="radio" name="hospital_id" id="${item.id}" value="${item.id}"><img src="${window.location.protocol}//${window.location.host}/storage/${item.photo}" height="270px" width="270px"><p style="text-align: center">${item.name}</p></label>`;
+                            `<div class="swiper-slide" >
+                                <input type="radio" name="hospital_id" id="hospital-${item.id}" value="${item.id}">
+                                <img src="${window.location.protocol}//${window.location.host}/storage/${item.photo}">
+                                <p>${item.name}</p>
+                            </div>`;
                     });
                 }
             });
@@ -238,5 +251,18 @@
                 el: '.swiper-scrollbar',
             },
         });
+        $(document).ready(function() {
+            $('.swiper-slide').click(function() {
+                $(this).find('input[type="radio"]').prop('checked', true);
+
+                document.querySelector('#next').removeAttribute('disabled', 'disabled');
+            });
+                if ($('input[name="department_id"]').is(':checked') == false) { 
+                    document.querySelector('#next').setAttribute('disabled','disabled')
+                } else {
+                    document.querySelector('#next').removeAttribute('disabled', 'disabled');
+                }
+        });
+        // set button disabled for not selected department
     </script>
 @endsection
