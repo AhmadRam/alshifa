@@ -70,16 +70,31 @@
                             @endforeach
                           </ul>
                         </li> 
-                    <li class="nav-item"><a href="/#Hospitals-section"
+                        <li class="nav-item"><a href="/#Hospitals-section"
                             class="nav-link"><span>Hospitals</span></a>
-                    </li>
-                    <li class="nav-item"><a href="/#Hotels-section"
+                        </li>
+                        <li class="nav-item"><a href="/#Hotels-section"
                             class="nav-link"><span>Hotels</span></a>
-                    </li>
-                    <li class="nav-item"><a href="/#contact-section" class="nav-link"><span>Contact Us</span></a></li>
-                    <li class="nav-item"><a href="/#about-section" class="nav-link"><span>About Us</span></a>
-                    <li class="nav-item cta mr-md-2"><a href="/appointment" class="nav-link">FREE CONSULTATION</a>
-                    </li>
+                        </li>
+                        <li class="nav-item"><a href="/#contact-section" class="nav-link"><span>Contact Us</span></a></li>
+                        <li class="nav-item"><a href="/#about-section" class="nav-link"><span>About Us</span></a>
+                            <li class="nav-item position-relative">
+                                <a class=" dropdown-toggle text-black nav-link d-flex align-items-center" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span>🌐</span>
+                                </a>
+                                <ul class="dropdown-menu position-absolute" aria-labelledby="dropdownMenuLink">
+                                    <li>
+                                        <a class="dropdown-item" href="{{request()->fullUrl() . '?locale=ar'}}">
+                                            {{ __('Arabic') }}
+                                        </a>
+                                        <a class="dropdown-item" href="{{request()->fullUrl() . '?locale=en'}}">
+                                            {{ __('English') }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li> 
+                            <li class="nav-item cta mr-md-2"><a href="/appointment" class="nav-link">FREE CONSULTATION</a>
+                            </li>
                 </ul>
             </div>
         </div>
