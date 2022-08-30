@@ -10,7 +10,7 @@
                 <h3>{{ trans('Patients Comment') }}</h3>
                 <div class="form-group">
                     <input type="text" class="form-control @error('name') is-invalid @enderror"
-                        placeholder="{{ trans('Name Surname') }}" name="name" value="{{ old('name') }}" required
+                        placeholder="{{ trans('Full Name') }}" name="name" value="{{ old('name') }}" required
                         autocomplete="name" autofocus>
 
                     @error('name')
