@@ -1,4 +1,8 @@
 {
+    "Home": "Home",
+    "Hospitals": "Hospitals",
+    "Hotels": "Hotels",
+    "About Us": "About Us",
     "Welcome to Alshifa CLINIC": "Welcome to Alshifa CLINIC",
     "We are here": "We are here",
     "for your Healthcare": "for your Healthcare",
@@ -10,6 +14,7 @@
     "Alshifa Clinic project aims to provide a safe and reliable environment for people coming from all over the world to obtain health care for international patients in Istanbul, highly qualified medical staff, surgeons and professors in various medical fields, and by contracting with the best hospitals designed according to international standards and the best health care providers in Istanbul, we strive to provide high quality services, smooth post-operative care, and a clean and healthy recovery environment. We also offer you a comfortable travel environment through our agreements with the best tourist facilities, transportation services and hotel services": "Alshifa Clinic project aims to provide a safe and reliable environment for people coming from all over the world to obtain health care for international patients in Istanbul, highly qualified medical staff, surgeons and professors in various medical fields, and by contracting with the best hospitals designed according to international standards and the best health care providers in Istanbul, we strive to provide high quality services, smooth post-operative care, and a clean and healthy recovery environment. We also offer you a comfortable travel environment through our agreements with the best tourist facilities, transportation services and hotel services",
     "FREE CONSULTATION": "FREE CONSULTATION",
     "Contact us": "Contact us",
+    "Contact Us": "Contact Us",
     "Our Services": "Our Services",
     "Our Hospitals": "Our Hospitals",
     "Number of departments": "Number of departments",
@@ -39,5 +44,9 @@
     "Patients Comment": "Patients Comment",
     "Name Surname": "Name Surname",
     "Rate us": "Rate us",
-    "Submit": "Submit"
+    "Submit": "Submit",
+    "Far far away, behind the word mountains, far from the countries": "Far far away, behind the word mountains, far from the countries",
+    "Have a Questions": "Have a Questions",
+    "English": "English",
+    "Arabic": "Arabic"
 }

@@ -12,7 +12,7 @@
                         <span class="subheading">{{ trans('Welcome to Alshifa CLINIC') }}</span>
                         <h1 class="mb-4">{{ trans('We are here') }} <br>{{ trans('for your Healthcare') }}</h1>
                         <p class="mb-4">
-                            {{ trans('Alshifa clinic has reached a high patient satisfaction, which is the reason behind the medical reputation of Alshifa Clinic in the medical sector.') }}
+                            {{ trans('Alshifa clinic has reached a high patient satisfaction, which is the reason behind the medical reputation of Alshifa Clinic in the medical sector') }}.
                         </p>
                         <p><a href="{{ route('customer.operation-plans.view') }}"
                                 class="btn btn-primary py-3 px-4">{{ trans('Plan Your Journey') }}</a></p>
