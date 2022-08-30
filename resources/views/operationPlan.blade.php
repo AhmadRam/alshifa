@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+<?php $locale = request()->get('locale') ?? 'en' ?>
 @section('css')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <style>
@@ -38,9 +38,9 @@
                                     <input id="department-{{ $key }}" type="radio" name="department_id" required
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
                                     <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]); ?>
-                                    <img class="w-100" src="{{ $image }}" alt="{{ $item->title }}"
-                                        title="{{ $item->title }}">
-                                    <p>{{ $item->name }}</p>
+                                    <img class="w-100" src="{{ $image }}" alt="{{ $item->{'title_' . $locale} }}"
+                                        title="{{ $item->{'title_' . $locale} }}">
+                                    <p>{{ $item->{'name_' . $locale} }}</p>
                                 </div>
                             @endforeach
                         </div>
@@ -78,9 +78,9 @@
                                     <input id="department-{{ $key }}" type="radio" name="department_id" required
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
                                     <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]); ?>
-                                    <img class="w-100" src="{{ $image }}" alt="{{ $item->title }}"
-                                        title="{{ $item->title }}">
-                                    <p>{{ $item->name }}</p>
+                                    <img class="w-100" src="{{ $image }}" alt="{{ $item->{'title_' . $locale} }}"
+                                        title="{{ $item->{'title_' . $locale} }}">
+                                    <p>{{ $item->{'name_' . $locale} }}</p>
                                 </div>
                             @endforeach
                         </div>
@@ -102,9 +102,9 @@
                                     <input id="department-{{ $key }}" type="radio" name="department_id" required
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
                                     <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]); ?>
-                                    <img class="w-100" src="{{ $image }}" alt="{{ $item->title }}"
-                                        title="{{ $item->title }}">
-                                    <p>{{ $item->name }}</p>
+                                    <img class="w-100" src="{{ $image }}" alt="{{ $item->{'title_' . $locale} }}"
+                                        title="{{ $item->{'title_' . $locale} }}">
+                                    <p>{{ $item->{'name_' . $locale} }}</p>
                                 </div>
                             @endforeach
                         </div>

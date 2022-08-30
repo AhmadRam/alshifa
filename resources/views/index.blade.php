@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+<?php $locale = request()->get('locale') ?? 'en' ?>
 @section('content')
     <section class="hero-wrap js-fullheight" style="background-image: url({{ asset('asset/images/bg_3.jpg') }});"
         data-section="home" data-stellar-background-ratio="0.5">
@@ -75,8 +75,8 @@
                                             @endif
                                         </div>
                                         <div class="media-body pl-md-4">
-                                            <h3 class="heading mb-3">{{ $our_service->title }}</h3>
-                                            <p>{{ $our_service->description }}</p>
+                                            <h3 class="heading mb-3">{{ $our_service->{'title_' . $locale} }}</h3>
+                                            <p>{{ $our_service->{'description_' . $locale} }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -117,9 +117,9 @@
                                         <span class="flaticon-stethoscope"></span>
                                     </div>
                                     <h3><a
-                                            href="{{ route('departments.view', $department->id) }}">{{ $department->name }}</a>
+                                            href="{{ route('departments.view', $department->id) }}">{{ $department->{'name_' . $locale} }}</a>
                                     </h3>
-                                    <p>{{ $department->short_description }}</p>
+                                    <p>{{ $department->{'short_description_' . $locale} }}</p>
                                 </div>
                             </div>
                             @if ($number == 3 || $number == 6 || $number == 9)
@@ -208,9 +208,9 @@
                                     </div>
                                 </div>
                                 <div class="text pt-3 text-center">
-                                    <h3 class="mb-2">{{ $item->name }}</h3>
+                                    <h3 class="mb-2">{{ $item->{'name_' . $locale} }}</h3>
                                     <div class="faded">
-                                        <p>{{ $item->short_description }}</p>
+                                        <p>{{ $item->{'short_description_' . $locale} }}</p>
                                         <ul class="ftco-social">
                                             <li class="ftco-animate">
                                                 <a href="#"><span class="icon-twitter"></span>
@@ -315,9 +315,9 @@
                                     </div>
                                 </div>
                                 <div class="text pt-3 text-center">
-                                    <h3 class="mb-2">{{ $item->name }}</h3>
+                                    <h3 class="mb-2">{{ $item->{'name_' . $locale} }}</h3>
                                     <div class="faded">
-                                        <p>{{ $item->short_description }}</p>
+                                        <p>{{ $item->{'short_description_' . $locale} }}</p>
                                         <ul class="ftco-social">
                                             <li class="ftco-animate">
                                                 <a href="#"><span class="icon-twitter"></span>
@@ -379,9 +379,9 @@
                                     </div>
                                 </div>
                                 <div class="text pt-3 text-start">
-                                    <h3 class="mb-2">{{ $item->name }}</h3>
+                                    <h3 class="mb-2">{{ $item->{'name_' . $locale} }}</h3>
                                     <div class="faded">
-                                        <p>{{ $item->short_description }}</p>
+                                        <p>{{ $item->{'short_description_' . $locale} }}</p>
                                         <ul class="ftco-social">
                                             <li class="ftco-animate">
                                                 <a href="#"><span class="icon-twitter"></span>
@@ -447,7 +447,7 @@
                                         @for ($i = 0; $i < 5 - $patientsComment->rating; $i++)
                                             <span class="fa fa-star"></span>
                                         @endfor
-                                        <h4 class="name">{{ $patientsComment->name }}</h4>
+                                        <h4 class="name">{{ $patientsComment->{'name_' . $locale} }}</h4>
                                         <span class="position">{{ $patientsComment->created_at }}</span>
                                     </div>
                                 </div>

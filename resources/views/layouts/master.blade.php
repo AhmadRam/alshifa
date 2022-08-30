@@ -52,6 +52,7 @@
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <?php $locale = request()->get('locale') ?? 'en' ?>
 
     <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-light ftco-navbar-light site-navbar-target"
         id="ftco-navbar">
@@ -76,7 +77,7 @@
                         <ul class="dropdown-menu position-absolute" aria-labelledby="dropdownMenuLink">
                             @foreach (App\Department::where('status', 1)->orderBy('sort_order', 'asc')->get() as $department)
                                 <li><a class="dropdown-item"
-                                        href="{{ route('departments.view', $department->id) }}">{{ $department->name }}</a>
+                                        href="{{ route('departments.view', $department->id) }}">{{ $department->{'name_' . $locale} }}</a>
                                 </li>
                             @endforeach
                         </ul>

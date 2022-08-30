@@ -1,3 +1,4 @@
+<?php $locale = request()->get('locale') ?? 'en' ?>
 <form method="POST" action="{{ route('customer.consultations.store') }}" class="appointment-form ftco-animate"
     enctype='multipart/form-data'>
     @csrf
@@ -15,7 +16,7 @@
                     <select name="department_id" id="" class="form-control" required>
                         <option value="">{{ trans('Departments') }}</option>
                         @foreach ($departments as $department)
-                            <option value="{{ $department->id }}">{{ $department->name }}</option>
+                            <option value="{{ $department->id }}">{{ $department->{'name_' . $locale} }}</option>
                         @endforeach
                     </select>
                 </div>
