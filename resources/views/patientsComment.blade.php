@@ -5,13 +5,13 @@
 
         <div class="appointment-wrap bg-white p-5 d-flex align-items-center" style="margin-top: 100px">
 
-            <form class="appointment-form ftco-animate" method="POST"
-                action="{{ route('customer.patients-comment.store') }}">
+            <form class="appointment-form ftco-animate" method="POST" action="{{ route('customer.patients-comment.store') }}">
                 @csrf
-                <h3>Patients Comment</h3>
+                <h3>{{ trans('Patients Comment') }}</h3>
                 <div class="form-group">
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name Surname"
-                        name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror"
+                        placeholder="{{ trans('Name Surname') }}" name="name" value="{{ old('name') }}" required
+                        autocomplete="name" autofocus>
 
                     @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -21,8 +21,9 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="comment" class="form-control @error('comment') is-invalid @enderror" placeholder="Rate us"
-                        name="comment" value="{{ old('comment') }}" required autocomplete="comment" autofocus>
+                    <input type="comment" class="form-control @error('comment') is-invalid @enderror"
+                        placeholder="{{ trans('Rate us') }}" name="comment" value="{{ old('comment') }}" required
+                        autocomplete="comment" autofocus>
 
                     @error('comment')
                         <span class="invalid-feedback" role="alert">
@@ -63,7 +64,7 @@
                     </label>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-secondary py-3 px-4">Submit</button>
+                    <button type="submit" class="btn btn-secondary py-3 px-4">{{ trans('Submit') }}</button>
                 </div>
 
             </form>

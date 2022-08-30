@@ -9,12 +9,13 @@
                 data-scrollax-parent="true">
                 <div class="col-md-7 pt-5 ftco-animate">
                     <div class="mt-5">
-                        <span class="subheading">Welcome to Alshifa CLINIC</span>
-                        <h1 class="mb-4">We are here <br>for your Healthcare</h1>
-                        <p class="mb-4">Alshifa clinic has reached a high patient satisfaction, which is the reason
-                            behind the medical reputation of Alshifa Clinic in the medical sector.</p>
-                        <p><a href="{{ route('customer.operation-plans.view') }}" class="btn btn-primary py-3 px-4">Plan
-                                Your Journey</a></p>
+                        <span class="subheading">{{ trans('Welcome to Alshifa CLINIC') }}</span>
+                        <h1 class="mb-4">{{ trans('We are here') }} <br>{{ trans('for your Healthcare') }}</h1>
+                        <p class="mb-4">
+                            {{ trans('Alshifa clinic has reached a high patient satisfaction, which is the reason behind the medical reputation of Alshifa Clinic in the medical sector.') }}
+                        </p>
+                        <p><a href="{{ route('customer.operation-plans.view') }}"
+                                class="btn btn-primary py-3 px-4">{{ trans('Plan Your Journey') }}</a></p>
                     </div>
                 </div>
             </div>
@@ -33,18 +34,14 @@
                     <div class="py-md-5">
                         <div class="row justify-content-start pb-3">
                             <div class="col-md-12 heading-section ftco-animate p-4 p-lg-5">
-                                <h2 class="mb-4">We Are <span>Alshifa</span> Clinic</h2>
-                                <p>Alshifa Clinic project aims to provide a safe and reliable environment for people coming
-                                    from all over the world to obtain health care for international patients in Istanbul,
-                                    highly qualified medical
-                                    staff, surgeons and professors in various medical fields, and by contracting
-                                    with the best hospitals designed according to international standards and the best
-                                    health care providers in Istanbul, we strive to provide high quality services, smooth
-                                    post-operative care, and a clean and healthy recovery environment. We also offer you a
-                                    comfortable travel environment through our agreements with the best tourist facilities,
-                                    transportation services and hotel services</p>
-                                <p><a href="/appointment" class="btn btn-primary py-3 px-4">FREE CONSULTATION</a> <a
-                                        href="/#about-section" class="btn btn-secondary py-3 px-4">Contact us</a></p>
+                                <h2 class="mb-4">{{ trans('We Are') }} <span>{{ trans('Alshifa') }}</span>
+                                    {{ trans('Clinic') }}</h2>
+                                <p>{{ trans('Alshifa Clinic project aims to provide a safe and reliable environment for people coming from all over the world to obtain health care for international patients in Istanbul, highly qualified medical staff, surgeons and professors in various medical fields, and by contracting with the best hospitals designed according to international standards and the best health care providers in Istanbul, we strive to provide high quality services, smooth post-operative care, and a clean and healthy recovery environment. We also offer you a comfortable travel environment through our agreements with the best tourist facilities, transportation services and hotel services') }}
+                                </p>
+                                <p><a href="/appointment"
+                                        class="btn btn-primary py-3 px-4">{{ trans('FREE CONSULTATION') }}</a> <a
+                                        href="/#about-section"
+                                        class="btn btn-secondary py-3 px-4">{{ trans('Contact us') }}</a></p>
                             </div>
                         </div>
                     </div>
@@ -61,7 +58,7 @@
                     <div class="py-lg-5">
                         <div class="row justify-content-center pb-5">
                             <div class="col-md-12 heading-section ftco-animate">
-                                <h2 class="mb-3">Our Services</h2>
+                                <h2 class="mb-3">{{ trans('Our Services') }}</h2>
                             </div>
                         </div>
                         <div class="row">
@@ -129,7 +126,7 @@
                     </div>
                     @endif
                     @endforeach
-                    <div class="department-wrap p-4 ftco-animate">
+                    {{-- <div class="department-wrap p-4 ftco-animate">
                         <div class="text p-2 text-center">
                             <div class="icon">
                                 <span class="flaticon-stethoscope"></span>
@@ -155,10 +152,10 @@
                             <h3><a href="#">Traumatology</a></h3>
                             <p>Far far away, behind the word mountains</p>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     <div class="department-wrap p-4 ftco-animate">
                         <div class="text p-2 text-center">
                             <div class="icon">
@@ -186,7 +183,7 @@
                             <p>Far far away, behind the word mountains</p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         </div>
@@ -197,7 +194,7 @@
         <div class="container px-5">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h2 class="mb-4">Our Hospitals</h2>
+                    <h2 class="mb-4">{{ trans('Our Hospitals') }}</h2>
                 </div>
             </div>
             <div class="hospitalsSwiper">
@@ -266,7 +263,7 @@
                             <div class="block-18">
                                 <div class="text">
                                     <strong class="number" data-number="{{ $departments->count() }}">0</strong>
-                                    <span>Number of departments</span>
+                                    <span>{{ trans('Number of departments') }}</span>
                                 </div>
                             </div>
                         </div>
@@ -274,7 +271,7 @@
                             <div class="block-18">
                                 <div class="text">
                                     <strong class="number" data-number="2658">0</strong>
-                                    <span>Satisfied Patients</span>
+                                    <span>{{ trans('Satisfied Patients') }}</span>
                                 </div>
                             </div>
                         </div>
@@ -282,7 +279,7 @@
                             <div class="block-18">
                                 <div class="text">
                                     <strong class="number" data-number="34">0</strong>
-                                    <span>Number of Doctors</span>
+                                    <span>{{ trans('Number of Doctors') }}</span>
                                 </div>
                             </div>
                         </div>
@@ -290,7 +287,7 @@
                             <div class="block-18">
                                 <div class="text">
                                     <strong class="number" data-number="{{ $hospitals->count() }}">0</strong>
-                                    <span>Number of Hospitals</span>
+                                    <span>{{ trans('Number of Hospitals') }}</span>
                                 </div>
                             </div>
                         </div>
@@ -304,7 +301,7 @@
         <div class="container px-5">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h2 class="mb-4">Our Hotels</h2>
+                    <h2 class="mb-4">{{ trans('Our Hotels') }}</h2>
                 </div>
             </div>
             <div class="hospitalsSwiper">
@@ -366,8 +363,9 @@
         <div class="container-fluid px-5">
             <div class="row justify-content-center mb-5 pb-5">
                 <div class="col-md-10 heading-section text-center ftco-animate">
-                    <h2 class="mb-4">Our doctors researches</h2>
-                    <p>Get the most accurate and up to date medical information through out our researchers</p>
+                    <h2 class="mb-4">{{ trans('Our doctors researches') }}</h2>
+                    <p>{{ trans('Get the most accurate and up to date medical information through out our researchers') }}
+                    </p>
                 </div>
             </div>
             <div class="hospitalsSwiper">
@@ -431,8 +429,8 @@
         <div class="container">
             <div class="row justify-content-center pb-3">
                 <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-                    <span class="subheading">Read testimonials</span>
-                    <h2 class="mb-4">Our Patient Says</h2>
+                    <span class="subheading">{{ trans('Read testimonials') }}</span>
+                    <h2 class="mb-4">{{ trans('Our Patient Says') }}</h2>
                 </div>
             </div>
             <div class="row ftco-animate justify-content-center">
@@ -458,8 +456,8 @@
                     </div>
 
                     <p style="text-align: center;margin-top: 40px;"><a
-                            href="{{ route('customer.patients-comment.view') }}" class="btn btn-primary py-2 px-3">Write
-                            your review</a></p>
+                            href="{{ route('customer.patients-comment.view') }}"
+                            class="btn btn-primary py-2 px-3">{{ trans('Write your review') }}</a></p>
 
                 </div>
             </div>
@@ -470,7 +468,7 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <p>CONTACT US</p>
+                    <p>{{trans('CONTACT US')}}</p>
                 </div>
             </div>
             <div class="row d-flex contact-info mb-5">
@@ -479,8 +477,7 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-map-signs"></span>
                         </div>
-                        <p>Ataköy 7-8-9-10 kısım mh. Çobançeşme E-5 yanyol CD. No:12 Daire:A119 Nivo Ataköy rezidans
-                            Bakırköy/İSTANBUL</p>
+                        <p>Kuwait</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex ftco-animate">

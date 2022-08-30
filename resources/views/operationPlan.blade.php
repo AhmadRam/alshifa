@@ -26,11 +26,11 @@
 
             <form method="POST" action="{{ route('customer.operation-plans.store') }}">
                 @csrf
-                <h1 class="h1">Operation Plan</h1>
+                <h1 class="h1">{{ trans('Operation Plan') }}</h1>
 
                 {{-- <section class="section"> --}}
                 <section class="section">
-                    <h3>Choose Department :</h3>
+                    <h3>{{ trans('Choose Department') }} :</h3>
                     <div class="mainSwiper">
                         <div class="swiper-wrapper">
                             @foreach ($departments as $key => $item)
@@ -54,7 +54,7 @@
                 </section>
 
                 <section class="section">
-                    <h3>Choose Hospital :</h3>
+                    <h3>{{ trans('Choose Hospital') }} :</h3>
                     <div class="mainSwiper">
                         <div class="swiper-wrapper" id="hospitals">
                         </div>
@@ -68,7 +68,7 @@
                 </section>
 
                 <section class="section">
-                    <h3>Choose Hotels :</h3>
+                    <h3>{{ trans('Choose Hotels') }} :</h3>
 
 
                     <div class="mainSwiper">
@@ -93,8 +93,8 @@
                     </div>
                 </section>
 
-                <section class="section">transfers
-                    <h3>Choose Transfer :</h3>
+                <section class="section">
+                    <h3>{{ trans('Choose Transfer') }} :</h3>
                     <div class="transfers-swiper">
                         <div class="swiper-wrapper">
                             @foreach ($transfers as $key => $item)
@@ -115,17 +115,17 @@
                         <div class="swiper-button-prev"></div>
 
                     </div>
-                    
+
                 </section>
 
                 <section class="section">
-                    <h3>Personal information :</h3>
+                    <h3>{{ trans('Personal information') }} :</h3>
                     <input class="input" type="text" name="full_name" placeholder="Full Name" required />
                     <input class="input" type="text" name="email" placeholder="E-mail" required />
                     <input class="input" type="text" name="phone" placeholder="Phone" />
                 </section>
-                <div class="button" id="prev">&larr; Previous</div>
-                <button class="button" id="next">Next &rarr;</button>
+                <div class="button" id="prev">&larr; {{ trans('Previous') }}</div>
+                <button class="button" id="next">{{ trans('Next') }} &rarr;</button>
                 <input type="submit" class="button" id="submit" value="Agree and send application" />
             </form>
         </div>
@@ -255,11 +255,11 @@
 
                 document.querySelector('#next').removeAttribute('disabled', 'disabled');
             });
-                if ($('input[name="department_id"]').is(':checked') == false) { 
-                    document.querySelector('#next').setAttribute('disabled','disabled')
-                } else {
-                    document.querySelector('#next').removeAttribute('disabled', 'disabled');
-                }
+            if ($('input[name="department_id"]').is(':checked') == false) {
+                document.querySelector('#next').setAttribute('disabled', 'disabled')
+            } else {
+                document.querySelector('#next').removeAttribute('disabled', 'disabled');
+            }
         });
         // set button disabled for not selected department
     </script>
