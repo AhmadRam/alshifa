@@ -31,7 +31,7 @@
                 {{-- <section class="section"> --}}
                 <section class="section">
                     <h3>Choose Department :</h3>
-                    <div class="swiper">
+                    <div class="mainSwiper">
                         <div class="swiper-wrapper">
                             @foreach ($departments as $key => $item)
                                 <div class="swiper-slide">
@@ -55,7 +55,7 @@
 
                 <section class="section">
                     <h3>Choose Hospital :</h3>
-                    <div class="swiper">
+                    <div class="mainSwiper">
                         <div class="swiper-wrapper" id="hospitals">
                         </div>
                         <!-- Add Pagination -->
@@ -71,7 +71,7 @@
                     <h3>Choose Hotels :</h3>
 
 
-                    <div class="swiper">
+                    <div class="mainSwiper">
                         <div class="swiper-wrapper">
                             @foreach ($hotels as $key => $item)
                                 <div class="swiper-slide">
@@ -132,7 +132,6 @@
     </section>
 @endsection
 @section('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script>
         function getHospital(id) {
             let url = `/getHospitals/${id}`;
@@ -152,7 +151,7 @@
                 }
             });
         }
-        const swiper = new Swiper('.swiper', {
+        const swiper = new Swiper('.mainSwiper', {
             // Optional parameters
             direction: 'horizontal',
             slidesPerView: 4,
@@ -234,7 +233,6 @@
             slidesPerView: 4,
             spaceBetween: 20,
             centeredSlides: true,
-
             // If we need pagination
             pagination: {
                 el: '.swiper-pagination',

@@ -97,18 +97,6 @@
         </div>
     </section>
 
-    {{-- <section class="ftco-intro img" style="background-image: url({{ asset('asset/images/bg_2.jpg') }});">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-9 text-center">
-                    <h2>Your Health is Our Priority</h2>
-                    <p>We can manage your dream building A small river named Duden flows by their place</p>
-                    <p class="mb-0"><a href="#" class="btn btn-white px-4 py-3">Search Places</a></p>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 
     <section class="ftco-section ftco-no-pt ftco-no-pb" id="department-section">
         <div class="container-fluid px-0">
@@ -141,142 +129,130 @@
                     </div>
                     @endif
                     @endforeach
-
-
-                    {{-- <div class="col-md-4">
-                            <div class="department-wrap p-4 ftco-animate">
-                                <div class="text p-2 text-center">
-                                    <div class="icon">
-                                        <span class="flaticon-stethoscope"></span>
-                                    </div>
-                                    <h3><a href="#">Opthalmology</a></h3>
-                                    <p>Far far away, behind the word mountains</p>
-                                </div>
+                    <div class="department-wrap p-4 ftco-animate">
+                        <div class="text p-2 text-center">
+                            <div class="icon">
+                                <span class="flaticon-stethoscope"></span>
                             </div>
-                            <div class="department-wrap p-4 ftco-animate">
-                                <div class="text p-2 text-center">
-                                    <div class="icon">
-                                        <span class="flaticon-stethoscope"></span>
-                                    </div>
-                                    <h3><a href="#">Cardiology</a></h3>
-                                    <p>Far far away, behind the word mountains</p>
-                                </div>
-                            </div>
-                            <div class="department-wrap p-4 ftco-animate">
-                                <div class="text p-2 text-center">
-                                    <div class="icon">
-                                        <span class="flaticon-stethoscope"></span>
-                                    </div>
-                                    <h3><a href="#">Traumatology</a></h3>
-                                    <p>Far far away, behind the word mountains</p>
-                                </div>
-                            </div>
+                            <h3><a href="#">Opthalmology</a></h3>
+                            <p>Far far away, behind the word mountains</p>
                         </div>
+                    </div>
+                    <div class="department-wrap p-4 ftco-animate">
+                        <div class="text p-2 text-center">
+                            <div class="icon">
+                                <span class="flaticon-stethoscope"></span>
+                            </div>
+                            <h3><a href="#">Cardiology</a></h3>
+                            <p>Far far away, behind the word mountains</p>
+                        </div>
+                    </div>
+                    <div class="department-wrap p-4 ftco-animate">
+                        <div class="text p-2 text-center">
+                            <div class="icon">
+                                <span class="flaticon-stethoscope"></span>
+                            </div>
+                            <h3><a href="#">Traumatology</a></h3>
+                            <p>Far far away, behind the word mountains</p>
+                        </div>
+                    </div>
+                </div>
 
-                        <div class="col-md-4">
-                            <div class="department-wrap p-4 ftco-animate">
-                                <div class="text p-2 text-center">
-                                    <div class="icon">
-                                        <span class="flaticon-stethoscope"></span>
-                                    </div>
-                                    <h3><a href="#">Nuclear Magnetic</a></h3>
-                                    <p>Far far away, behind the word mountains</p>
-                                </div>
+                <div class="col-md-4">
+                    <div class="department-wrap p-4 ftco-animate">
+                        <div class="text p-2 text-center">
+                            <div class="icon">
+                                <span class="flaticon-stethoscope"></span>
                             </div>
-                            <div class="department-wrap p-4 ftco-animate">
-                                <div class="text p-2 text-center">
-                                    <div class="icon">
-                                        <span class="flaticon-stethoscope"></span>
-                                    </div>
-                                    <h3><a href="#">X-ray</a></h3>
-                                    <p>Far far away, behind the word mountains</p>
-                                </div>
+                            <h3><a href="#">Nuclear Magnetic</a></h3>
+                            <p>Far far away, behind the word mountains</p>
+                        </div>
+                    </div>
+                    <div class="department-wrap p-4 ftco-animate">
+                        <div class="text p-2 text-center">
+                            <div class="icon">
+                                <span class="flaticon-stethoscope"></span>
                             </div>
-                            <div class="department-wrap p-4 ftco-animate">
-                                <div class="text p-2 text-center">
-                                    <div class="icon">
-                                        <span class="flaticon-stethoscope"></span>
-                                    </div>
-                                    <h3><a href="#">Cardiology</a></h3>
-                                    <p>Far far away, behind the word mountains</p>
-                                </div>
+                            <h3><a href="#">X-ray</a></h3>
+                            <p>Far far away, behind the word mountains</p>
+                        </div>
+                    </div>
+                    <div class="department-wrap p-4 ftco-animate">
+                        <div class="text p-2 text-center">
+                            <div class="icon">
+                                <span class="flaticon-stethoscope"></span>
                             </div>
-                        </div> --}}
+                            <h3><a href="#">Cardiology</a></h3>
+                            <p>Far far away, behind the word mountains</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
         </div>
         </div>
     </section>
 
     <section class="ftco-section" id="Hospitals-section">
-        <div class="container-fluid px-5">
+        <div class="container px-5">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
                     <h2 class="mb-4">Our Hospitals</h2>
-                    {{-- <p>Separated they live in. A small river named Duden flows by their place and supplies it with the
-                        necessary regelialia. It is a paradisematic country</p> --}}
                 </div>
             </div>
-
-            <div class="row mx-auto my-auto">
-                <div id="hospitals" class="carousel slide w-100" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        {{-- انتبه على كلاس الاكتيف --}}
-                        <div class="carousel-item py-8 active">
-                            <div class="row">
-                                @foreach ($hospitals as $key => $hospitalSlider)
-                                    <div class="col col{{ $key + 1 }}">
-                                        <div class="col-md-12 ftco-animate">
-                                            <div class="staff">
-                                                <div class="img-wrap d-flex align-items-stretch">
-                                                    <div class="img align-self-stretch"
-                                                        style="background-image: url({{ Voyager::image(json_decode($hospitalSlider->photo)[0] ?? null) }}">
-                                                    </div>
-                                                </div>
-                                                <div class="text pt-3 text-center">
-                                                    <h3 class="mb-2">{{ $hospitalSlider->name }}</h3>
-                                                    {{-- <span class="position mb-2">Neurologist</span> --}}
-                                                    <div class="faded">
-                                                        <p>{{ $hospitalSlider->short_description }}</p>
-                                                        <ul class="ftco-social text-center">
-                                                            <li class="ftco-animate"><a href="#"><span
-                                                                        class="icon-twitter"></span></a>
-                                                            </li>
-                                                            <li class="ftco-animate"><a href="#"><span
-                                                                        class="icon-facebook"></span></a></li>
-                                                            <li class="ftco-animate"><a href="#"><span
-                                                                        class="icon-google-plus"></span></a></li>
-                                                            <li class="ftco-animate"><a href="#"><span
-                                                                        class="icon-instagram"></span></a></li>
-                                                        </ul>
-                                                        <p><a href="{{ route('hospitals.view', $hospitalSlider->id) }}"
-                                                                class="btn btn-primary">View</a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+            <div class="hospitalsSwiper">
+                <div class="swiper-wrapper d-flex">
+                    @foreach ($hospitals as $key => $item)
+                        <div class="swiper-slide ftco-animate">
+                            <div class="staff hospitalsCard">
+                                <div class="img-wrap d-flex align-items-stretch">
+                                    <div class="img align-self-stretch ovarflow-hidden"
+                                        style="background-image: url({{ Voyager::image(json_decode($item->photo)[0] ?? null) }}">
                                     </div>
-                                @endforeach
-
+                                </div>
+                                <div class="text pt-3 text-center">
+                                    <h3 class="mb-2">{{ $item->name }}</h3>
+                                    <div class="faded">
+                                        <p>{{ $item->short_description }}</p>
+                                        <ul class="ftco-social">
+                                            <li class="ftco-animate">
+                                                <a href="#"><span class="icon-twitter"></span>
+                                                </a>
+                                            </li>
+                                            <li class="ftco-animate">
+                                                <a href="#">
+                                                    <span class="icon-facebook"></span>
+                                                </a>
+                                            </li>
+                                            <li class="ftco-animate">
+                                                <a href="#">
+                                                    <span class="icon-google-plus"></span>
+                                                </a>
+                                            </li>
+                                            <li class="ftco-animate">
+                                                <a href="#">
+                                                    <span span class="icon-instagram"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <p class="">
+                                            <a href="{{ route('hospitals.view', $item->id) }}" class="btn btn-primary">
+                                                View
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <a class="carousel-control-prev text-dark" href="#hospitals" role="button" data-slide="prev">
-                        <span class="fa fa-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next text-dark" href="#hospitals" role="button" data-slide="next">
-                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    @endforeach
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </div>
-
         </div>
     </section>
 
@@ -284,13 +260,6 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row d-flex align-items-center">
-                {{-- <div class="col-md-5 heading-section heading-section-white">
-                    <span class="subheading">Fun facts</span>
-                    <h2 class="mb-4">Over 5,468 patients trust us</h2>
-                    <p class="mb-0"><a href="/appointment" class="btn btn-secondary px-4 py-3">Make an appointment</a>
-                    </p>
-                </div> --}}
-                {{-- <div class="col-md-7"> --}}
                 <div class="col-md-12">
                     <div class="row pt-4">
                         <div class="col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
@@ -332,69 +301,62 @@
     </section>
 
     <section class="ftco-section" id="Hotels-section">
-        <div class="container-fluid px-5">
+        <div class="container px-5">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
                     <h2 class="mb-4">Our Hotels</h2>
-                    {{-- <p>Separated they live in. A small river named Duden flows by their place and supplies it with the
-                        necessary regelialia. It is a paradisematic country</p> --}}
                 </div>
             </div>
-            <div class="row mx-auto my-auto">
-                <div id="hotels" class="carousel slide w-100" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item py-8 active">
-                            <div class="row">
-                                @foreach ($hotels as $key => $hotelSlider)
-                                    <div class="col col{{ $key + 1 }}">
-                                        <div class="col-md-12 ftco-animate">
-                                            <div class="staff">
-                                                <div class="img-wrap d-flex align-items-stretch">
-                                                    <div class="img align-self-stretch"
-                                                        style="background-image: url({{ Voyager::image(json_decode($hotelSlider->photo)[0] ?? null) }}">
-                                                    </div>
-                                                </div>
-                                                <div class="text pt-3 text-center">
-                                                    <h3 class="mb-2">{{ $hotelSlider->name }}</h3>
-                                                    {{-- <span class="position mb-2">Neurologist</span> --}}
-                                                    <div class="faded">
-                                                        <p>{{ $hotelSlider->short_description }}</p>
-                                                        <ul class="ftco-social text-center">
-                                                            <li class="ftco-animate"><a href="#"><span
-                                                                        class="icon-twitter"></span></a>
-                                                            </li>
-                                                            <li class="ftco-animate"><a href="#"><span
-                                                                        class="icon-facebook"></span></a></li>
-                                                            <li class="ftco-animate"><a href="#"><span
-                                                                        class="icon-google-plus"></span></a></li>
-                                                            <li class="ftco-animate"><a href="#"><span
-                                                                        class="icon-instagram"></span></a></li>
-                                                        </ul>
-                                                        <p><a href="{{ route('hotels.view', $hotelSlider->id) }}"
-                                                                class="btn btn-primary">View</a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+            <div class="hospitalsSwiper">
+                <div class="swiper-wrapper d-flex">
+                    @foreach ($hotels as $key => $item)
+                        <div class="swiper-slide ftco-animate">
+                            <div class="staff hospitalsCard">
+                                <div class="img-wrap d-flex align-items-stretch">
+                                    <div class="img align-self-stretch ovarflow-hidden"
+                                        style="background-image: url({{ Voyager::image(json_decode($item->photo)[0] ?? null) }}">
                                     </div>
-                                @endforeach
-
+                                </div>
+                                <div class="text pt-3 text-center">
+                                    <h3 class="mb-2">{{ $item->name }}</h3>
+                                    <div class="faded">
+                                        <p>{{ $item->short_description }}</p>
+                                        <ul class="ftco-social">
+                                            <li class="ftco-animate">
+                                                <a href="#"><span class="icon-twitter"></span>
+                                                </a>
+                                            </li>
+                                            <li class="ftco-animate">
+                                                <a href="#">
+                                                    <span class="icon-facebook"></span>
+                                                </a>
+                                            </li>
+                                            <li class="ftco-animate">
+                                                <a href="#">
+                                                    <span class="icon-google-plus"></span>
+                                                </a>
+                                            </li>
+                                            <li class="ftco-animate">
+                                                <a href="#">
+                                                    <span span class="icon-instagram"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <p class="">
+                                            <a href="{{ route('hospitals.view', $item->id) }}" class="btn btn-primary">
+                                                View
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <a class="carousel-control-prev text-dark" href="#hotels" role="button" data-slide="prev">
-                        <span class="fa fa-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next text-dark" href="#hotels" role="button" data-slide="next">
-                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    @endforeach
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </div>
@@ -408,53 +370,58 @@
                     <p>Get the most accurate and up to date medical information through out our researchers</p>
                 </div>
             </div>
-            <div class="row mx-auto my-auto">
-                <div id="esearchs" class="carousel slide w-100" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item py-8 active">
-                            <div class="row">
-                                @foreach ($researches as $key => $research)
-                                    <div class="col col{{ $key + 1 }}">
-                                        <div class="col-md-4 ftco-animate">
-                                            <div class="blog-entry" style="max-width: 336px">
-                                                <a href="#" class="block-20"
-                                                    style="background-image: url({{ Voyager::image($research->photo) }})">
+            <div class="hospitalsSwiper">
+                <div class="swiper-wrapper d-flex">
+                    @foreach ($researches as $key => $item)
+                        <div class="swiper-slide ftco-animate">
+                            <div class="staff hospitalsCard">
+                                <div class="img-wrap d-flex align-items-stretch">
+                                    <div class="img align-self-stretch ovarflow-hidden"
+                                        style="background-image: url({{ Voyager::image(json_decode($item->photo)[0] ?? null) }}">
+                                    </div>
+                                </div>
+                                <div class="text pt-3 text-start">
+                                    <h3 class="mb-2">{{ $item->name }}</h3>
+                                    <div class="faded">
+                                        <p>{{ $item->short_description }}</p>
+                                        <ul class="ftco-social">
+                                            <li class="ftco-animate">
+                                                <a href="#"><span class="icon-twitter"></span>
                                                 </a>
-                                                <div class="text d-block">
-                                                    <div class="meta mb-3">
-                                                        <div><a
-                                                                href="#">{{ $research->created_at->format('Y.m.d H:i:s') }}</a>
-                                                        </div>
-                                                        {{-- <div><a href="#">Admin</a></div> --}}
-                                                        {{-- <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div> --}}
-                                                    </div>
-                                                    <h3 class="heading"><a
-                                                            href="{{ route('researches.view', $research->id) }}">{{ $research->short_description }}.
-                                                            </p>
-                                                            <p><a href="{{ route('researches.view', $research->id) }}"
-                                                                    class="btn btn-primary py-2 px-3">Read more</a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                @endforeach
+                                            </li>
+                                            <li class="ftco-animate">
+                                                <a href="#">
+                                                    <span class="icon-facebook"></span>
+                                                </a>
+                                            </li>
+                                            <li class="ftco-animate">
+                                                <a href="#">
+                                                    <span class="icon-google-plus"></span>
+                                                </a>
+                                            </li>
+                                            <li class="ftco-animate">
+                                                <a href="#">
+                                                    <span span class="icon-instagram"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <p class="">
+                                            <a href="{{ route('hospitals.view', $item->id) }}" class="btn btn-primary">
+                                                View
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <a class="carousel-control-prev text-dark" href="#esearchs" role="button" data-slide="prev">
-                        <span class="fa fa-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next text-dark" href="#esearchs" role="button" data-slide="next">
-                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        </div>
         </div>
     </section>
 
@@ -474,12 +441,6 @@
                         @foreach ($patientsComments as $patientsComment)
                             <div class="item" style="background-color: #7b59a466">
                                 <div class="testimony-wrap text-center py-4 pb-5">
-                                    {{-- <div class="user-img"
-                                        style="background-image: url({{ Voyager::image($patientsComment->photo) }})">
-                                        <span class="quote d-flex align-items-center justify-content-center">
-                                            <i class="icon-quote-left"></i>
-                                        </span>
-                                    </div> --}}
                                     <div class="text px-4">
                                         <h2 class="mb-4" style="color: black">{{ $patientsComment->comment }}</h2>
                                         @for ($i = 0; $i < $patientsComment->rating; $i++)
@@ -527,7 +488,6 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-phone2"></span>
                         </div>
-                        {{-- <p><a href="//api.whatsapp.com/send?phone=905550243555MOBILE_NUMBER&text=Hello">+90 555 024 35 55</a></p> --}}
                         <p><a href="//api.whatsapp.com/send?phone=96566670028MOBILE_NUMBER&text=Hello">+96566670028</a></p>
                     </div>
                 </div>
@@ -548,32 +508,44 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="row no-gutters block-9">
-                <div class="col-md-6 order-md-last d-flex">
-                    <form action="#" class="bg-light p-5 contact-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Send Message" class="btn btn-secondary py-3 px-5">
-                        </div>
-                    </form>
-
-                </div>
-
-                <div class="col-md-6 d-flex">
-                    <div id="map" class="bg-white"></div>
-                </div>
-            </div> --}}
         </div>
     </section>
+@endsection
+
+@section('scripts')
+    <script>
+        const hospitalsSwiper = new Swiper('.hospitalsSwiper', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                }
+            }
+        });
+        $(document).ready(function() {
+
+            var slidewidth = $('.hospitalsSwiper .swiper-slide').css('width');
+            $('.hospitalsSwiper .hospitalsCard').css('width', slidewidth);
+        });
+    </script>
 @endsection

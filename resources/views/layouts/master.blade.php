@@ -180,6 +180,7 @@
         }
     </script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 @yield('scripts')
 <script>
     $(document).ready(function() {
