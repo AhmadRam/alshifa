@@ -1,5 +1,5 @@
 @extends('layouts.master')
-<?php $locale = request()->get('locale') ?? 'en' ?>
+<?php $locale = app()->getLocale() ?>
 
 @section('content')
     <section class="hero-wrap hero-wrap-2"

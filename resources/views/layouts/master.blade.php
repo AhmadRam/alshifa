@@ -52,7 +52,7 @@
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-    <?php $locale = request()->get('locale') ?? 'en' ?>
+    <?php $locale = app()->getLocale() ?>
 
     <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-light ftco-navbar-light site-navbar-target"
         id="ftco-navbar">

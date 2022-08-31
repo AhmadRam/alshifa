@@ -1,5 +1,5 @@
 @extends('layouts.master')
-<?php $locale = request()->get('locale') ?? 'en' ?>
+<?php $locale = app()->getLocale() ?>
 @section('css')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <style>

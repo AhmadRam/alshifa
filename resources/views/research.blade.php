@@ -1,5 +1,5 @@
 @extends('layouts.master')
-<?php $locale = request()->get('locale') ?? 'en'; ?>
+<?php $locale = app()->getLocale(); ?>
 @section('content')
     <section class="hero-wrap hero-wrap-2"
         style="background-image: url({{ Voyager::image(json_decode($research->banner_photo)[0] ?? null) }});height:400px"

@@ -1,4 +1,4 @@
-<?php $locale = request()->get('locale') ?? 'en' ?>
+<?php $locale = app()->getLocale() ?>
 <form method="POST" action="{{ route('customer.consultations.store') }}" class="appointment-form ftco-animate"
     enctype='multipart/form-data'>
     @csrf

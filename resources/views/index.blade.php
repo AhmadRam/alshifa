@@ -1,5 +1,5 @@
 @extends('layouts.master')
-<?php $locale = request()->get('locale') ?? 'en' ?>
+<?php $locale = app()->getLocale() ?>
 @section('content')
     <section class="hero-wrap js-fullheight" style="background-image: url({{ asset('asset/images/bg_3.jpg') }});"
         data-section="home" data-stellar-background-ratio="0.5">
