@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\URL;
 
 class Localization
 {
@@ -17,9 +18,12 @@ class Localization
      */
     public function handle(Request $request, Closure $next)
     {
-        $locale = $request->locale ?? 'en';
+        $locale = $request->locale ?? cache()->get('locale');
+        if (cache()->get('locale') != $locale) {
+            cache()->put('locale', $request->locale ?? 'en');
+        }
 
-        App::setLocale($locale);
+        App::setLocale(cache()->get('locale'));
 
         return $next($request);
     }

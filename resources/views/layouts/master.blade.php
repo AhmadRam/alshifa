@@ -67,7 +67,7 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav nav ml-auto">
-                    <li class="nav-item"><a href="/?locale={{ request()->get('locale') != null ? request()->get('locale') : "en"}}" class="nav-link"><span>{{ trans('Home') }}</span></a></li>
+                    <li class="nav-item"><a href="/" class="nav-link"><span>{{ trans('Home') }}</span></a></li>
                     </li>
                     <li class="nav-item position-relative">
                         <a class=" dropdown-toggle text-black nav-link d-flex align-items-center" href="#"
