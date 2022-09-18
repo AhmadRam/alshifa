@@ -1,5 +1,5 @@
 @extends('layouts.master')
-<?php $locale = app()->getLocale() ?>
+<?php $locale = app()->getLocale(); ?>
 @section('content')
     <section class="hero-wrap js-fullheight" style="background-image: url({{ asset('asset/images/bg_3.jpg') }});"
         data-section="home" data-stellar-background-ratio="0.5">
@@ -8,7 +8,7 @@
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start"
                 data-scrollax-parent="true">
                 <div class="col-md-7 pt-5 ftco-animate">
-                    <div class="mt-5">
+                    <div class="mt-5 text-{{ $locale == 'ar' ? 'end' : 'start' }}">
                         <span class="subheading">{{ trans('Welcome to Alshifa CLINIC') }}</span>
                         <h1 class="mb-4">{{ trans('We are here') }} <br>{{ trans('for your Healthcare') }}</h1>
                         <p class="mb-4">
@@ -33,7 +33,8 @@
                 <div class="col-md-6 col-lg-7 pl-lg-5 py-md-5">
                     <div class="py-md-5">
                         <div class="row justify-content-start pb-3">
-                            <div class="col-md-12 heading-section ftco-animate p-4 p-lg-5">
+                            <div
+                                class="col-md-12 head ing-section ftco-animate p-4 p-lg-5 text-{{ $locale == 'ar' ? 'end' : 'start' }}">
                                 <h2 class="mb-4">{{ trans('We Are') }} <span>{{ trans('Alshifa') }}</span>
                                     {{ trans('Clinic') }}</h2>
                                 <p>{{ trans('Alshifa Clinic project aims to provide a safe and reliable environment for people coming from all over the world to obtain health care for international patients in Istanbul, highly qualified medical staff, surgeons and professors in various medical fields, and by contracting with the best hospitals designed according to international standards and the best health care providers in Istanbul, we strive to provide high quality services, smooth post-operative care, and a clean and healthy recovery environment. We also offer you a comfortable travel environment through our agreements with the best tourist facilities, transportation services and hotel services') }}
@@ -66,7 +67,7 @@
                             @foreach ($our_services as $our_service)
                                 <div class="col-md-6 d-flex align-self-stretch ftco-animate">
                                     <div class="media block-6 services d-flex">
-                                        <div class="icon justify-content-center align-items-center d-flex">
+                                        <div class="icon justify-content-center align-items-center d-flex ">
                                             @if ($our_service->icon)
                                                 <span class="{{ $our_service->icon }}"></span>
                                             @else
@@ -197,7 +198,7 @@
                     <h2 class="mb-4">{{ trans('Our Hospitals') }}</h2>
                 </div>
             </div>
-            <div class="hospitalsSwiper">
+            <div class="homeSwiper">
                 <div class="swiper-wrapper d-flex">
                     @foreach ($hospitals as $key => $item)
                         <div class="swiper-slide ftco-animate">
@@ -242,12 +243,12 @@
                             </div>
                         </div>
                     @endforeach
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                    <!-- Add Arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
         </div>
@@ -304,7 +305,7 @@
                     <h2 class="mb-4">{{ trans('Our Hotels') }}</h2>
                 </div>
             </div>
-            <div class="hospitalsSwiper">
+            <div class="homeSwiper">
                 <div class="swiper-wrapper d-flex">
                     @foreach ($hotels as $key => $item)
                         <div class="swiper-slide ftco-animate">
@@ -349,12 +350,12 @@
                             </div>
                         </div>
                     @endforeach
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                    <!-- Add Arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
@@ -368,7 +369,7 @@
                     </p>
                 </div>
             </div>
-            <div class="hospitalsSwiper">
+            <div class="secondSwiper">
                 <div class="swiper-wrapper d-flex">
                     @foreach ($researches as $key => $item)
                         <div class="swiper-slide ftco-animate">
@@ -413,12 +414,12 @@
                             </div>
                         </div>
                     @endforeach
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                    <!-- Add Arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
@@ -468,7 +469,7 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <p>{{trans('CONTACT US')}}</p>
+                    <p>{{ trans('CONTACT US') }}</p>
                 </div>
             </div>
             <div class="row d-flex contact-info mb-5">
@@ -511,7 +512,10 @@
 
 @section('scripts')
     <script>
-        const hospitalsSwiper = new Swiper('.hospitalsSwiper', {
+        const secondSwiper = new Swiper('.secondSwiper', {
+            centeredSlides: true,
+            loop: true,
+            dir: rtl,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -535,7 +539,37 @@
                 },
                 320: {
                     slidesPerView: 1,
+                    spaceBetween: 30,
+                }
+            }
+        });
+        const homeSwiper = new Swiper('.homeSwiper', {
+            centeredSlides: true,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                1024: {
+                    slidesPerView: 2,
                     spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
                 }
             }
         });

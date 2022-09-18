@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
     <title>{{ trans('Alshifa clinic') }}</title>
@@ -23,13 +23,18 @@
     <link rel="stylesheet" href="{{ asset('asset/css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
 
-    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> --}}
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
 
 
     <link rel="icon" sizes="8x8" href="{{ asset('asset/images/Logo.png') }}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    @if (app()->getLocale() == 'ar')
+        <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css"
+            integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe" crossorigin="anonymous">
+    @endif
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
@@ -52,7 +57,7 @@
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-    <?php $locale = app()->getLocale() ?>
+    <?php $locale = app()->getLocale(); ?>
 
     <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-light ftco-navbar-light site-navbar-target"
         id="ftco-navbar">
@@ -92,21 +97,24 @@
                             class="nav-link"><span>{{ trans('Contact Us') }}</span></a></li>
                     <li class="nav-item"><a href="/#about-section"
                             class="nav-link"><span>{{ trans('About Us') }}</span></a>
-                            <li class="nav-item position-relative">
-                                <a class=" dropdown-toggle text-black nav-link d-flex align-items-center" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span>🌐</span>
+                    <li class="nav-item position-relative" >
+                        <a class=" dropdown-toggle text-black nav-link d-flex align-items-center" href="#"
+                            role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span>🌐</span>
+                        </a>
+                        <ul class="dropdown-menu position-absolute text-center" aria-labelledby="dropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" href="?locale=ar">
+                                    {{ trans('Arabic') }}
                                 </a>
-                                <ul class="dropdown-menu position-absolute" aria-labelledby="dropdownMenuLink">
-                                    <li>
-                                        <a class="dropdown-item" href="?locale=ar">
-                                            {{ trans('Arabic') }}
-                                        </a>
-                                        <a class="dropdown-item" href="?locale=en">
-                                            {{ trans('English') }}
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
+                            <li>
+                                <a class="dropdown-item" href="?locale=en">
+                                    {{ trans('English') }}
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item cta mr-md-2"><a href="/appointment"
                             class="nav-link">{{ trans('FREE CONSULTATION') }}</a>
                     </li>
@@ -123,7 +131,7 @@
         <div class="container-fluid px-md-5">
             <div class="row mb-8">
                 <div class="col-md">
-                    <div class="ftco-footer-widget mb-4">
+                    <div class="ftco-footer-widget mb-4 text-center">
                         <a class="navbar-brand" href="/"><img src="{{ asset('asset/images/Logo.png') }}"
                                 height="70px" width="110px" /></a>
                         <p>{{ trans('Far far away, behind the word mountains, far from the countries') }}.</p>
@@ -137,18 +145,18 @@
                 </div>
 
                 <div class="col-md">
-                    <div class="ftco-footer-widget mb-4">
+                    <div class="ftco-footer-widget mb-4 text-{{ $locale == 'ar' ? 'right' : 'left' }}">
                         <h2 class="ftco-heading-2">{{ trans('Have a Questions') }}?</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon icon-map-marker"></span><span class="text">Kuwait</span></li>
+                                <li><a class="icon icon-map-marker"></a><a class="text">Kuwait</a></li>
                                 {{-- <li><a target="_blank" href="//api.whatsapp.com/send?phone=905550243555MOBILE_NUMBER&text=Hello"><span class="icon icon-phone"></span><span class="text">+90 555 024 35 55</a></span></li> --}}
                                 <li><a target="_blank"
                                         href="//api.whatsapp.com/send?phone=96566670028MOBILE_NUMBER&text=Hello"><span
                                             class="icon icon-phone"></span><span
                                             class="text">+96566670028</a></span></li>
                                 <li><a href="mailto: info@alshifa-kw.com"><span
-                                            class="icon icon-envelope pr-4"></span><span
+                                            class="icon icon-envelope"></span><span
                                             class="text">info@alshifa-kw.com</span></a></li>
                             </ul>
                         </div>
@@ -188,20 +196,25 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
+
     <script src="{{ asset('asset/js/main.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/js/toastr.js"></script>
 
     <script>
+        var lang = "{{ app()->getLocale() }}";
+        var url = "{{ url('lang') }}";
+        var rtl = "{{ app()->getLocale() == 'ar' ? 'true' : 'false' }}";
+
         $(document).ready(function() {
             toastr.options.timeOut = 10000;
             @if (Session::has('error'))
                 toastr.error('{{ Session::get('error') }}');
-            @elseif(Session::has('success'))
+            @elseif (Session::has('success'))
                 toastr.success('{{ Session::get('success') }}');
-            @elseif(Session::has('warning'))
+            @elseif (Session::has('warning'))
                 toastr.success('{{ Session::get('warning') }}');
-            @elseif(Session::has('info'))
+            @elseif (Session::has('info'))
                 toastr.success('{{ Session::get('info') }}');
             @endif
         });
