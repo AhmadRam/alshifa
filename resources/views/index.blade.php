@@ -115,7 +115,7 @@
                             <div class="department-wrap p-4 ftco-animate">
                                 <div class="text p-2 text-center" style="height: 170px;">
                                     <div class="icon">
-                                        <span class="flaticon-stethoscope"></span>
+                                        <img src="{{ Voyager::image((json_decode($department->photo)[0] ?? null)) }}" height="80px">
                                     </div>
                                     <h3><a
                                             href="{{ route('departments.view', $department->id) }}">{{ $department->{'name_' . $locale} }}</a>
