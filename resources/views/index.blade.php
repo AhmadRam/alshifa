@@ -109,7 +109,7 @@
                         <?php $number = 0; ?>
                         @foreach ($departments as $department)
                             <?php $number++; ?>
-                            @if ($number == 1 || $number == 4 || $number == 7 || $number == 10)
+                            @if ($number == 1 || $number == 4 || $number == 7 || $number == 10 || $number == 13)
                                 <div class="col-md-4">
                             @endif
                             <div class="department-wrap p-4 ftco-animate">
