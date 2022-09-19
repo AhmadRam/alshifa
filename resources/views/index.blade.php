@@ -123,7 +123,7 @@
                                     <p>{{ $department->{'short_description_' . $locale} }}</p>
                                 </div>
                             </div>
-                            @if ($number == 3 || $number == 6 || $number == 9)
+                            @if ($number == 3 || $number == 6 || $number == 9 || $number == 12)
                     </div>
                     @endif
                     @endforeach
