@@ -110,7 +110,7 @@
                         @foreach ($departments as $department)
                             <?php $number++; ?>
                             @if ($number == 1 || $number == 4 || $number == 7 || $number == 10 || $number == 13)
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                             @endif
                             <div class="department-wrap p-4 ftco-animate">
                                 <div class="text p-2 text-center" style="height: 170px;">
@@ -123,7 +123,7 @@
                                     <p>{{ $department->{'short_description_' . $locale} }}</p>
                                 </div>
                             </div>
-                            @if ($number == 3 || $number == 6 || $number == 9 || $number == 12)
+                            @if ($number == 3 || $number == 6 || $number == 9 || $number == 12 || $number == 15)
                     </div>
                     @endif
                     @endforeach
