@@ -68,12 +68,12 @@
                                 <div class="col-md-6 d-flex align-self-stretch ftco-animate">
                                     <div class="media block-6 services d-flex">
                                         <div class="icon justify-content-center align-items-center d-flex ">
-                                            @if ($our_service->icon)
-                                                <span class="{{ $our_service->icon }}"></span>
-                                            @else
-                                                <img class="w-50" src="{{ asset('asset/images/loc.png') }}"
+                                            {{-- @if ($our_service->icon) --}}
+                                                {{-- <span class="{{ $our_service->icon }}"></span> --}}
+                                            {{-- @else --}}
+                                                <img class="w-50" src="{{ Voyager::image(($our_service->icon ?? asset('asset/images/loc.png'))) }}"
                                                     alt="">
-                                            @endif
+                                            {{-- @endif --}}
                                         </div>
                                         <div class="media-body pl-md-4">
                                             <h3 class="heading mb-3">{{ $our_service->{'title_' . $locale} }}</h3>
