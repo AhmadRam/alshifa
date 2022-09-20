@@ -359,7 +359,7 @@
             </div>
         </div>
     </section>
-
+    @if($researches->count())
     <section class="ftco-section bg-light" id="blog-section">
         <div class="container-fluid px-5">
             <div class="row justify-content-center mb-5 pb-5">
@@ -423,7 +423,7 @@
             </div>
         </div>
     </section>
-
+    @endif
     <section class="ftco-section testimony-section img"
         style="background-image: url({{ asset('asset/images/bg_3.jpg') }});">
         <div class="overlay"></div>
