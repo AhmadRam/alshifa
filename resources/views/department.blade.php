@@ -1,5 +1,5 @@
 @extends('layouts.master')
-<?php $locale = app()->getLocale() ?>
+<?php $locale = app()->getLocale(); ?>
 
 @section('content')
     <section class="hero-wrap hero-wrap-2"
@@ -9,7 +9,8 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-start">
                 <div class="col-md-9 ftco-animate pb-4">
-                    <h1 class="mb-3 bread" style="padding-bottom: 285px;text-align: center">{{ $department->{'name_' . $locale} }}</h1>
+                    <h1 class="mb-3 bread" style="padding-bottom: 285px;text-align: center">
+                        {{ $department->{'name_' . $locale} }}</h1>
                     <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
                                     class="ion-ios-arrow-forward"></i></a></span> <span>Appointment <i
                                 class="ion-ios-arrow-forward"></i></span></p>
@@ -43,19 +44,19 @@
                     <div class="appointment-wrap bg-white p-5 d-flex align-items-center">
                         <div class="row justify-content pb-5" style="width: 100%">
                             <div class="col-md-12 heading-section ftco-animate">
-                                <h2 class="mb-3">{{ $department->{'title_' . $locale} }}</h2>
+                                <h2 class="mb-3">{{ $department->{'name_' . $locale} }}</h2>
                             </div>
 
                             <div class="col-md-10 d-flex align-self-stretch ftco-animate">
                                 <div class="media block-6 services d-flex">
                                     <div class="media-body pl-md-4">
-                                        <p>{{ $department->{'description_' . $locale} }}</p>
+                                        <p>{!! $department->{'description_' . $locale} !!}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div id="carouselExampleControls" class="col-md-4 carousel slide" data-bs-ride="carousel">
+                        {{-- <div id="carouselExampleControls" class="col-md-4 carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 @if (is_array(json_decode($department->photo)))
                                     @foreach (json_decode($department->photo) as $key => $photo)
@@ -75,12 +76,10 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">{{ trans('Next') }}</span>
                             </button>
-                        </div>
-
+                        </div> --}}
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 @endsection

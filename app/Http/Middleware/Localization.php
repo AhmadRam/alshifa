@@ -20,7 +20,7 @@ class Localization
     {
         $locale = $request->locale ?? cache()->get('locale');
         if (cache()->get('locale') != $locale) {
-            cache()->put('locale', $request->locale ?? 'en');
+            cache()->put('locale', $request->locale ?? 'ar');
         }
 
         App::setLocale(cache()->get('locale'));

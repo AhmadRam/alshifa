@@ -128,11 +128,13 @@ class HomeController extends Controller
     {
         $departments = Department::where('status', 1)->orderBy('sort_order', 'asc')->get();
 
+        $hospitals = Hospital::orderBy('sort_order', 'asc')->get();
+
         $hotels = Hotel::orderBy('sort_order', 'asc')->get();
 
         $transfers = Transfer::all();
 
-        return view('operationPlan', compact('transfers', 'departments', 'hotels'));
+        return view('operationPlan', compact('transfers', 'departments', 'hotels', 'hospitals'));
     }
 
     public function patientsCommentPage()
