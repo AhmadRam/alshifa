@@ -448,7 +448,7 @@
                                         @for ($i = 0; $i < 5 - $patientsComment->rating; $i++)
                                             <span class="fa fa-star"></span>
                                         @endfor
-                                        <h4 class="name">{{ $patientsComment->{'name_' . $locale} }}</h4>
+                                        <h4 class="name">{{ $patientsComment->name }}</h4>
                                         <span class="position">{{ $patientsComment->created_at }}</span>
                                     </div>
                                 </div>
