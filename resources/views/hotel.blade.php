@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-start">
                 <div class="col-md-9 ftco-animate pb-4">
-                    <h1 class="mb-3 bread" style="padding-bottom: 285px;text-align: center">{{ $hotel->name_[$locale] }}</h1>
+                    <h1 class="mb-3 bread" style="padding-bottom: 285px;text-align: center">{{ $hotel->{'name_' . $locale} }}</h1>
                     <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
                                     class="ion-ios-arrow-forward"></i></a></span> <span>Appointment <i
                                 class="ion-ios-arrow-forward"></i></span></p>
@@ -42,7 +42,7 @@
                     <div class="appointment-wrap bg-white p-5 d-flex align-items-center">
                         <div class="row justify-content pb-5" style="width: 100%">
                             <div class="col-md-12 heading-section ftco-animate">
-                                <h2 class="mb-3">{{ $hotel->{'title_' . $locale} }}</h2>
+                                <h2 class="mb-3">{{ $hotel->{'name_' . $locale} }}</h2>
                             </div>
 
                             <div class="col-md-10 d-flex align-self-stretch ftco-animate">

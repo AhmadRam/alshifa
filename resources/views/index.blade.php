@@ -200,18 +200,18 @@
             </div>
             <div class="homeSwiper">
                 <div class="swiper-wrapper d-flex">
-                    @foreach ($hospitals as $key => $item)
+                    @foreach ($hospitals as $key => $hospital)
                         <div class="swiper-slide ftco-animate">
                             <div class="staff hospitalsCard">
                                 <div class="img-wrap d-flex align-items-stretch">
                                     <div class="img align-self-stretch ovarflow-hidden"
-                                        style="background-image: url({{ Voyager::image(json_decode($item->photo)[0] ?? null) }}">
+                                        style="background-image: url({{ Voyager::image(json_decode($hospital->photo)[0] ?? null) }}">
                                     </div>
                                 </div>
                                 <div class="text pt-3 text-center">
-                                    <h3 class="mb-2">{{ $item->{'name_' . $locale} }}</h3>
+                                    <h3 class="mb-2">{{ $hospital->{'name_' . $locale} }}</h3>
                                     <div class="faded">
-                                        <p>{{ $item->{'short_description_' . $locale} }}</p>
+                                        <p>{{ $hospital->{'short_description_' . $locale} }}</p>
                                         <ul class="ftco-social">
                                             <li class="ftco-animate">
                                                 <a href="#"><span class="icon-twitter"></span>
@@ -234,7 +234,7 @@
                                             </li>
                                         </ul>
                                         <p class="">
-                                            <a href="{{ route('hospitals.view', $item->id) }}" class="btn btn-primary">
+                                            <a href="{{ route('hospitals.view', $hospital->id) }}" class="btn btn-primary">
                                                 View
                                             </a>
                                         </p>
@@ -307,18 +307,18 @@
             </div>
             <div class="homeSwiper">
                 <div class="swiper-wrapper d-flex">
-                    @foreach ($hotels as $key => $item)
+                    @foreach ($hotels as $key => $hotel)
                         <div class="swiper-slide ftco-animate">
                             <div class="staff hospitalsCard">
                                 <div class="img-wrap d-flex align-items-stretch">
                                     <div class="img align-self-stretch ovarflow-hidden"
-                                        style="background-image: url({{ Voyager::image(json_decode($item->photo)[0] ?? null) }}">
+                                        style="background-image: url({{ Voyager::image(json_decode($hotel->photo)[0] ?? null) }}">
                                     </div>
                                 </div>
                                 <div class="text pt-3 text-center">
-                                    <h3 class="mb-2">{{ $item->{'name_' . $locale} }}</h3>
+                                    <h3 class="mb-2">{{ $hotel->{'name_' . $locale} }}</h3>
                                     <div class="faded">
-                                        <p>{{ $item->{'short_description_' . $locale} }}</p>
+                                        <p>{{ $hotel->{'short_description_' . $locale} }}</p>
                                         <ul class="ftco-social">
                                             <li class="ftco-animate">
                                                 <a href="#"><span class="icon-twitter"></span>
@@ -341,7 +341,7 @@
                                             </li>
                                         </ul>
                                         <p class="">
-                                            <a href="{{ route('hospitals.view', $item->id) }}" class="btn btn-primary">
+                                            <a href="{{ route('hotels.view', $hotel->id) }}" class="btn btn-primary">
                                                 View
                                             </a>
                                         </p>
