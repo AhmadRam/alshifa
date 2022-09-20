@@ -371,18 +371,18 @@
             </div>
             <div class="secondSwiper">
                 <div class="swiper-wrapper d-flex">
-                    @foreach ($researches as $key => $item)
+                    @foreach ($researches as $key => $researche)
                         <div class="swiper-slide ftco-animate">
                             <div class="staff hospitalsCard">
                                 <div class="img-wrap d-flex align-items-stretch">
                                     <div class="img align-self-stretch ovarflow-hidden"
-                                        style="background-image: url({{ Voyager::image(json_decode($item->photo)[0] ?? null) }}">
+                                        style="background-image: url({{ Voyager::image(json_decode($researche->photo)[0] ?? null) }}">
                                     </div>
                                 </div>
                                 <div class="text pt-3 text-start">
-                                    <h3 class="mb-2">{{ $item->{'name_' . $locale} }}</h3>
+                                    <h3 class="mb-2">{{ $researche->{'name_' . $locale} }}</h3>
                                     <div class="faded">
-                                        <p>{{ $item->{'short_description_' . $locale} }}</p>
+                                        <p>{{ $researche->{'short_description_' . $locale} }}</p>
                                         <ul class="ftco-social">
                                             <li class="ftco-animate">
                                                 <a href="#"><span class="icon-twitter"></span>
@@ -405,7 +405,7 @@
                                             </li>
                                         </ul>
                                         <p class="">
-                                            <a href="{{ route('hospitals.view', $item->id) }}" class="btn btn-primary">
+                                            <a href="{{ route('researches.view', $researche->id) }}" class="btn btn-primary">
                                                 View
                                             </a>
                                         </p>
