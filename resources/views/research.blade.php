@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-start">
                 <div class="col-md-9 ftco-animate pb-4">
-                    <h1 class="mb-3 bread" style="padding-bottom: 285px;text-align: center">{{ $research->name_[$locale] }}
+                    <h1 class="mb-3 bread" style="padding-bottom: 285px;text-align: center">{{ $research->{'name_' . $locale} }}
                     </h1>
                     <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
                                     class="ion-ios-arrow-forward"></i></a></span> <span>Appointment <i
