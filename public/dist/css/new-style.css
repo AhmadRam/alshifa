@@ -1,0 +1,37 @@
+.department .head-section {
+  position: relative;
+  height: 500px;
+}
+.department .head-section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.department .head-section h1 {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  color: #000000;
+  font-size: 50px;
+  font-weight: 700;
+  z-index: 1;
+}
+.department .head-section h1:lang(ar) {
+  text-align: right;
+  right: 5%;
+  left: auto;
+}
+.department .description-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.department .description-content .description {
+  width: fit-content;
+  padding: 20px;
+}

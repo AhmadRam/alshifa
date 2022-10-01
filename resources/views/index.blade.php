@@ -514,7 +514,6 @@
     <script>
         const secondSwiper = new Swiper('.secondSwiper', {
             centeredSlides: true,
-            loop: true,
             dir: rtl,
             pagination: {
                 el: '.swiper-pagination',
@@ -545,7 +544,6 @@
         });
         const homeSwiper = new Swiper('.homeSwiper', {
             centeredSlides: true,
-            loop: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
