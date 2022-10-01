@@ -25,7 +25,7 @@ gulp.task('serve', gulp.series('sass', function() {
     
         gulp.watch(['public/asset/sass/*.scss', 'src/scss/*.scss'], gulp.series('sass'));
         gulp.watch("resources/*.blade.php").on('change', browserSync.reload);
-        // reload http://127.0.0.1:8000/ after change in blade file
+        
         
     }
 ));

@@ -371,41 +371,42 @@
             </div>
             <div class="secondSwiper">
                 <div class="swiper-wrapper d-flex">
-                    @foreach ($researches as $key => $researche)
+                    @foreach ($researches as $key => $item)
                         <div class="swiper-slide ftco-animate">
                             <div class="staff hospitalsCard">
                                 <div class="img-wrap d-flex align-items-stretch">
                                     <div class="img align-self-stretch ovarflow-hidden"
-                                        style="background-image: url({{ Voyager::image(json_decode($researche->photo)[0] ?? null) }}">
+                                        style="background-image: url({{ Voyager::image(json_decode($item->photo)[0] ?? null) }}">
                                     </div>
                                 </div>
                                 <div class="text pt-3 text-start">
-                                    <h3 class="mb-2">{{ $researche->{'name_' . $locale} }}</h3>
+                                    <h3 class="mb-2">{{ $item->{'name_' . $locale} }}</h3>
                                     <div class="faded">
-                                        <p>{{ $researche->{'short_description_' . $locale} }}</p>
+                                        <p>{{ $item->{'short_description_' . $locale} }}</p>
+                                       
                                         <ul class="ftco-social">
                                             <li class="ftco-animate">
                                                 <a href="#"><span class="icon-twitter"></span>
                                                 </a>
                                             </li>
                                             <li class="ftco-animate">
-                                                <a href="#">
+                                                <a href="https://facebook.com/sharer/sharer.php?u={{ route('researches.view', $item->id) }}">
                                                     <span class="icon-facebook"></span>
                                                 </a>
                                             </li>
                                             <li class="ftco-animate">
-                                                <a href="#">
+                                                <a href="https://plus.google.com/share?url={{ route('researches.view', $item->id) }}">
                                                     <span class="icon-google-plus"></span>
                                                 </a>
                                             </li>
                                             <li class="ftco-animate">
-                                                <a href="#">
+                                                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('researches.view', $item->id) }}">
                                                     <span span class="icon-instagram"></span>
                                                 </a>
                                             </li>
                                         </ul>
                                         <p class="">
-                                            <a href="{{ route('researches.view', $researche->id) }}" class="btn btn-primary">
+                                            <a href="{{ route('researches.view', $item->id) }}" class="btn btn-primary">
                                                 View
                                             </a>
                                         </p>
@@ -514,7 +515,7 @@
     <script>
         const secondSwiper = new Swiper('.secondSwiper', {
             centeredSlides: true,
-            dir: rtl,
+            rtl: rtl,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -572,7 +573,6 @@
             }
         });
         $(document).ready(function() {
-
             var slidewidth = $('.hospitalsSwiper .swiper-slide').css('width');
             $('.hospitalsSwiper .hospitalsCard').css('width', slidewidth);
         });
