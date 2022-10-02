@@ -1,5 +1,13 @@
 @extends('layouts.master')
 <?php $locale = app()->getLocale() ?>
+
+@section('body-class', 'hospital')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('dist/css/new-style.css') }}">
+@endsection
+
+
 @section('content')
     <section class="hero-wrap hero-wrap-2"
         style="background-image: url({{ Voyager::image(json_decode($hospital->banner_photo)[0] ?? null) }});height:400px"
@@ -38,9 +46,9 @@
                         </div>
                     </div>
                 </div> --}}
-                <div class="col-md-12 d-flex m-4">
+                <div class="col-md-12 d-flex m-md-4">
                     <div class="appointment-wrap bg-white p-5 d-flex align-items-center">
-                        <div class="row justify-content pb-5" style="width: 100%">
+                        <div class="row justify-content pb-5  flex-col-reverse " style="width: 100%">
                             <div class="col-md-12 heading-section ftco-animate">
                                 <h2 class="mb-3">{{ $hospital->{'title_' . $locale} }}</h2>
                             </div>

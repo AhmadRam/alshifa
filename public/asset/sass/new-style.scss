@@ -17,6 +17,10 @@
         .owl-prev{
             position: absolute;
             left: 0;
+            &:lang(ar){
+                left: auto;
+                right: 0;
+            }
             border: none;
             background: none;
             padding: 0;
@@ -29,6 +33,10 @@
         .owl-next{
             position: absolute;
             right: 0;
+            &:lang(ar){
+                left: 0;
+                right: auto;
+            }
             border: none;
             background: none;
             padding: 0;
@@ -53,7 +61,8 @@
             border-radius: 50%;
             background: #7134BD;
             opacity: 0.5;
-            margin: 0 5px;
+            margin: 0 2.5px;
+            border: none;
             &.active{
                 opacity: 1;
             }
@@ -103,6 +112,13 @@
         .description{
             width: fit-content;
             padding: 20px;
+        }
+    }
+}
+.hospital , .hotel {
+    .appointment-wrap{
+        @media screen and (max-width: 767px){
+            flex-direction: column-reverse;
         }
     }
 }

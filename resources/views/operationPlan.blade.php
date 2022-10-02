@@ -35,8 +35,6 @@
                         <div class="swiper-wrapper">
                             @foreach ($departments as $key => $item)
                                 <div class="swiper-slide">
-                                    {{-- <input id="department-{{ $key }}" type="radio" name="department_id" required
-                                        value="{{ $item->id }}" onchange="getHospital({{ $item->id }})"> --}}
                                     <input id="department-{{ $key }}" type="radio" name="department_id" required
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
                                     <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]); ?>
@@ -57,29 +55,8 @@
 
                 <section class="section">
                     <h3>{{ trans('Choose Hospital') }} :</h3>
-                    {{-- <div class="mainSwiper">
-                        <div class="swiper-wrapper" id="hospitals">
-                        </div>
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
-                        <!-- Add Arrows -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-
-                    </div> --}}
-
                     <div class="mainSwiper">
-                        <div class="swiper-wrapper">
-                            @foreach ($hospitals as $key => $item)
-                                <div class="swiper-slide">
-                                    <input id="department-{{ $key }}" type="radio" name="department_id" required
-                                        value="{{ $item->id }}">
-                                    <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]); ?>
-                                    <img class="w-100" src="{{ $image }}" alt="{{ $item->{'title_' . $locale} }}"
-                                        title="{{ $item->{'title_' . $locale} }}">
-                                    <p>{{ $item->{'name_' . $locale} }}</p>
-                                </div>
-                            @endforeach
+                        <div class="swiper-wrapper" id="hospitals">
                         </div>
                         <!-- Add Pagination -->
                         <div class="swiper-pagination"></div>
@@ -99,6 +76,7 @@
                             @foreach ($hotels as $key => $item)
                                 <div class="swiper-slide">
                                     <input id="department-{{ $key }}" type="radio" name="department_id" required
+                                    {{ $key == 0 ? 'checked' : '' }}
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
                                     <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]); ?>
                                     <img class="w-100" src="{{ $image }}" alt="{{ $item->{'title_' . $locale} }}"

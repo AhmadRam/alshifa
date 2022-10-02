@@ -202,7 +202,7 @@
     </section>
 
     <section class="ftco-section" id="Hospitals-section">
-        <div class="container px-5">
+        <div class="container px-md-5">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
                     <h2 class="mb-4">{{ trans('Our Hospitals') }}</h2>
@@ -300,7 +300,7 @@
     </section>
 
     <section class="ftco-section" id="Hotels-section">
-        <div class="container px-5">
+        <div class="container px-md-5">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
                     <h2 class="mb-4">{{ trans('Our Hotels') }}</h2>
@@ -503,6 +503,7 @@
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        const direction = '{{ app()->getLocale() == 'ar' ? 'true' : 'false' }}';
         const secondSwiper = new Swiper('.secondSwiper', {
             centeredSlides: true,
             rtl: rtl,
@@ -537,6 +538,7 @@
             margin: 10,
             nav: true,
             dots: true,
+            rtl: direction,
             responsive: {
                 0: {
                     items: 1
@@ -556,15 +558,17 @@
             nav: true,
             dots: true,
             center: true,
+            rtl: direction,
             responsive: {
                 0: {
-                    items: 2
+                    items: 2,
+                    center: false,
                 },
                 600: {
-                    items: 3
+                    items: 3,
                 },
                 1000: {
-                    items: 4
+                    items: 4,
                 }
             }
         });
