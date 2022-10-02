@@ -76,7 +76,6 @@
                             @foreach ($hotels as $key => $item)
                                 <div class="swiper-slide">
                                     <input id="department-{{ $key }}" type="radio" name="department_id" required
-                                    {{ $key == 0 ? 'checked' : '' }}
                                         value="{{ $item->id }}" onchange="getHospital({{ $item->id }})">
                                     <?php $image = !is_array(json_decode($item->photo)) ? asset('asset/images/Logo.png') : Voyager::image(json_decode($item->photo)[0]); ?>
                                     <img class="w-100" src="{{ $image }}" alt="{{ $item->{'title_' . $locale} }}"
@@ -157,13 +156,14 @@
             direction: 'horizontal',
             slidesPerView: 4,
             spaceBetween: 20,
+            pagination:false,
             grid: {
                 rows: 2,
             },
             breakpoints: {
                 // when window width is >= 320px
                 320: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 5,
                     grid: {
                         rows: 2,
@@ -171,7 +171,7 @@
                 },
                 // when window width is >= 480px
                 480: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 10,
                     grid: {
                         rows: 2,
@@ -179,7 +179,7 @@
                 },
                 // when window width is >= 640px
                 640: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                     spaceBetween: 10,
                     grid: {
                         rows: 2,
