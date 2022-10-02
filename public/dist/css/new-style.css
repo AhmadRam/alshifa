@@ -1,6 +1,68 @@
-.home-page .home-Carousal .owl-stage {
+.owl-loaded {
+  position: relative;
+  padding-bottom: 30px;
+}
+.owl-loaded .owl-stage {
   display: flex;
   flex-direction: row;
+}
+.owl-loaded .owl-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.owl-loaded .owl-nav .owl-prev {
+  position: absolute;
+  left: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  color: #7134BD;
+}
+.owl-loaded .owl-nav .owl-next {
+  position: absolute;
+  right: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  color: #7134BD;
+}
+.owl-loaded .owl-dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.owl-loaded .owl-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #7134BD;
+  opacity: 0.5;
+  margin: 0 5px;
+}
+.owl-loaded .owl-dots button.active {
+  opacity: 1;
+}
+
+.home-page .homeCarousel {
+  overflow: hidden;
+  width: 100%;
 }
 
 .department .head-section {
