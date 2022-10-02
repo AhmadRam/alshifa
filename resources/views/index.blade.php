@@ -1,5 +1,13 @@
 @extends('layouts.master')
+
 <?php $locale = app()->getLocale(); ?>
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('') }}">
+@endsection
+
+@section('body-class', 'home-page')
+
 @section('content')
     <section class="hero-wrap js-fullheight" style="background-image: url({{ asset('asset/images/bg_3.jpg') }});"
         data-section="home" data-stellar-background-ratio="0.5">
@@ -69,10 +77,11 @@
                                     <div class="media block-6 services d-flex">
                                         <div class="icon justify-content-center align-items-center d-flex ">
                                             {{-- @if ($our_service->icon) --}}
-                                                {{-- <span class="{{ $our_service->icon }}"></span> --}}
+                                            {{-- <span class="{{ $our_service->icon }}"></span> --}}
                                             {{-- @else --}}
-                                                <img class="w-50" src="{{ Voyager::image(($our_service->icon ?? asset('asset/images/loc.png'))) }}"
-                                                    alt="">
+                                            <img class="w-50"
+                                                src="{{ Voyager::image($our_service->icon ?? asset('asset/images/loc.png')) }}"
+                                                alt="">
                                             {{-- @endif --}}
                                         </div>
                                         <div class="media-body pl-md-4">
@@ -115,7 +124,8 @@
                             <div class="department-wrap p-4 ftco-animate">
                                 <div class="text p-2 text-center" style="height: 170px;">
                                     <div class="icon">
-                                        <img src="{{ Voyager::image((json_decode($department->photo)[0] ?? null)) }}" height="80px">
+                                        <img src="{{ Voyager::image(json_decode($department->photo)[0] ?? null) }}"
+                                            height="80px">
                                     </div>
                                     <h3><a
                                             href="{{ route('departments.view', $department->id) }}">{{ $department->{'name_' . $locale} }}</a>
@@ -198,57 +208,48 @@
                     <h2 class="mb-4">{{ trans('Our Hospitals') }}</h2>
                 </div>
             </div>
-            <div class="homeSwiper">
-                <div class="swiper-wrapper d-flex">
-                    @foreach ($hospitals as $key => $hospital)
-                        <div class="swiper-slide ftco-animate">
-                            <div class="staff hospitalsCard">
-                                <div class="img-wrap d-flex align-items-stretch">
-                                    <div class="img align-self-stretch ovarflow-hidden"
-                                        style="background-image: url({{ Voyager::image(json_decode($hospital->photo)[0] ?? null) }}">
-                                    </div>
-                                </div>
-                                <div class="text pt-3 text-center">
-                                    <h3 class="mb-2">{{ $hospital->{'name_' . $locale} }}</h3>
-                                    <div class="faded">
-                                        <p>{{ $hospital->{'short_description_' . $locale} }}</p>
-                                        <ul class="ftco-social">
-                                            <li class="ftco-animate">
-                                                <a href="#"><span class="icon-twitter"></span>
-                                                </a>
-                                            </li>
-                                            <li class="ftco-animate">
-                                                <a href="#">
-                                                    <span class="icon-facebook"></span>
-                                                </a>
-                                            </li>
-                                            <li class="ftco-animate">
-                                                <a href="#">
-                                                    <span class="icon-google-plus"></span>
-                                                </a>
-                                            </li>
-                                            <li class="ftco-animate">
-                                                <a href="#">
-                                                    <span span class="icon-instagram"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <p class="">
-                                            <a href="{{ route('hospitals.view', $hospital->id) }}" class="btn btn-primary">
-                                                View
-                                            </a>
-                                        </p>
-                                    </div>
-                                </div>
+            <div class="homeCarousel">
+                @foreach ($hospitals as $key => $hospital)
+                    <div class="staff hospitalsCard">
+                        <div class="img-wrap d-flex align-items-stretch">
+                            <div class="img align-self-stretch ovarflow-hidden"
+                                style="background-image: url({{ Voyager::image(json_decode($hospital->photo)[0] ?? null) }}">
                             </div>
                         </div>
-                    @endforeach
-                </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                        <div class="text pt-3 text-center">
+                            <h3 class="mb-2">{{ $hospital->{'name_' . $locale} }}</h3>
+                            <div class="faded">
+                                <p>{{ $hospital->{'short_description_' . $locale} }}</p>
+                                <ul class="ftco-social">
+                                    <li class="ftco-animate">
+                                        <a href="#"><span class="icon-twitter"></span>
+                                        </a>
+                                    </li>
+                                    <li class="ftco-animate">
+                                        <a href="#">
+                                            <span class="icon-facebook"></span>
+                                        </a>
+                                    </li>
+                                    <li class="ftco-animate">
+                                        <a href="#">
+                                            <span class="icon-google-plus"></span>
+                                        </a>
+                                    </li>
+                                    <li class="ftco-animate">
+                                        <a href="#">
+                                            <span span class="icon-instagram"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <p class="">
+                                    <a href="{{ route('hospitals.view', $hospital->id) }}" class="btn btn-primary">
+                                        View
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
         </div>
@@ -359,71 +360,75 @@
             </div>
         </div>
     </section>
-    @if($researches->count())
-    <section class="ftco-section bg-light" id="blog-section">
-        <div class="container-fluid px-5">
-            <div class="row justify-content-center mb-5 pb-5">
-                <div class="col-md-10 heading-section text-center ftco-animate">
-                    <h2 class="mb-4">{{ trans('Our doctors researches') }}</h2>
-                    <p>{{ trans('Get the most accurate and up to date medical information through out our researchers') }}
-                    </p>
+    @if ($researches->count())
+        <section class="ftco-section bg-light" id="blog-section">
+            <div class="container-fluid px-5">
+                <div class="row justify-content-center mb-5 pb-5">
+                    <div class="col-md-10 heading-section text-center ftco-animate">
+                        <h2 class="mb-4">{{ trans('Our doctors researches') }}</h2>
+                        <p>{{ trans('Get the most accurate and up to date medical information through out our researchers') }}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="secondSwiper">
-                <div class="swiper-wrapper d-flex">
-                    @foreach ($researches as $key => $item)
-                        <div class="swiper-slide ftco-animate">
-                            <div class="staff hospitalsCard">
-                                <div class="img-wrap d-flex align-items-stretch">
-                                    <div class="img align-self-stretch ovarflow-hidden"
-                                        style="background-image: url({{ Voyager::image(json_decode($item->photo)[0] ?? null) }}">
+                <div class="secondSwiper">
+                    <div class="swiper-wrapper d-flex">
+                        @foreach ($researches as $key => $item)
+                            <div class="swiper-slide ftco-animate">
+                                <div class="staff hospitalsCard">
+                                    <div class="img-wrap d-flex align-items-stretch">
+                                        <div class="img align-self-stretch ovarflow-hidden"
+                                            style="background-image: url({{ Voyager::image(json_decode($item->photo)[0] ?? null) }}">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="text pt-3 text-start">
-                                    <h3 class="mb-2">{{ $item->{'name_' . $locale} }}</h3>
-                                    <div class="faded">
-                                        <p>{{ $item->{'short_description_' . $locale} }}</p>
-                                       
-                                        <ul class="ftco-social">
-                                            <li class="ftco-animate">
-                                                <a href="#"><span class="icon-twitter"></span>
+                                    <div class="text pt-3 text-start">
+                                        <h3 class="mb-2">{{ $item->{'name_' . $locale} }}</h3>
+                                        <div class="faded">
+                                            <p>{{ $item->{'short_description_' . $locale} }}</p>
+
+                                            <ul class="ftco-social">
+                                                <li class="ftco-animate">
+                                                    <a href="#"><span class="icon-twitter"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="ftco-animate">
+                                                    <a
+                                                        href="https://facebook.com/sharer/sharer.php?u={{ route('researches.view', $item->id) }}">
+                                                        <span class="icon-facebook"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="ftco-animate">
+                                                    <a
+                                                        href="https://plus.google.com/share?url={{ route('researches.view', $item->id) }}">
+                                                        <span class="icon-google-plus"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="ftco-animate">
+                                                    <a
+                                                        href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('researches.view', $item->id) }}">
+                                                        <span span class="icon-instagram"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <p class="">
+                                                <a href="{{ route('researches.view', $item->id) }}"
+                                                    class="btn btn-primary">
+                                                    View
                                                 </a>
-                                            </li>
-                                            <li class="ftco-animate">
-                                                <a href="https://facebook.com/sharer/sharer.php?u={{ route('researches.view', $item->id) }}">
-                                                    <span class="icon-facebook"></span>
-                                                </a>
-                                            </li>
-                                            <li class="ftco-animate">
-                                                <a href="https://plus.google.com/share?url={{ route('researches.view', $item->id) }}">
-                                                    <span class="icon-google-plus"></span>
-                                                </a>
-                                            </li>
-                                            <li class="ftco-animate">
-                                                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('researches.view', $item->id) }}">
-                                                    <span span class="icon-instagram"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <p class="">
-                                            <a href="{{ route('researches.view', $item->id) }}" class="btn btn-primary">
-                                                View
-                                            </a>
-                                        </p>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
-        </div>
-    </section>
+        </section>
     @endif
     <section class="ftco-section testimony-section img"
         style="background-image: url({{ asset('asset/images/bg_3.jpg') }});">
@@ -512,6 +517,9 @@
 @endsection
 
 @section('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         const secondSwiper = new Swiper('.secondSwiper', {
             centeredSlides: true,
@@ -543,35 +551,41 @@
                 }
             }
         });
-        const homeSwiper = new Swiper('.homeSwiper', {
-            centeredSlides: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                1024: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                },
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 30,
-                }
-            }
-        });
+        // const homeSwiper = new Swiper('.homeSwiper', {
+        //     centeredSlides: true,
+        //     pagination: {
+        //         el: '.swiper-pagination',
+        //         clickable: true,
+        //     },
+        //     navigation: {
+        //         nextEl: '.swiper-button-next',
+        //         prevEl: '.swiper-button-prev',
+        //     },
+        //     breakpoints: {
+        //         1024: {
+        //             slidesPerView: 2,
+        //             spaceBetween: 10,
+        //         },
+        //         768: {
+        //             slidesPerView: 2,
+        //             spaceBetween: 10,
+        //         },
+        //         640: {
+        //             slidesPerView: 1,
+        //             spaceBetween: 20,
+        //         },
+        //         320: {
+        //             slidesPerView: 1,
+        //             spaceBetween: 30,
+        //         }
+        //     }
+        // });
+        $('.homeCarousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            rtl: rtl,
+        })
         $(document).ready(function() {
             var slidewidth = $('.hospitalsSwiper .swiper-slide').css('width');
             $('.hospitalsSwiper .hospitalsCard').css('width', slidewidth);
