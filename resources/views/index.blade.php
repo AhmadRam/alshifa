@@ -122,16 +122,17 @@
                                 <div class="col-md-3">
                             @endif
                             <div class="department-wrap p-4 ftco-animate">
-                                <div class="text p-2 text-center" style="height: 170px;">
-                                    <div class="icon">
-                                        <img src="{{ Voyager::image(json_decode($department->photo)[0] ?? null) }}"
-                                            height="80px">
+                                <a href="{{ route('departments.view', $department->id) }}" style="text-decoration:none">
+                                    <div class="text p-2 text-center" style="height: 170px;">
+                                        <div class="icon">
+                                            <img src="{{ Voyager::image(json_decode($department->photo)[0] ?? null) }}"
+                                                height="80px">
+                                        </div>
+                                        <h3>{{ $department->{'name_' . $locale} }}
+                                        </h3>
+                                        <p>{{ $department->{'short_description_' . $locale} }}</p>
                                     </div>
-                                    <h3><a
-                                            href="{{ route('departments.view', $department->id) }}">{{ $department->{'name_' . $locale} }}</a>
-                                    </h3>
-                                    <p>{{ $department->{'short_description_' . $locale} }}</p>
-                                </div>
+                                </a>
                             </div>
                             @if ($number == 3 || $number == 6 || $number == 9 || $number == 12 || $number == 15)
                     </div>
@@ -307,49 +308,49 @@
                 </div>
             </div>
             <div class="homeCarousel">
-                    @foreach ($hotels as $key => $hotel)
-                            <div class="staff hospitalsCard">
-                                <div class="img-wrap d-flex align-items-stretch">
-                                    <div class="img align-self-stretch ovarflow-hidden"
-                                        style="background-image: url({{ Voyager::image(json_decode($hotel->photo)[0] ?? null) }}">
-                                    </div>
-                                </div>
-                                <div class="text pt-3 text-center">
-                                    <h3 class="mb-2">{{ $hotel->{'name_' . $locale} }}</h3>
-                                    <div class="faded">
-                                        <p>{{ $hotel->{'short_description_' . $locale} }}</p>
-                                        <ul class="ftco-social">
-                                            <li class="ftco-animate">
-                                                <a href="#"><span class="icon-twitter"></span>
-                                                </a>
-                                            </li>
-                                            <li class="ftco-animate">
-                                                <a href="#">
-                                                    <span class="icon-facebook"></span>
-                                                </a>
-                                            </li>
-                                            <li class="ftco-animate">
-                                                <a href="#">
-                                                    <span class="icon-google-plus"></span>
-                                                </a>
-                                            </li>
-                                            <li class="ftco-animate">
-                                                <a href="#">
-                                                    <span span class="icon-instagram"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <p class="">
-                                            <a href="{{ route('hotels.view', $hotel->id) }}" class="btn btn-primary">
-                                                View
-                                            </a>
-                                        </p>
-                                    </div>
-                                </div>
+                @foreach ($hotels as $key => $hotel)
+                    <div class="staff hospitalsCard">
+                        <div class="img-wrap d-flex align-items-stretch">
+                            <div class="img align-self-stretch ovarflow-hidden"
+                                style="background-image: url({{ Voyager::image(json_decode($hotel->photo)[0] ?? null) }}">
                             </div>
-                    @endforeach
-                </div>
+                        </div>
+                        <div class="text pt-3 text-center">
+                            <h3 class="mb-2">{{ $hotel->{'name_' . $locale} }}</h3>
+                            <div class="faded">
+                                <p>{{ $hotel->{'short_description_' . $locale} }}</p>
+                                <ul class="ftco-social">
+                                    <li class="ftco-animate">
+                                        <a href="#"><span class="icon-twitter"></span>
+                                        </a>
+                                    </li>
+                                    <li class="ftco-animate">
+                                        <a href="#">
+                                            <span class="icon-facebook"></span>
+                                        </a>
+                                    </li>
+                                    <li class="ftco-animate">
+                                        <a href="#">
+                                            <span class="icon-google-plus"></span>
+                                        </a>
+                                    </li>
+                                    <li class="ftco-animate">
+                                        <a href="#">
+                                            <span span class="icon-instagram"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <p class="">
+                                    <a href="{{ route('hotels.view', $hotel->id) }}" class="btn btn-primary">
+                                        View
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
+        </div>
         </div>
     </section>
     @if ($researches->count())
