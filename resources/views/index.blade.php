@@ -445,10 +445,11 @@
                         @endforeach
                     </div>
 
-                    <p style="text-align: center;margin-top: 40px;"><a
-                            href="{{ route('customer.patients-comment.view') }}"
-                            class="btn btn-primary py-2 px-3">{{ trans('Write your review') }}</a></p>
-
+                    <p style="text-align: center;margin-top: 40px;">
+                        <a href="{{ route('customer.patients-comment.view') }}"
+                            class="btn btn-primary py-2 px-3">{{ trans('Write your review') }}
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -504,8 +505,7 @@
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        const direction = '{{ app()->getLocale() == "ar" ? true : false }}';
-        console.log(direction);
+        const direction = '{{ app()->getLocale() == 'ar' ? true : false }}';
         const secondSwiper = new Swiper('.secondSwiper', {
             centeredSlides: true,
             rtl: rtl,
@@ -574,6 +574,24 @@
                 }
             }
         });
+        // $('.carousel-testimony').owlCarousel({
+        //     center: true,
+        //     items: 1,
+        //     loop: true,
+        //     margin: 10,
+        //     rtl: direction,
+        //     responsive: {
+        //         0: {
+        //             items: 1
+        //         },
+        //         600: {
+        //             items: 2
+        //         }
+        //         1000: {
+        //             items: 3
+        //         }
+        //     }
+        // });
         $(document).ready(function() {
             var slidewidth = $('.hospitalsSwiper .swiper-slide').css('width');
             $('.hospitalsSwiper .hospitalsCard').css('width', slidewidth);
