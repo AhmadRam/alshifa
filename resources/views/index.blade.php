@@ -504,7 +504,8 @@
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        const direction = '{{ app()->getLocale() == 'ar' ? 'true' : 'false' }}';
+        const direction = '{{ app()->getLocale() == "ar" ? true : false }}';
+        console.log(direction);
         const secondSwiper = new Swiper('.secondSwiper', {
             centeredSlides: true,
             rtl: rtl,

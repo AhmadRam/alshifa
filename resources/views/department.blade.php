@@ -30,7 +30,7 @@ data-stellar-background-ratio="0.5">
 <div class="container">
     <div class="row d-flex">
         <div class="col-md-12 d-flex m-4">
-            <div class="appointment-wrap bg-white p-5 d-flex align-items-center">
+            <div class="appointment-wrap bg-white p-md-5 d-flex align-items-center">
                 <div class="row justify-content pb-5" style="width: 100%">
                     {{-- <div class="col-md-12 heading-section ftco-animate">
                         <h2 class="mb-3">{{ $department->{'name_' . $locale} }}</h2>
